@@ -1,0 +1,8 @@
+model/venv/
+preprocessing/node_modules/
+.DS_Store
+node_modules/
+preprocessing/smallerStructuredEnrichedCoins.json
+preprocessing/enrichedCoins.json
+preprocessing/spaces.json
+preprocessing/structuredEnrichedCoins.json

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "graphql": "^16.9.0",
+    "undici": "^6.19.8"
+  }
+}

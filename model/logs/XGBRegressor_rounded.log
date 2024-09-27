@@ -1,0 +1,107 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-09-24 20:11:03.329529'.
+Reading './isDaoActiveData(2).json'... Done.
+Total training Data: 30
+Size of training set: 21
+Size of test set: 9
+Preparing data for training...
+	Creating sequence for '0-mee'... Done.
+	Creating sequence for '0xblack'... Done.
+	Creating sequence for '01coin'... Done.
+	Creating sequence for '0xbet'... Done.
+	Creating sequence for '0x'... Done.
+	Creating sequence for '0xanon'... Done.
+	Creating sequence for '0xaiswap'... Done.
+	Creating sequence for '0xdao'... Done.
+	Creating sequence for '0-knowledge-network'... Done.
+	Creating sequence for '0xos-ai'... Done.
+	Creating sequence for '0xgasless-2'... Done.
+	Creating sequence for '0xlp'... Done.
+	Creating sequence for '0xgpu-ai'... Done.
+	Creating sequence for '0xcoco'... Done.
+	Creating sequence for '0dog'... Skipped.
+	Creating sequence for '0xdefcafe'... Done.
+	Creating sequence for '0xmonero'... Done.
+	Creating sequence for '0chain'... Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... Done.
+	Creating sequence for '0xadventure'... Done.
+	Creating sequence for '1000bonk'... Done.
+Preparing data for testing...
+	Creating sequence for '0x-leverage'... Done.
+	Creating sequence for '1000troll'... Done.
+	Creating sequence for '0xgen'... Done.
+	Creating sequence for '0xvpn-org'... Done.
+	Creating sequence for '0xscans'... Done.
+	Creating sequence for '0x404'... Done.
+	Creating sequence for '0x678-landwolf-1933'... Done.
+	Creating sequence for '1000sats-ordinals'... Done.
+	Creating sequence for '0xnumber'... Done.
+Actual training set: 20 entries
+Actual testing set:  9 entries
+Actual training/total ratio: 0.6666666666666666
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss", "use_label_encoder": false}
+Training group 0, split 1
+	Y Train Labels:(array([0.], dtype=float32), array([76]))
+	Y Val Labels:(array([0.], dtype=float32), array([76]))
+Training group 0, split 2
+	Y Train Labels:(array([0.], dtype=float32), array([152]))
+	Y Val Labels:(array([0.], dtype=float32), array([76]))
+Training group 0, split 3
+	Y Train Labels:(array([0.], dtype=float32), array([228]))
+	Y Val Labels:(array([0.], dtype=float32), array([76]))
+Training group 1, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([0., 1.], dtype=float32), array([32,  5]))
+	Y Val Labels:(array([0.], dtype=float32), array([36]))
+Training group 1, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([0., 1.], dtype=float32), array([68,  5]))
+	Y Val Labels:(array([0.], dtype=float32), array([36]))
+Training group 1, split 3
+	Early stopping at epoch 22
+	Y Train Labels:(array([0., 1.], dtype=float32), array([104,   5]))
+	Y Val Labels:(array([0.], dtype=float32), array([36]))
+Training group 2, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([0., 1.], dtype=float32), array([45, 30]))
+	Y Val Labels:(array([0.], dtype=float32), array([75]))
+Training group 2, split 2
+	Early stopping at epoch 24
+	Y Train Labels:(array([0., 1.], dtype=float32), array([120,  30]))
+	Y Val Labels:(array([0.], dtype=float32), array([75]))
+Training group 2, split 3
+	Early stopping at epoch 20
+	Y Train Labels:(array([0., 1.], dtype=float32), array([195,  30]))
+	Y Val Labels:(array([0.], dtype=float32), array([75]))
+Training group 3, split 1
+	Y Train Labels:(array([0.], dtype=float32), array([17]))
+	Y Val Labels:(array([0.], dtype=float32), array([16]))
+Training group 3, split 2
+	Y Train Labels:(array([0.], dtype=float32), array([33]))
+	Y Val Labels:(array([0.], dtype=float32), array([16]))
+Training group 3, split 3
+	Y Train Labels:(array([0.], dtype=float32), array([49]))
+	Y Val Labels:(array([0.], dtype=float32), array([16]))
+Training group 4, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([78]))
+	Y Val Labels:(array([1.], dtype=float32), array([76]))
+Traceback (most recent call last):
+  File "/Users/throvn/Documents/is-dao-active/model/lstm.py", line 308, in <module>
+    gbm.fit(train_output, torch.round(y_train_tensor).cpu().numpy().astype(int), eval_set=[(val_output, torch.round(y_val_tensor).cpu().numpy().astype(int))], verbose=True)
+  File "/Users/throvn/Documents/is-dao-active/model/venv/lib/python3.12/site-packages/xgboost/core.py", line 726, in inner_f
+    return func(**kwargs)
+           ^^^^^^^^^^^^^^
+  File "/Users/throvn/Documents/is-dao-active/model/venv/lib/python3.12/site-packages/xgboost/sklearn.py", line 1491, in fit
+    raise ValueError(
+ValueError: Invalid classes inferred from unique values of `y`.  Expected: [0], got [1]

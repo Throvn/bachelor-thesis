@@ -1,0 +1,17 @@
+{
+  "name": "is-dao-active",
+  "version": "1.0.0",
+  "description": "This little tool is useful if you need to manually classify a lot of DAOs regarding their activity.",
+  "main": "bottomLeft.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "stream-json": "^1.8.0"
+  }
+}
