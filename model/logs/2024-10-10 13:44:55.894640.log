@@ -1,0 +1,136 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 13:44:55.894640'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'...                                             priceUSD  ... devActivity
+0  [{'datetime': '2019-07-01T00:00:00Z', 'value':...  ...          []
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'alphabet-erc404'...                                             priceUSD twitterFollowers devActivity
+1  [{'datetime': '2024-02-20T00:00:00Z', 'value':...             None          []
+Done.
+	Creating sequence for 'across-protocol'...                                             priceUSD  ...                                        devActivity
+2  [{'datetime': '2022-11-28T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'clore-ai'...                                             priceUSD twitterFollowers devActivity
+3  [{'datetime': '2023-05-31T00:00:00Z', 'value':...             None          []
+Done.
+	Creating sequence for 'alchemist'...                                             priceUSD  ...                                        devActivity
+4  [{'datetime': '2021-04-28T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'cnns'...                                             priceUSD  ... devActivity
+5  [{'datetime': '2019-05-13T00:00:00Z', 'value':...  ...          []
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'bnktothefuture'...                                             priceUSD  ...                                        devActivity
+6  [{'datetime': '2018-03-22T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'cornucopias'...                                             priceUSD twitterFollowers devActivity
+7  [{'datetime': '2021-12-11T00:00:00Z', 'value':...               []          []
+Done.
+	Creating sequence for 'aave-busd'... Skipped.
+	Creating sequence for 'base-protocol'...                                             priceUSD  ...                                        devActivity
+9  [{'datetime': '2020-12-03T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'algorand'...                                              priceUSD  ...                                        devActivity
+10  [{'datetime': '2019-06-21T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'...                                              priceUSD  ...                                        devActivity
+11  [{'datetime': '2023-01-31T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'bytom'...                                              priceUSD  ...                                        devActivity
+12  [{'datetime': '2017-08-08T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'as-roma-fan-token'...                                              priceUSD twitterFollowers devActivity
+13  [{'datetime': '2020-06-22T00:00:00Z', 'value':...             None          []
+Done.
+	Creating sequence for 'cajutel'...                                              priceUSD  ...                                        devActivity
+14  [{'datetime': '2019-01-31T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'chainbing'...                                              priceUSD  ...                                        devActivity
+15  [{'datetime': '2021-08-31T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'calcium'...                                              priceUSD twitterFollowers devActivity
+16  [{'datetime': '2023-09-22T00:00:00Z', 'value':...             None          []
+Done.
+	Creating sequence for 'belt'...                                              priceUSD twitterFollowers devActivity
+17  [{'datetime': '2021-03-11T00:00:00Z', 'value':...             None          []
+Done.
+	Creating sequence for 'baasid'...                                              priceUSD  ... devActivity
+18  [{'datetime': '2018-08-10T00:00:00Z', 'value':...  ...          []
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'cobak-token'...                                              priceUSD  ...                                        devActivity
+19  [{'datetime': '2020-12-24T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'agatech'...                                              priceUSD twitterFollowers devActivity
+20  [{'datetime': '2023-12-05T00:00:00Z', 'value':...             None          []
+Done.
+	Creating sequence for 'clearpool'...                                              priceUSD  ...                                        devActivity
+21  [{'datetime': '2021-10-28T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'bridge-mutual'...                                              priceUSD  ... devActivity
+22  [{'datetime': '2021-01-31T00:00:00Z', 'value':...  ...          []
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'bitget-wallet-token'...                                              priceUSD twitterFollowers devActivity
+23  [{'datetime': '2024-06-06T00:00:00Z', 'value':...             None          []
+Done.
+	Creating sequence for 'chainx'...                                              priceUSD  ...                                        devActivity
+24  [{'datetime': '2019-08-01T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'anyswap'...                                              priceUSD  ... devActivity
+25  [{'datetime': '2020-08-17T00:00:00Z', 'value':...  ...          []
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'botto'...                                              priceUSD  ...                                        devActivity
+26  [{'datetime': '2021-11-12T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'bitcoin'...                                              priceUSD  ...                                        devActivity
+27  [{'datetime': '2013-04-28T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'centrifuge'...                                              priceUSD  ...                                        devActivity
+28  [{'datetime': '2021-07-14T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
+Done.
+	Creating sequence for 'basis-cash'... 

@@ -1,0 +1,11 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-09-27 14:13:00.875718'.
+Reading '../classifiedDAOs_preview.json'... Done.
+Total training Data: 159
+Size of training set: 111
+Size of test set: 48
+Preparing data for training...
+	Creating sequence for 'adreward'... 

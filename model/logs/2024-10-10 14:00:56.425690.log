@@ -1,0 +1,1368 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 14:00:56.425690'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'... Len price:Index([0], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'alphabet-erc404'... Len price:Index([1], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'across-protocol'... Len price:Index([2], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'clore-ai'... Len price:Index([3], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'alchemist'... Len price:Index([4], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cnns'... Len price:Index([5], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bnktothefuture'... Len price:Index([6], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cornucopias'... Len price:Index([7], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aave-busd'... Skipped.
+	Creating sequence for 'base-protocol'... Len price:Index([9], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'algorand'... Len price:Index([10], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... Len price:Index([11], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bytom'... Len price:Index([12], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'as-roma-fan-token'... Len price:Index([13], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cajutel'... Len price:Index([14], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'chainbing'... Len price:Index([15], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'calcium'... Len price:Index([16], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'belt'... Len price:Index([17], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'baasid'... Len price:Index([18], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cobak-token'... Len price:Index([19], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'agatech'... Len price:Index([20], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'clearpool'... Len price:Index([21], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bridge-mutual'... Len price:Index([22], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitget-wallet-token'... Len price:Index([23], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'chainx'... Len price:Index([24], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'anyswap'... Len price:Index([25], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'botto'... Len price:Index([26], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin'... Len price:Index([27], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'centrifuge'... Len price:Index([28], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'basis-cash'... Len price:Index([29], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bolt'... Len price:Index([30], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'creo-engine'... Len price:Index([31], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'band-protocol'... Len price:Index([32], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'celestia'... Len price:Index([33], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'antimatter'... Len price:Index([34], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bistroo'... Len price:Index([35], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aipad'... Len price:Index([36], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bidao'... Len price:Index([37], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitmart-token'... Len price:Index([38], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'blocknet'... Len price:Index([39], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aviator'... Len price:Index([40], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'ark'... Len price:Index([41], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bifrost'... Len price:Index([42], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'assemble-protocol'... Len price:Index([43], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aergo'... Len price:Index([44], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'artrade'... Len price:Index([45], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'access-protocol'... Len price:Index([46], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aurusx'... Len price:Index([47], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'affyn'... Len price:Index([48], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'adapad'... Len price:Index([49], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'crypto-asset-governance-alliance'... Len price:Index([50], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'compound-basic-attention-token'... Len price:Index([51], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aave-usdt'... Skipped.
+	Creating sequence for 'apy-finance'... Len price:Index([53], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'arweave'... Len price:Index([54], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'ageofgods'... Len price:Index([55], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'biswap'... Len price:Index([56], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'dafi-protocol'... Len price:Index([57], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'biconomy'... Len price:Index([58], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cumrocket'... Len price:Index([59], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'beoble'... Len price:Index([60], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'apm-coin'... Len price:Index([61], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bottos'... Len price:Index([62], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aave-usdc'... Skipped.
+	Creating sequence for 'bullperks'... Len price:Index([64], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bittorrent'... Len price:Index([65], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aurory'... Len price:Index([66], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'acala'... Len price:Index([67], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'banano'... Len price:Index([68], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aston-martin-cognizant-fan-token'... Len price:Index([69], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'argent'... Skipped.
+	Creating sequence for 'celo-dollar'... Len price:Index([71], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'blendr-network'... Len price:Index([72], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'adamant-messenger'... Len price:Index([73], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'compound-ether'... Len price:Index([74], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cloudbric'... Len price:Index([75], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'achain'... Len price:Index([76], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'ben-the-dog'... Len price:Index([77], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'arkham'... Len price:Index([78], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cellframe'... Len price:Index([79], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'basic-attention-token'... Len price:Index([80], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'connex'... Len price:Index([81], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'coinsbit-token'... Len price:Index([82], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'chronicle'... Len price:Index([83], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'dacxi'... Len price:Index([84], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'arcs'... Len price:Index([85], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'billionhappiness'... Len price:Index([86], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'burger-swap'... Len price:Index([87], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for '1inch'... Len price:Index([88], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'binance-usd'... Len price:Index([89], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'beyond-finance'... Len price:Index([90], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'binemon'... Len price:Index([91], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'b20'... Len price:Index([92], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bemo-staked-ton'... Len price:Index([93], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aeron'... Len price:Index([94], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'coldstack'... Len price:Index([95], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'brz'... Len price:Index([96], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'blockstack'... Len price:Index([97], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bamboo-defi'... Len price:Index([98], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'astroswap'... Len price:Index([99], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'barnbridge'... Len price:Index([100], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-wizards'... Len price:Index([101], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'commune-ai'... Len price:Index([102], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'alva'... Len price:Index([103], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'balpha'... Len price:Index([104], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cardano'... Len price:Index([105], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'alvey-chain'... Len price:Index([106], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'adreward'... Len price:Index([107], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'acorn-protocol'... Len price:Index([108], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-cash'... Len price:Index([109], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bazaars'... Len price:Index([110], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cere-network'... Len price:Index([111], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bnsd-finance'... Len price:Index([112], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitball-treasure'... Len price:Index([113], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'airight'... Len price:Index([114], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'auto'... Len price:Index([115], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'comtech-gold'... Len price:Index([116], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bluzelle'... Len price:Index([117], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitkub-coin'... Len price:Index([118], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aston-villa-fan-token'... Len price:Index([119], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'crash-on-base'... Len price:Index([120], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aeon'... Len price:Index([121], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'alchemix'... Len price:Index([122], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitball'... Len price:Index([123], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'beefy-finance'... Len price:Index([124], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'calamari-network'... Len price:Index([125], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'crown-by-third-time-games'... Len price:Index([126], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'apeswap-finance'... Len price:Index([127], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'ait-protocol'... Len price:Index([128], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'ampleforth-governance-token'... Len price:Index([129], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aion'... Len price:Index([130], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'autonio'... Len price:Index([131], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'airtor-protocol'... Len price:Index([132], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'acquire-fi'... Len price:Index([133], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aptos'... Len price:Index([134], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cyberfi'... Len price:Index([135], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'carvertical'... Len price:Index([136], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'captain-tsubasa'... Len price:Index([137], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-diamond'... Len price:Index([138], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-gold'... Len price:Index([139], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cotrader'... Len price:Index([140], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'coin98'... Len price:Index([141], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'convex-finance'... Len price:Index([142], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'alpine-f1-team-fan-token'... Len price:Index([143], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'ampleforth'... Len price:Index([144], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'airswap'... Len price:Index([145], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aerodrome-finance'... Len price:Index([146], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'blackcardcoin'... Len price:Index([147], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'ambo'... Skipped.
+	Creating sequence for 'bepro-network'... Len price:Index([149], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'azuki'... Len price:Index([150], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aioz-network'... Len price:Index([151], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'astar'... Len price:Index([152], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'augur'... Len price:Index([153], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'adshares'... Len price:Index([154], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'ceres'... Len price:Index([155], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'constitutiondao'... Len price:Index([156], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aragon'... Len price:Index([157], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'areon-network'... Len price:Index([158], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'ai-analysis-token'... Len price:Index([159], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'armor'... Len price:Index([160], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitshares'... Len price:Index([161], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cryptozoon'... Len price:Index([162], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitdao'... Len price:Index([163], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'convergence'... Len price:Index([164], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'contentos'... Len price:Index([165], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'alitas'... Len price:Index([166], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'akita-inu'... Len price:Index([167], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aeternity'... Len price:Index([168], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'brainlet'... Skipped.
+	Creating sequence for 'bread'... Len price:Index([170], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'contentbox'... Len price:Index([171], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bad-idea-ai'... Len price:Index([172], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'crypto-ai-robo'... Len price:Index([173], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'blind-boxes'... Len price:Index([174], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'beam'... Len price:Index([175], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'alien-worlds'... Len price:Index([176], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'banana-gun'... Len price:Index([177], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aave-mana'... Skipped.
+	Creating sequence for 'amino'... Len price:Index([179], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cashaa'... Len price:Index([180], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'catcoin'... Len price:Index([181], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'birake'... Len price:Index([182], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'altered-state-token'... Len price:Index([183], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bonfida'... Len price:Index([184], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bakerytoken'... Len price:Index([185], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aave-link'... Skipped.
+	Creating sequence for 'credefi'... Len price:Index([187], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bella-protocol'... Len price:Index([188], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'ardor'... Len price:Index([189], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'acknoledger'... Len price:Index([190], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cryptogpt'... Len price:Index([191], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'civic'... Len price:Index([192], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bifi'... Len price:Index([193], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'axelar'... Len price:Index([194], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'amepay'... Len price:Index([195], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'clube-atletico-mineiro-fan-token'... Len price:Index([196], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cyclone-protocol'... Len price:Index([197], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'apenft'... Len price:Index([198], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'celo'... Len price:Index([199], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'coinweb'... Len price:Index([200], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'concordium'... Len price:Index([201], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'chex-token'... Len price:Index([202], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'coinex-token'... Len price:Index([203], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'appcoins'... Len price:Index([204], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'boba-network'... Len price:Index([205], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'arcona'... Len price:Index([206], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'azuro-protocol'... Len price:Index([207], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aave-tusd'... Skipped.
+	Creating sequence for 'babb'... Len price:Index([209], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cult-dao'... Len price:Index([210], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'avail'... Skipped.
+	Creating sequence for 'amond'... Len price:Index([212], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'akash-network'... Len price:Index([213], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitcicoin'... Len price:Index([214], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aave-knc'... Skipped.
+	Creating sequence for '0x'... Len price:Index([216], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'billy'... Len price:Index([217], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bbs-network'... Len price:Index([218], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'atlas-navi'... Len price:Index([219], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'api3'... Len price:Index([220], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'andy-on-sol'... Len price:Index([221], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'credits'... Len price:Index([222], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for '5ire'... Len price:Index([223], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aethir'... Len price:Index([224], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'axie-infinity'... Len price:Index([225], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'compound-uniswap'... Len price:Index([226], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'beta-finance'... Len price:Index([227], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'blockasset'... Len price:Index([228], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'art-de-finance'... Len price:Index([229], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for '3space-art'... Len price:Index([230], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'carry'... Len price:Index([231], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'amber'... Len price:Index([232], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'alephium'... Len price:Index([233], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bibox-token'... Len price:Index([234], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'boson-protocol'... Len price:Index([235], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'arcblock'... Len price:Index([236], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'circuits-of-value'... Len price:Index([237], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'book-of-meme'... Len price:Index([238], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aventus'... Len price:Index([239], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'adappter-token'... Len price:Index([240], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for '404aliens'... Len price:Index([241], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cratos'... Len price:Index([242], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cartesi'... Len price:Index([243], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'choise'... Len price:Index([244], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'amaterasu-omikami'... Len price:Index([245], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'adventure-gold'... Len price:Index([246], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'celer-network'... Len price:Index([247], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitpanda-ecosystem-token'... Len price:Index([248], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'celo-euro'... Len price:Index([249], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bomb'... Len price:Index([250], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cosmos'... Len price:Index([251], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'cudos'... Len price:Index([252], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bora'... Len price:Index([253], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'altlayer'... Len price:Index([254], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'aave-dai'... Skipped.
+	Creating sequence for 'aimalls'... Len price:Index([256], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'bitrock'... Len price:Index([257], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'acute-angle-cloud'... Len price:Index([258], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'blocery'... Len price:Index([259], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'beamswap'... Len price:Index([260], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'alkimi'... Len price:Index([261], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'attila'... Len price:Index([262], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'brickken'... Len price:Index([263], dtype='int64')
+[]
+[]
+Done.
+	Creating sequence for 'alethea-artificial-liquid-intelligence-token'... Len price:Index([264], dtype='int64')
+[]
+[]
+Done.
+Preparing data for testing...
+	Creating sequence for 'cetus-protocol'... Len price:Index([265], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aave-snx'... Skipped.
+	Creating sequence for 'axel'... Len price:Index([267], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bao-finance'... Len price:Index([268], dtype='int64')
+[]
+Done.
+	Creating sequence for 'babyswap'... Len price:Index([269], dtype='int64')
+[]
+Done.
+	Creating sequence for 'blockchain-monster-hunt'... Len price:Index([270], dtype='int64')
+[]
+Done.
+	Creating sequence for 'conun'... Len price:Index([271], dtype='int64')
+[]
+Done.
+	Creating sequence for 'brn-metaverse'... Len price:Index([272], dtype='int64')
+[]
+Done.
+	Creating sequence for 'berry-data'... Len price:Index([273], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aave-bat'... Skipped.
+	Creating sequence for 'ankr'... Len price:Index([275], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bondly'... Len price:Index([276], dtype='int64')
+[]
+Done.
+	Creating sequence for 'cryptofranc'... Len price:Index([277], dtype='int64')
+[]
+Done.
+	Creating sequence for 'crowns'... Len price:Index([278], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bosagora'... Len price:Index([279], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bobo-coin'... Len price:Index([280], dtype='int64')
+[]
+Done.
+	Creating sequence for 'coinfi'... Len price:Index([281], dtype='int64')
+[]
+Done.
+	Creating sequence for 'crvusd'... Len price:Index([282], dtype='int64')
+[]
+Done.
+	Creating sequence for '88mph'... Len price:Index([283], dtype='int64')
+[]
+Done.
+	Creating sequence for '0chain'... Len price:Index([284], dtype='int64')
+[]
+Done.
+	Creating sequence for 'autonolas'... Len price:Index([285], dtype='int64')
+[]
+Done.
+	Creating sequence for 'byte'... Len price:Index([286], dtype='int64')
+[]
+Done.
+	Creating sequence for 'corite'... Len price:Index([287], dtype='int64')
+[]
+Done.
+	Creating sequence for 'breederdao'... Len price:Index([288], dtype='int64')
+[]
+Done.
+	Creating sequence for 'coti'... Len price:Index([289], dtype='int64')
+[]
+Done.
+	Creating sequence for 'blockv'... Len price:Index([290], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aurora-near'... Len price:Index([291], dtype='int64')
+[]
+Done.
+	Creating sequence for 'audius'... Len price:Index([292], dtype='int64')
+[]
+Done.
+	Creating sequence for 'cropbytes'... Len price:Index([293], dtype='int64')
+[]
+Done.
+	Creating sequence for 'cheems'... Len price:Index([294], dtype='int64')
+[]
+Done.
+	Creating sequence for 'conceal'... Len price:Index([295], dtype='int64')
+[]
+Done.
+	Creating sequence for 'ariva'... Len price:Index([296], dtype='int64')
+[]
+Done.
+	Creating sequence for 'blockchain-certified-data-token'... Len price:Index([297], dtype='int64')
+[]
+Done.
+	Creating sequence for 'auctus'... Len price:Index([298], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bitcoin-atom'... Len price:Index([299], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aave-mkr'... Skipped.
+	Creating sequence for 'alchemy-pay'... Len price:Index([301], dtype='int64')
+[]
+Done.
+	Creating sequence for 'befe'... Len price:Index([302], dtype='int64')
+[]
+Done.
+	Creating sequence for 'archloot'... Len price:Index([303], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aelf'... Len price:Index([304], dtype='int64')
+[]
+Done.
+	Creating sequence for 'arsenal-fan-token'... Len price:Index([305], dtype='int64')
+[]
+Done.
+	Creating sequence for 'cookie'... Len price:Index([306], dtype='int64')
+[]
+Done.
+	Creating sequence for 'counterparty'... Len price:Index([307], dtype='int64')
+[]
+Done.
+	Creating sequence for 'binamon'... Len price:Index([308], dtype='int64')
+[]
+Done.
+	Creating sequence for 'blast'... Len price:Index([309], dtype='int64')
+[]
+Done.
+	Creating sequence for 'coinpoker'... Len price:Index([310], dtype='int64')
+[]
+Done.
+	Creating sequence for 'cvault-finance'... Len price:Index([311], dtype='int64')
+[]
+Done.
+	Creating sequence for 'alpaca-finance'... Len price:Index([312], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aigentx'... Len price:Index([313], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bouncebit'... Len price:Index([314], dtype='int64')
+[]
+Done.
+	Creating sequence for 'balancer'... Len price:Index([315], dtype='int64')
+[]
+Done.
+	Creating sequence for 'cindicator'... Len price:Index([316], dtype='int64')
+[]
+Done.
+	Creating sequence for 'altava'... Len price:Index([317], dtype='int64')
+[]
+Done.
+	Creating sequence for 'clintex-cti'... Len price:Index([318], dtype='int64')
+[]
+Done.
+	Creating sequence for 'anchor-protocol'... Len price:Index([319], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aave'... Len price:Index([320], dtype='int64')
+[]
+Done.
+	Creating sequence for 'daex'... Len price:Index([321], dtype='int64')
+[]
+Done.
+	Creating sequence for 'carbon-browser'... Len price:Index([322], dtype='int64')
+[]
+Done.
+	Creating sequence for 'blazestake-staked-sol'... Len price:Index([323], dtype='int64')
+[]
+Done.
+	Creating sequence for 'city-tycoon-games'... Len price:Index([324], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aura-finance'... Len price:Index([325], dtype='int64')
+[]
+Done.
+	Creating sequence for 'cryptoblades'... Len price:Index([326], dtype='int64')
+[]
+Done.
+	Creating sequence for 'atlas-protocol'... Len price:Index([327], dtype='int64')
+[]
+Done.
+	Creating sequence for 'covesting'... Len price:Index([328], dtype='int64')
+[]
+Done.
+	Creating sequence for 'boringdao'... Len price:Index([329], dtype='int64')
+[]
+Done.
+	Creating sequence for 'coreum'... Len price:Index([330], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bald'... Len price:Index([331], dtype='int64')
+[]
+Done.
+	Creating sequence for 'cryptex-finance'... Len price:Index([332], dtype='int64')
+[]
+Done.
+	Creating sequence for 'daddy-tate'... Len price:Index([333], dtype='int64')
+[]
+Done.
+	Creating sequence for 'catheon-gaming'... Len price:Index([334], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aave-susd'... Skipped.
+	Creating sequence for 'cargox'... Len price:Index([336], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bone-shibaswap'... Len price:Index([337], dtype='int64')
+[]
+Done.
+	Creating sequence for 'cortex'... Len price:Index([338], dtype='int64')
+[]
+Done.
+	Creating sequence for 'contracoin'... Len price:Index([339], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bittensor'... Len price:Index([340], dtype='int64')
+[]
+Done.
+	Creating sequence for 'big-time'... Len price:Index([341], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aurora'... Len price:Index([342], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aryacoin'... Len price:Index([343], dtype='int64')
+[]
+Done.
+	Creating sequence for 'allianceblock-nexera'... Len price:Index([344], dtype='int64')
+[]
+Done.
+	Creating sequence for 'alanyaspor-fan-token'... Len price:Index([345], dtype='int64')
+[]
+Done.
+	Creating sequence for 'curate'... Len price:Index([346], dtype='int64')
+[]
+Done.
+	Creating sequence for '8pay'... Len price:Index([347], dtype='int64')
+[]
+Done.
+	Creating sequence for 'big-data-protocol'... Len price:Index([348], dtype='int64')
+[]
+Done.
+	Creating sequence for 'coinbase-wrapped-staked-eth'... Len price:Index([349], dtype='int64')
+[]
+Done.
+	Creating sequence for 'analos'... Len price:Index([350], dtype='int64')
+[]
+Done.
+	Creating sequence for 'coreto'... Len price:Index([351], dtype='int64')
+[]
+Done.
+	Creating sequence for 'blox'... Len price:Index([352], dtype='int64')
+[]
+Done.
+	Creating sequence for 'avinoc'... Len price:Index([353], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bitcore'... Len price:Index([354], dtype='int64')
+[]
+Done.
+	Creating sequence for 'akropolis'... Len price:Index([355], dtype='int64')
+[]
+Done.
+	Creating sequence for 'compound-0x'... Len price:Index([356], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bird-money'... Len price:Index([357], dtype='int64')
+[]
+Done.
+	Creating sequence for 'apyswap'... Len price:Index([358], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aave-wbtc'... Skipped.
+	Creating sequence for 'bridge-oracle'... Len price:Index([360], dtype='int64')
+[]
+Done.
+	Creating sequence for 'ancient8'... Len price:Index([361], dtype='int64')
+[]
+Done.
+	Creating sequence for 'catman'... Len price:Index([362], dtype='int64')
+[]
+Done.
+	Creating sequence for 'astrotools'... Len price:Index([363], dtype='int64')
+[]
+Done.
+	Creating sequence for 'azbit'... Len price:Index([364], dtype='int64')
+[]
+Done.
+	Creating sequence for 'aave-zrx'... Skipped.
+	Creating sequence for 'cybervein'... Len price:Index([366], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bscpad'... Len price:Index([367], dtype='int64')
+[]
+Done.
+	Creating sequence for 'ally'... Len price:Index([368], dtype='int64')
+[]
+Done.
+	Creating sequence for 'ambire-wallet'... Len price:Index([369], dtype='int64')
+[]
+Done.
+	Creating sequence for 'amazy'... Len price:Index([370], dtype='int64')
+[]
+Done.
+	Creating sequence for 'cyberconnect'... Len price:Index([371], dtype='int64')
+[]
+Done.
+	Creating sequence for 'covalent'... Len price:Index([372], dtype='int64')
+[]
+Done.
+	Creating sequence for 'cypherium'... Len price:Index([373], dtype='int64')
+[]
+Done.
+	Creating sequence for 'bancor'... Len price:Index([374], dtype='int64')
+[]
+Done.
+	Creating sequence for 'blockbank'... Len price:Index([375], dtype='int64')
+[]
+Done.
+	Creating sequence for 'crabada'... Len price:Index([376], dtype='int64')
+[]
+Done.
+	Creating sequence for 'beyond-protocol'... Len price:Index([377], dtype='int64')
+[]
+Done.
+	Creating sequence for 'axis-defi'... Len price:Index([378], dtype='int64')
+[]
+Done.
+Actual training set: 253 entries
+Actual testing set:  108 entries
+Actual training/total ratio: 0.6675461741424802

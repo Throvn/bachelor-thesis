@@ -1,0 +1,754 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 13:52:02.994146'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'... Hello5
+Done.
+	Creating sequence for 'alphabet-erc404'... Hello5
+Done.
+	Creating sequence for 'across-protocol'... Hello5
+Done.
+	Creating sequence for 'clore-ai'... Hello5
+Done.
+	Creating sequence for 'alchemist'... Hello5
+Done.
+	Creating sequence for 'cnns'... Hello5
+Done.
+	Creating sequence for 'bnktothefuture'... Hello5
+Done.
+	Creating sequence for 'cornucopias'... Hello5
+Done.
+	Creating sequence for 'aave-busd'... Skipped.
+	Creating sequence for 'base-protocol'... Hello5
+Done.
+	Creating sequence for 'algorand'... Hello5
+Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... Hello5
+Done.
+	Creating sequence for 'bytom'... Hello5
+Done.
+	Creating sequence for 'as-roma-fan-token'... Hello5
+Done.
+	Creating sequence for 'cajutel'... Hello5
+Done.
+	Creating sequence for 'chainbing'... Hello5
+Done.
+	Creating sequence for 'calcium'... Hello5
+Done.
+	Creating sequence for 'belt'... Hello5
+Done.
+	Creating sequence for 'baasid'... Hello5
+Done.
+	Creating sequence for 'cobak-token'... Hello5
+Done.
+	Creating sequence for 'agatech'... Hello5
+Done.
+	Creating sequence for 'clearpool'... Hello5
+Done.
+	Creating sequence for 'bridge-mutual'... Hello5
+Done.
+	Creating sequence for 'bitget-wallet-token'... Hello5
+Done.
+	Creating sequence for 'chainx'... Hello5
+Done.
+	Creating sequence for 'anyswap'... Hello5
+Done.
+	Creating sequence for 'botto'... Hello5
+Done.
+	Creating sequence for 'bitcoin'... Hello5
+Done.
+	Creating sequence for 'centrifuge'... Hello5
+Done.
+	Creating sequence for 'basis-cash'... Hello5
+Done.
+	Creating sequence for 'bolt'... Hello5
+Done.
+	Creating sequence for 'creo-engine'... Hello5
+Done.
+	Creating sequence for 'band-protocol'... Hello5
+Done.
+	Creating sequence for 'celestia'... Hello5
+Done.
+	Creating sequence for 'antimatter'... Hello5
+Done.
+	Creating sequence for 'bistroo'... Hello5
+Done.
+	Creating sequence for 'aipad'... Hello5
+Done.
+	Creating sequence for 'bidao'... Hello5
+Done.
+	Creating sequence for 'bitmart-token'... Hello5
+Done.
+	Creating sequence for 'blocknet'... Hello5
+Done.
+	Creating sequence for 'aviator'... Hello5
+Done.
+	Creating sequence for 'ark'... Hello5
+Done.
+	Creating sequence for 'bifrost'... Hello5
+Done.
+	Creating sequence for 'assemble-protocol'... Hello5
+Done.
+	Creating sequence for 'aergo'... Hello5
+Done.
+	Creating sequence for 'artrade'... Hello5
+Done.
+	Creating sequence for 'access-protocol'... Hello5
+Done.
+	Creating sequence for 'aurusx'... Hello5
+Done.
+	Creating sequence for 'affyn'... Hello5
+Done.
+	Creating sequence for 'adapad'... Hello5
+Done.
+	Creating sequence for 'crypto-asset-governance-alliance'... Hello5
+Done.
+	Creating sequence for 'compound-basic-attention-token'... Hello5
+Done.
+	Creating sequence for 'aave-usdt'... Skipped.
+	Creating sequence for 'apy-finance'... Hello5
+Done.
+	Creating sequence for 'arweave'... Hello5
+Done.
+	Creating sequence for 'ageofgods'... Hello5
+Done.
+	Creating sequence for 'biswap'... Hello5
+Done.
+	Creating sequence for 'dafi-protocol'... Hello5
+Done.
+	Creating sequence for 'biconomy'... Hello5
+Done.
+	Creating sequence for 'cumrocket'... Hello5
+Done.
+	Creating sequence for 'beoble'... Hello5
+Done.
+	Creating sequence for 'apm-coin'... Hello5
+Done.
+	Creating sequence for 'bottos'... Hello5
+Done.
+	Creating sequence for 'aave-usdc'... Skipped.
+	Creating sequence for 'bullperks'... Hello5
+Done.
+	Creating sequence for 'bittorrent'... Hello5
+Done.
+	Creating sequence for 'aurory'... Hello5
+Done.
+	Creating sequence for 'acala'... Hello5
+Done.
+	Creating sequence for 'banano'... Hello5
+Done.
+	Creating sequence for 'aston-martin-cognizant-fan-token'... Hello5
+Done.
+	Creating sequence for 'argent'... Skipped.
+	Creating sequence for 'celo-dollar'... Hello5
+Done.
+	Creating sequence for 'blendr-network'... Hello5
+Done.
+	Creating sequence for 'adamant-messenger'... Hello5
+Done.
+	Creating sequence for 'compound-ether'... Hello5
+Done.
+	Creating sequence for 'cloudbric'... Hello5
+Done.
+	Creating sequence for 'achain'... Hello5
+Done.
+	Creating sequence for 'ben-the-dog'... Hello5
+Done.
+	Creating sequence for 'arkham'... Hello5
+Done.
+	Creating sequence for 'cellframe'... Hello5
+Done.
+	Creating sequence for 'basic-attention-token'... Hello5
+Done.
+	Creating sequence for 'connex'... Hello5
+Done.
+	Creating sequence for 'coinsbit-token'... Hello5
+Done.
+	Creating sequence for 'chronicle'... Hello5
+Done.
+	Creating sequence for 'dacxi'... Hello5
+Done.
+	Creating sequence for 'arcs'... Hello5
+Done.
+	Creating sequence for 'billionhappiness'... Hello5
+Done.
+	Creating sequence for 'burger-swap'... Hello5
+Done.
+	Creating sequence for '1inch'... Hello5
+Done.
+	Creating sequence for 'binance-usd'... Hello5
+Done.
+	Creating sequence for 'beyond-finance'... Hello5
+Done.
+	Creating sequence for 'binemon'... Hello5
+Done.
+	Creating sequence for 'b20'... Hello5
+Done.
+	Creating sequence for 'bemo-staked-ton'... Hello5
+Done.
+	Creating sequence for 'aeron'... Hello5
+Done.
+	Creating sequence for 'coldstack'... Hello5
+Done.
+	Creating sequence for 'brz'... Hello5
+Done.
+	Creating sequence for 'blockstack'... Hello5
+Done.
+	Creating sequence for 'bamboo-defi'... Hello5
+Done.
+	Creating sequence for 'astroswap'... Hello5
+Done.
+	Creating sequence for 'barnbridge'... Hello5
+Done.
+	Creating sequence for 'bitcoin-wizards'... Hello5
+Done.
+	Creating sequence for 'commune-ai'... Hello5
+Done.
+	Creating sequence for 'alva'... Hello5
+Done.
+	Creating sequence for 'balpha'... Hello5
+Done.
+	Creating sequence for 'cardano'... Hello5
+Done.
+	Creating sequence for 'alvey-chain'... Hello5
+Done.
+	Creating sequence for 'adreward'... Hello5
+Done.
+	Creating sequence for 'acorn-protocol'... Hello5
+Done.
+	Creating sequence for 'bitcoin-cash'... Hello5
+Done.
+	Creating sequence for 'bazaars'... Hello5
+Done.
+	Creating sequence for 'cere-network'... Hello5
+Done.
+	Creating sequence for 'bnsd-finance'... Hello5
+Done.
+	Creating sequence for 'bitball-treasure'... Hello5
+Done.
+	Creating sequence for 'airight'... Hello5
+Done.
+	Creating sequence for 'auto'... Hello5
+Done.
+	Creating sequence for 'comtech-gold'... Hello5
+Done.
+	Creating sequence for 'bluzelle'... Hello5
+Done.
+	Creating sequence for 'bitkub-coin'... Hello5
+Done.
+	Creating sequence for 'aston-villa-fan-token'... Hello5
+Done.
+	Creating sequence for 'crash-on-base'... Hello5
+Done.
+	Creating sequence for 'aeon'... Hello5
+Done.
+	Creating sequence for 'alchemix'... Hello5
+Done.
+	Creating sequence for 'bitball'... Hello5
+Done.
+	Creating sequence for 'beefy-finance'... Hello5
+Done.
+	Creating sequence for 'calamari-network'... Hello5
+Done.
+	Creating sequence for 'crown-by-third-time-games'... Hello5
+Done.
+	Creating sequence for 'apeswap-finance'... Hello5
+Done.
+	Creating sequence for 'ait-protocol'... Hello5
+Done.
+	Creating sequence for 'ampleforth-governance-token'... Hello5
+Done.
+	Creating sequence for 'aion'... Hello5
+Done.
+	Creating sequence for 'autonio'... Hello5
+Done.
+	Creating sequence for 'airtor-protocol'... Hello5
+Done.
+	Creating sequence for 'acquire-fi'... Hello5
+Done.
+	Creating sequence for 'aptos'... Hello5
+Done.
+	Creating sequence for 'cyberfi'... Hello5
+Done.
+	Creating sequence for 'carvertical'... Hello5
+Done.
+	Creating sequence for 'captain-tsubasa'... Hello5
+Done.
+	Creating sequence for 'bitcoin-diamond'... Hello5
+Done.
+	Creating sequence for 'bitcoin-gold'... Hello5
+Done.
+	Creating sequence for 'cotrader'... Hello5
+Done.
+	Creating sequence for 'coin98'... Hello5
+Done.
+	Creating sequence for 'convex-finance'... Hello5
+Done.
+	Creating sequence for 'alpine-f1-team-fan-token'... Hello5
+Done.
+	Creating sequence for 'ampleforth'... Hello5
+Done.
+	Creating sequence for 'airswap'... Hello5
+Done.
+	Creating sequence for 'aerodrome-finance'... Hello5
+Done.
+	Creating sequence for 'blackcardcoin'... Hello5
+Done.
+	Creating sequence for 'ambo'... Skipped.
+	Creating sequence for 'bepro-network'... Hello5
+Done.
+	Creating sequence for 'azuki'... Hello5
+Done.
+	Creating sequence for 'aioz-network'... Hello5
+Done.
+	Creating sequence for 'astar'... Hello5
+Done.
+	Creating sequence for 'augur'... Hello5
+Done.
+	Creating sequence for 'adshares'... Hello5
+Done.
+	Creating sequence for 'ceres'... Hello5
+Done.
+	Creating sequence for 'constitutiondao'... Hello5
+Done.
+	Creating sequence for 'aragon'... Hello5
+Done.
+	Creating sequence for 'areon-network'... Hello5
+Done.
+	Creating sequence for 'ai-analysis-token'... Hello5
+Done.
+	Creating sequence for 'armor'... Hello5
+Done.
+	Creating sequence for 'bitshares'... Hello5
+Done.
+	Creating sequence for 'cryptozoon'... Hello5
+Done.
+	Creating sequence for 'bitdao'... Hello5
+Done.
+	Creating sequence for 'convergence'... Hello5
+Done.
+	Creating sequence for 'contentos'... Hello5
+Done.
+	Creating sequence for 'alitas'... Hello5
+Done.
+	Creating sequence for 'akita-inu'... Hello5
+Done.
+	Creating sequence for 'aeternity'... Hello5
+Done.
+	Creating sequence for 'brainlet'... Skipped.
+	Creating sequence for 'bread'... Hello5
+Done.
+	Creating sequence for 'contentbox'... Hello5
+Done.
+	Creating sequence for 'bad-idea-ai'... Hello5
+Done.
+	Creating sequence for 'crypto-ai-robo'... Hello5
+Done.
+	Creating sequence for 'blind-boxes'... Hello5
+Done.
+	Creating sequence for 'beam'... Hello5
+Done.
+	Creating sequence for 'alien-worlds'... Hello5
+Done.
+	Creating sequence for 'banana-gun'... Hello5
+Done.
+	Creating sequence for 'aave-mana'... Skipped.
+	Creating sequence for 'amino'... Hello5
+Done.
+	Creating sequence for 'cashaa'... Hello5
+Done.
+	Creating sequence for 'catcoin'... Hello5
+Done.
+	Creating sequence for 'birake'... Hello5
+Done.
+	Creating sequence for 'altered-state-token'... Hello5
+Done.
+	Creating sequence for 'bonfida'... Hello5
+Done.
+	Creating sequence for 'bakerytoken'... Hello5
+Done.
+	Creating sequence for 'aave-link'... Skipped.
+	Creating sequence for 'credefi'... Hello5
+Done.
+	Creating sequence for 'bella-protocol'... Hello5
+Done.
+	Creating sequence for 'ardor'... Hello5
+Done.
+	Creating sequence for 'acknoledger'... Hello5
+Done.
+	Creating sequence for 'cryptogpt'... Hello5
+Done.
+	Creating sequence for 'civic'... Hello5
+Done.
+	Creating sequence for 'bifi'... Hello5
+Done.
+	Creating sequence for 'axelar'... Hello5
+Done.
+	Creating sequence for 'amepay'... Hello5
+Done.
+	Creating sequence for 'clube-atletico-mineiro-fan-token'... Hello5
+Done.
+	Creating sequence for 'cyclone-protocol'... Hello5
+Done.
+	Creating sequence for 'apenft'... Hello5
+Done.
+	Creating sequence for 'celo'... Hello5
+Done.
+	Creating sequence for 'coinweb'... Hello5
+Done.
+	Creating sequence for 'concordium'... Hello5
+Done.
+	Creating sequence for 'chex-token'... Hello5
+Done.
+	Creating sequence for 'coinex-token'... Hello5
+Done.
+	Creating sequence for 'appcoins'... Hello5
+Done.
+	Creating sequence for 'boba-network'... Hello5
+Done.
+	Creating sequence for 'arcona'... Hello5
+Done.
+	Creating sequence for 'azuro-protocol'... Hello5
+Done.
+	Creating sequence for 'aave-tusd'... Skipped.
+	Creating sequence for 'babb'... Hello5
+Done.
+	Creating sequence for 'cult-dao'... Hello5
+Done.
+	Creating sequence for 'avail'... Skipped.
+	Creating sequence for 'amond'... Hello5
+Done.
+	Creating sequence for 'akash-network'... Hello5
+Done.
+	Creating sequence for 'bitcicoin'... Hello5
+Done.
+	Creating sequence for 'aave-knc'... Skipped.
+	Creating sequence for '0x'... Hello5
+Done.
+	Creating sequence for 'billy'... Hello5
+Done.
+	Creating sequence for 'bbs-network'... Hello5
+Done.
+	Creating sequence for 'atlas-navi'... Hello5
+Done.
+	Creating sequence for 'api3'... Hello5
+Done.
+	Creating sequence for 'andy-on-sol'... Hello5
+Done.
+	Creating sequence for 'credits'... Hello5
+Done.
+	Creating sequence for '5ire'... Hello5
+Done.
+	Creating sequence for 'aethir'... Hello5
+Done.
+	Creating sequence for 'axie-infinity'... Hello5
+Done.
+	Creating sequence for 'compound-uniswap'... Hello5
+Done.
+	Creating sequence for 'beta-finance'... Hello5
+Done.
+	Creating sequence for 'blockasset'... Hello5
+Done.
+	Creating sequence for 'art-de-finance'... Hello5
+Done.
+	Creating sequence for '3space-art'... Hello5
+Done.
+	Creating sequence for 'carry'... Hello5
+Done.
+	Creating sequence for 'amber'... Hello5
+Done.
+	Creating sequence for 'alephium'... Hello5
+Done.
+	Creating sequence for 'bibox-token'... Hello5
+Done.
+	Creating sequence for 'boson-protocol'... Hello5
+Done.
+	Creating sequence for 'arcblock'... Hello5
+Done.
+	Creating sequence for 'circuits-of-value'... Hello5
+Done.
+	Creating sequence for 'book-of-meme'... Hello5
+Done.
+	Creating sequence for 'aventus'... Hello5
+Done.
+	Creating sequence for 'adappter-token'... Hello5
+Done.
+	Creating sequence for '404aliens'... Hello5
+Done.
+	Creating sequence for 'cratos'... Hello5
+Done.
+	Creating sequence for 'cartesi'... Hello5
+Done.
+	Creating sequence for 'choise'... Hello5
+Done.
+	Creating sequence for 'amaterasu-omikami'... Hello5
+Done.
+	Creating sequence for 'adventure-gold'... Hello5
+Done.
+	Creating sequence for 'celer-network'... Hello5
+Done.
+	Creating sequence for 'bitpanda-ecosystem-token'... Hello5
+Done.
+	Creating sequence for 'celo-euro'... Hello5
+Done.
+	Creating sequence for 'bomb'... Hello5
+Done.
+	Creating sequence for 'cosmos'... Hello5
+Done.
+	Creating sequence for 'cudos'... Hello5
+Done.
+	Creating sequence for 'bora'... Hello5
+Done.
+	Creating sequence for 'altlayer'... Hello5
+Done.
+	Creating sequence for 'aave-dai'... Skipped.
+	Creating sequence for 'aimalls'... Hello5
+Done.
+	Creating sequence for 'bitrock'... Hello5
+Done.
+	Creating sequence for 'acute-angle-cloud'... Hello5
+Done.
+	Creating sequence for 'blocery'... Hello5
+Done.
+	Creating sequence for 'beamswap'... Hello5
+Done.
+	Creating sequence for 'alkimi'... Hello5
+Done.
+	Creating sequence for 'attila'... Hello5
+Done.
+	Creating sequence for 'brickken'... Hello5
+Done.
+	Creating sequence for 'alethea-artificial-liquid-intelligence-token'... Hello5
+Done.
+Preparing data for testing...
+	Creating sequence for 'cetus-protocol'... Hello5
+Done.
+	Creating sequence for 'aave-snx'... Skipped.
+	Creating sequence for 'axel'... Hello5
+Done.
+	Creating sequence for 'bao-finance'... Hello5
+Done.
+	Creating sequence for 'babyswap'... Hello5
+Done.
+	Creating sequence for 'blockchain-monster-hunt'... Hello5
+Done.
+	Creating sequence for 'conun'... Hello5
+Done.
+	Creating sequence for 'brn-metaverse'... Hello5
+Done.
+	Creating sequence for 'berry-data'... Hello5
+Done.
+	Creating sequence for 'aave-bat'... Skipped.
+	Creating sequence for 'ankr'... Hello5
+Done.
+	Creating sequence for 'bondly'... Hello5
+Done.
+	Creating sequence for 'cryptofranc'... Hello5
+Done.
+	Creating sequence for 'crowns'... Hello5
+Done.
+	Creating sequence for 'bosagora'... Hello5
+Done.
+	Creating sequence for 'bobo-coin'... Hello5
+Done.
+	Creating sequence for 'coinfi'... Hello5
+Done.
+	Creating sequence for 'crvusd'... Hello5
+Done.
+	Creating sequence for '88mph'... Hello5
+Done.
+	Creating sequence for '0chain'... Hello5
+Done.
+	Creating sequence for 'autonolas'... Hello5
+Done.
+	Creating sequence for 'byte'... Hello5
+Done.
+	Creating sequence for 'corite'... Hello5
+Done.
+	Creating sequence for 'breederdao'... Hello5
+Done.
+	Creating sequence for 'coti'... Hello5
+Done.
+	Creating sequence for 'blockv'... Hello5
+Done.
+	Creating sequence for 'aurora-near'... Hello5
+Done.
+	Creating sequence for 'audius'... Hello5
+Done.
+	Creating sequence for 'cropbytes'... Hello5
+Done.
+	Creating sequence for 'cheems'... Hello5
+Done.
+	Creating sequence for 'conceal'... Hello5
+Done.
+	Creating sequence for 'ariva'... Hello5
+Done.
+	Creating sequence for 'blockchain-certified-data-token'... Hello5
+Done.
+	Creating sequence for 'auctus'... Hello5
+Done.
+	Creating sequence for 'bitcoin-atom'... Hello5
+Done.
+	Creating sequence for 'aave-mkr'... Skipped.
+	Creating sequence for 'alchemy-pay'... Hello5
+Done.
+	Creating sequence for 'befe'... Hello5
+Done.
+	Creating sequence for 'archloot'... Hello5
+Done.
+	Creating sequence for 'aelf'... Hello5
+Done.
+	Creating sequence for 'arsenal-fan-token'... Hello5
+Done.
+	Creating sequence for 'cookie'... Hello5
+Done.
+	Creating sequence for 'counterparty'... Hello5
+Done.
+	Creating sequence for 'binamon'... Hello5
+Done.
+	Creating sequence for 'blast'... Hello5
+Done.
+	Creating sequence for 'coinpoker'... Hello5
+Done.
+	Creating sequence for 'cvault-finance'... Hello5
+Done.
+	Creating sequence for 'alpaca-finance'... Hello5
+Done.
+	Creating sequence for 'aigentx'... Hello5
+Done.
+	Creating sequence for 'bouncebit'... Hello5
+Done.
+	Creating sequence for 'balancer'... Hello5
+Done.
+	Creating sequence for 'cindicator'... Hello5
+Done.
+	Creating sequence for 'altava'... Hello5
+Done.
+	Creating sequence for 'clintex-cti'... Hello5
+Done.
+	Creating sequence for 'anchor-protocol'... Hello5
+Done.
+	Creating sequence for 'aave'... Hello5
+Done.
+	Creating sequence for 'daex'... Hello5
+Done.
+	Creating sequence for 'carbon-browser'... Hello5
+Done.
+	Creating sequence for 'blazestake-staked-sol'... Hello5
+Done.
+	Creating sequence for 'city-tycoon-games'... Hello5
+Done.
+	Creating sequence for 'aura-finance'... Hello5
+Done.
+	Creating sequence for 'cryptoblades'... Hello5
+Done.
+	Creating sequence for 'atlas-protocol'... Hello5
+Done.
+	Creating sequence for 'covesting'... Hello5
+Done.
+	Creating sequence for 'boringdao'... Hello5
+Done.
+	Creating sequence for 'coreum'... Hello5
+Done.
+	Creating sequence for 'bald'... Hello5
+Done.
+	Creating sequence for 'cryptex-finance'... Hello5
+Done.
+	Creating sequence for 'daddy-tate'... Hello5
+Done.
+	Creating sequence for 'catheon-gaming'... Hello5
+Done.
+	Creating sequence for 'aave-susd'... Skipped.
+	Creating sequence for 'cargox'... Hello5
+Done.
+	Creating sequence for 'bone-shibaswap'... Hello5
+Done.
+	Creating sequence for 'cortex'... Hello5
+Done.
+	Creating sequence for 'contracoin'... Hello5
+Done.
+	Creating sequence for 'bittensor'... Hello5
+Done.
+	Creating sequence for 'big-time'... Hello5
+Done.
+	Creating sequence for 'aurora'... Hello5
+Done.
+	Creating sequence for 'aryacoin'... Hello5
+Done.
+	Creating sequence for 'allianceblock-nexera'... Hello5
+Done.
+	Creating sequence for 'alanyaspor-fan-token'... Hello5
+Done.
+	Creating sequence for 'curate'... Hello5
+Done.
+	Creating sequence for '8pay'... Hello5
+Done.
+	Creating sequence for 'big-data-protocol'... Hello5
+Done.
+	Creating sequence for 'coinbase-wrapped-staked-eth'... Hello5
+Done.
+	Creating sequence for 'analos'... Hello5
+Done.
+	Creating sequence for 'coreto'... Hello5
+Done.
+	Creating sequence for 'blox'... Hello5
+Done.
+	Creating sequence for 'avinoc'... Hello5
+Done.
+	Creating sequence for 'bitcore'... Hello5
+Done.
+	Creating sequence for 'akropolis'... Hello5
+Done.
+	Creating sequence for 'compound-0x'... Hello5
+Done.
+	Creating sequence for 'bird-money'... Hello5
+Done.
+	Creating sequence for 'apyswap'... Hello5
+Done.
+	Creating sequence for 'aave-wbtc'... Skipped.
+	Creating sequence for 'bridge-oracle'... Hello5
+Done.
+	Creating sequence for 'ancient8'... Hello5
+Done.
+	Creating sequence for 'catman'... Hello5
+Done.
+	Creating sequence for 'astrotools'... Hello5
+Done.
+	Creating sequence for 'azbit'... Hello5
+Done.
+	Creating sequence for 'aave-zrx'... Skipped.
+	Creating sequence for 'cybervein'... Hello5
+Done.
+	Creating sequence for 'bscpad'... Hello5
+Done.
+	Creating sequence for 'ally'... Hello5
+Done.
+	Creating sequence for 'ambire-wallet'... Hello5
+Done.
+	Creating sequence for 'amazy'... Hello5
+Done.
+	Creating sequence for 'cyberconnect'... Hello5
+Done.
+	Creating sequence for 'covalent'... Hello5
+Done.
+	Creating sequence for 'cypherium'... Hello5
+Done.
+	Creating sequence for 'bancor'... Hello5
+Done.
+	Creating sequence for 'blockbank'... Hello5
+Done.
+	Creating sequence for 'crabada'... Hello5
+Done.
+	Creating sequence for 'beyond-protocol'... Hello5
+Done.
+	Creating sequence for 'axis-defi'... Hello5
+Done.
+Actual training set: 253 entries
+Actual testing set:  108 entries
+Actual training/total ratio: 0.6675461741424802

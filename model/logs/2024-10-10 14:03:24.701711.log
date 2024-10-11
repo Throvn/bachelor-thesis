@@ -1,0 +1,1368 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 14:03:24.701711'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'alphabet-erc404'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'across-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'clore-ai'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+[]
+Done.
+	Creating sequence for 'alchemist'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'cnns'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f80>
+[]
+[]
+Done.
+	Creating sequence for 'bnktothefuture'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+[]
+Done.
+	Creating sequence for 'cornucopias'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'aave-busd'... Skipped.
+	Creating sequence for 'base-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'algorand'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'bytom'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'as-roma-fan-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'cajutel'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633200>
+[]
+[]
+Done.
+	Creating sequence for 'chainbing'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'calcium'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'belt'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'baasid'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'cobak-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'agatech'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'clearpool'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'bridge-mutual'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'bitget-wallet-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'chainx'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+[]
+Done.
+	Creating sequence for 'anyswap'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'botto'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216333e0>
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'centrifuge'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'basis-cash'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'bolt'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216330c0>
+[]
+[]
+Done.
+	Creating sequence for 'creo-engine'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216330c0>
+[]
+[]
+Done.
+	Creating sequence for 'band-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216330c0>
+[]
+[]
+Done.
+	Creating sequence for 'celestia'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'antimatter'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'bistroo'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'aipad'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'bidao'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f80>
+[]
+[]
+Done.
+	Creating sequence for 'bitmart-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f80>
+[]
+[]
+Done.
+	Creating sequence for 'blocknet'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'aviator'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'ark'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'bifrost'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'assemble-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'aergo'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216330c0>
+[]
+[]
+Done.
+	Creating sequence for 'artrade'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'access-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'aurusx'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'affyn'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'adapad'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'crypto-asset-governance-alliance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'compound-basic-attention-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'aave-usdt'... Skipped.
+	Creating sequence for 'apy-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'arweave'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'ageofgods'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'biswap'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'dafi-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'biconomy'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'cumrocket'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633200>
+[]
+[]
+Done.
+	Creating sequence for 'beoble'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+[]
+Done.
+	Creating sequence for 'apm-coin'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'bottos'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'aave-usdc'... Skipped.
+	Creating sequence for 'bullperks'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f80>
+[]
+[]
+Done.
+	Creating sequence for 'bittorrent'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'aurory'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'acala'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633200>
+[]
+[]
+Done.
+	Creating sequence for 'banano'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'aston-martin-cognizant-fan-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'argent'... Skipped.
+	Creating sequence for 'celo-dollar'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'blendr-network'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'adamant-messenger'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'compound-ether'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'cloudbric'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'achain'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'ben-the-dog'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'arkham'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'cellframe'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f80>
+[]
+[]
+Done.
+	Creating sequence for 'basic-attention-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f80>
+[]
+[]
+Done.
+	Creating sequence for 'connex'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216333e0>
+[]
+[]
+Done.
+	Creating sequence for 'coinsbit-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216333e0>
+[]
+[]
+Done.
+	Creating sequence for 'chronicle'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'dacxi'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+[]
+Done.
+	Creating sequence for 'arcs'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'billionhappiness'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'burger-swap'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for '1inch'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'binance-usd'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'beyond-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'binemon'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'b20'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'bemo-staked-ton'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'aeron'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633200>
+[]
+[]
+Done.
+	Creating sequence for 'coldstack'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'brz'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f80>
+[]
+[]
+Done.
+	Creating sequence for 'blockstack'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'bamboo-defi'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'astroswap'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'barnbridge'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-wizards'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'commune-ai'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'alva'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633200>
+[]
+[]
+Done.
+	Creating sequence for 'balpha'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216333e0>
+[]
+[]
+Done.
+	Creating sequence for 'cardano'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'alvey-chain'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'adreward'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'acorn-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633200>
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-cash'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633200>
+[]
+[]
+Done.
+	Creating sequence for 'bazaars'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'cere-network'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'bnsd-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'bitball-treasure'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'airight'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'auto'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'comtech-gold'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'bluzelle'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'bitkub-coin'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'aston-villa-fan-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'crash-on-base'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'aeon'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'alchemix'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'bitball'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'beefy-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'calamari-network'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'crown-by-third-time-games'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'apeswap-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'ait-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'ampleforth-governance-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'aion'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'autonio'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'airtor-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'acquire-fi'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'aptos'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'cyberfi'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'carvertical'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'captain-tsubasa'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-diamond'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-gold'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'cotrader'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+[]
+Done.
+	Creating sequence for 'coin98'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'convex-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'alpine-f1-team-fan-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'ampleforth'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+[]
+Done.
+	Creating sequence for 'airswap'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'aerodrome-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'blackcardcoin'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'ambo'... Skipped.
+	Creating sequence for 'bepro-network'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'azuki'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'aioz-network'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'astar'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'augur'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+[]
+Done.
+	Creating sequence for 'adshares'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'ceres'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'constitutiondao'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'aragon'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'areon-network'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'ai-analysis-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'armor'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'bitshares'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'cryptozoon'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'bitdao'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'convergence'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'contentos'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'alitas'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'akita-inu'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'aeternity'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'brainlet'... Skipped.
+	Creating sequence for 'bread'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'contentbox'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'bad-idea-ai'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'crypto-ai-robo'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'blind-boxes'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'beam'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'alien-worlds'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'banana-gun'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'aave-mana'... Skipped.
+	Creating sequence for 'amino'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'cashaa'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'catcoin'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+[]
+Done.
+	Creating sequence for 'birake'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'altered-state-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'bonfida'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216333e0>
+[]
+[]
+Done.
+	Creating sequence for 'bakerytoken'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'aave-link'... Skipped.
+	Creating sequence for 'credefi'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'bella-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'ardor'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'acknoledger'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'cryptogpt'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216333e0>
+[]
+[]
+Done.
+	Creating sequence for 'civic'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+[]
+Done.
+	Creating sequence for 'bifi'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'axelar'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216333e0>
+[]
+[]
+Done.
+	Creating sequence for 'amepay'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'clube-atletico-mineiro-fan-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'cyclone-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332a0>
+[]
+[]
+Done.
+	Creating sequence for 'apenft'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'celo'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'coinweb'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'concordium'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'chex-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633200>
+[]
+[]
+Done.
+	Creating sequence for 'coinex-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'appcoins'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'boba-network'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'arcona'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+[]
+Done.
+	Creating sequence for 'azuro-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for 'aave-tusd'... Skipped.
+	Creating sequence for 'babb'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633200>
+[]
+[]
+Done.
+	Creating sequence for 'cult-dao'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'avail'... Skipped.
+	Creating sequence for 'amond'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'akash-network'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'bitcicoin'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'aave-knc'... Skipped.
+	Creating sequence for '0x'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'billy'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'bbs-network'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'atlas-navi'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'api3'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'andy-on-sol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'credits'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for '5ire'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'aethir'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'axie-infinity'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'compound-uniswap'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'beta-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633160>
+[]
+[]
+Done.
+	Creating sequence for 'blockasset'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632f30>
+[]
+[]
+Done.
+	Creating sequence for 'art-de-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216333e0>
+[]
+[]
+Done.
+	Creating sequence for '3space-art'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'carry'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'amber'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'alephium'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'bibox-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633200>
+[]
+[]
+Done.
+	Creating sequence for 'boson-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633200>
+[]
+[]
+Done.
+	Creating sequence for 'arcblock'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'circuits-of-value'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'book-of-meme'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633250>
+[]
+[]
+Done.
+	Creating sequence for 'aventus'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'adappter-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+	Creating sequence for '404aliens'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'cratos'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'cartesi'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'choise'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'amaterasu-omikami'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'adventure-gold'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'celer-network'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'bitpanda-ecosystem-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+[]
+Done.
+	Creating sequence for 'celo-euro'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'bomb'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'cosmos'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'cudos'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'bora'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'altlayer'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'aave-dai'... Skipped.
+	Creating sequence for 'aimalls'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'bitrock'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632fd0>
+[]
+[]
+Done.
+	Creating sequence for 'acute-angle-cloud'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633070>
+[]
+[]
+Done.
+	Creating sequence for 'blocery'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'beamswap'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'alkimi'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'attila'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633390>
+[]
+[]
+Done.
+	Creating sequence for 'brickken'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216331b0>
+[]
+[]
+Done.
+	Creating sequence for 'alethea-artificial-liquid-intelligence-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+[]
+Done.
+Preparing data for testing...
+	Creating sequence for 'cetus-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216332f0>
+[]
+Done.
+	Creating sequence for 'aave-snx'... Skipped.
+	Creating sequence for 'axel'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633340>
+[]
+Done.
+	Creating sequence for 'bao-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216330c0>
+[]
+Done.
+	Creating sequence for 'babyswap'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633570>
+[]
+Done.
+	Creating sequence for 'blockchain-monster-hunt'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633660>
+[]
+Done.
+	Creating sequence for 'conun'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633750>
+[]
+Done.
+	Creating sequence for 'brn-metaverse'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633480>
+[]
+Done.
+	Creating sequence for 'berry-data'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1216338e0>
+[]
+Done.
+	Creating sequence for 'aave-bat'... Skipped.
+	Creating sequence for 'ankr'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633980>
+[]
+Done.
+	Creating sequence for 'bondly'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633b10>
+[]
+Done.
+	Creating sequence for 'cryptofranc'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121632ee0>
+[]
+Done.
+	Creating sequence for 'crowns'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633cf0>
+[]
+Done.
+	Creating sequence for 'bosagora'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633d90>
+[]
+Done.
+	Creating sequence for 'bobo-coin'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633e80>
+[]
+Done.
+	Creating sequence for 'coinfi'... Len price:<pandas.core.indexing._iLocIndexer object at 0x121633f70>
+[]
+Done.
+	Creating sequence for 'crvusd'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f80a0>
+[]
+Done.
+	Creating sequence for '88mph'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8190>
+[]
+Done.
+	Creating sequence for '0chain'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8280>
+[]
+Done.
+	Creating sequence for 'autonolas'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8370>
+[]
+Done.
+	Creating sequence for 'byte'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8460>
+[]
+Done.
+	Creating sequence for 'corite'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8550>
+[]
+Done.
+	Creating sequence for 'breederdao'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8640>
+[]
+Done.
+	Creating sequence for 'coti'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8730>
+[]
+Done.
+	Creating sequence for 'blockv'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8820>
+[]
+Done.
+	Creating sequence for 'aurora-near'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8690>
+[]
+Done.
+	Creating sequence for 'audius'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8a50>
+[]
+Done.
+	Creating sequence for 'cropbytes'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8af0>
+[]
+Done.
+	Creating sequence for 'cheems'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8be0>
+[]
+Done.
+	Creating sequence for 'conceal'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8a00>
+[]
+Done.
+	Creating sequence for 'ariva'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8d70>
+[]
+Done.
+	Creating sequence for 'blockchain-certified-data-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8c30>
+[]
+Done.
+	Creating sequence for 'auctus'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8fa0>
+[]
+Done.
+	Creating sequence for 'bitcoin-atom'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f8dc0>
+[]
+Done.
+	Creating sequence for 'aave-mkr'... Skipped.
+	Creating sequence for 'alchemy-pay'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f90e0>
+[]
+Done.
+	Creating sequence for 'befe'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f92c0>
+[]
+Done.
+	Creating sequence for 'archloot'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9360>
+[]
+Done.
+	Creating sequence for 'aelf'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9040>
+[]
+Done.
+	Creating sequence for 'arsenal-fan-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9450>
+[]
+Done.
+	Creating sequence for 'cookie'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f95e0>
+[]
+Done.
+	Creating sequence for 'counterparty'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9360>
+[]
+Done.
+	Creating sequence for 'binamon'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f97c0>
+[]
+Done.
+	Creating sequence for 'blast'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9860>
+[]
+Done.
+	Creating sequence for 'coinpoker'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f95e0>
+[]
+Done.
+	Creating sequence for 'cvault-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9770>
+[]
+Done.
+	Creating sequence for 'alpaca-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9a90>
+[]
+Done.
+	Creating sequence for 'aigentx'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9c20>
+[]
+Done.
+	Creating sequence for 'bouncebit'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9cc0>
+[]
+Done.
+	Creating sequence for 'balancer'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9db0>
+[]
+Done.
+	Creating sequence for 'cindicator'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9ea0>
+[]
+Done.
+	Creating sequence for 'altava'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9f90>
+[]
+Done.
+	Creating sequence for 'clintex-cti'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9e00>
+[]
+Done.
+	Creating sequence for 'anchor-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fa120>
+[]
+Done.
+	Creating sequence for 'aave'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fa2b0>
+[]
+Done.
+	Creating sequence for 'daex'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fa350>
+[]
+Done.
+	Creating sequence for 'carbon-browser'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784f9e00>
+[]
+Done.
+	Creating sequence for 'blazestake-staked-sol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fa4e0>
+[]
+Done.
+	Creating sequence for 'city-tycoon-games'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fa5d0>
+[]
+Done.
+	Creating sequence for 'aura-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fa6c0>
+[]
+Done.
+	Creating sequence for 'cryptoblades'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fa760>
+[]
+Done.
+	Creating sequence for 'atlas-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fa850>
+[]
+Done.
+	Creating sequence for 'covesting'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fa9e0>
+[]
+Done.
+	Creating sequence for 'boringdao'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784faad0>
+[]
+Done.
+	Creating sequence for 'coreum'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fab20>
+[]
+Done.
+	Creating sequence for 'bald'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fac10>
+[]
+Done.
+	Creating sequence for 'cryptex-finance'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fa850>
+[]
+Done.
+	Creating sequence for 'daddy-tate'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fae40>
+[]
+Done.
+	Creating sequence for 'catheon-gaming'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fac60>
+[]
+Done.
+	Creating sequence for 'aave-susd'... Skipped.
+	Creating sequence for 'cargox'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb020>
+[]
+Done.
+	Creating sequence for 'bone-shibaswap'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fa2b0>
+[]
+Done.
+	Creating sequence for 'cortex'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb200>
+[]
+Done.
+	Creating sequence for 'contracoin'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb2f0>
+[]
+Done.
+	Creating sequence for 'bittensor'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb340>
+[]
+Done.
+	Creating sequence for 'big-time'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784faee0>
+[]
+Done.
+	Creating sequence for 'aurora'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb4d0>
+[]
+Done.
+	Creating sequence for 'aryacoin'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb610>
+[]
+Done.
+	Creating sequence for 'allianceblock-nexera'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb5c0>
+[]
+Done.
+	Creating sequence for 'alanyaspor-fan-token'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb340>
+[]
+Done.
+	Creating sequence for 'curate'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb7f0>
+[]
+Done.
+	Creating sequence for '8pay'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb8e0>
+[]
+Done.
+	Creating sequence for 'big-data-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb8e0>
+[]
+Done.
+	Creating sequence for 'coinbase-wrapped-staked-eth'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb980>
+[]
+Done.
+	Creating sequence for 'analos'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fba20>
+[]
+Done.
+	Creating sequence for 'coreto'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fbb60>
+[]
+Done.
+	Creating sequence for 'blox'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fbc00>
+[]
+Done.
+	Creating sequence for 'avinoc'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fb1b0>
+[]
+Done.
+	Creating sequence for 'bitcore'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fbcf0>
+[]
+Done.
+	Creating sequence for 'akropolis'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fbe30>
+[]
+Done.
+	Creating sequence for 'compound-0x'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fbde0>
+[]
+Done.
+	Creating sequence for 'bird-money'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1784fbe80>
+[]
+Done.
+	Creating sequence for 'apyswap'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500050>
+[]
+Done.
+	Creating sequence for 'aave-wbtc'... Skipped.
+	Creating sequence for 'bridge-oracle'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500050>
+[]
+Done.
+	Creating sequence for 'ancient8'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1785000f0>
+[]
+Done.
+	Creating sequence for 'catman'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500230>
+[]
+Done.
+	Creating sequence for 'astrotools'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500370>
+[]
+Done.
+	Creating sequence for 'azbit'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500410>
+[]
+Done.
+	Creating sequence for 'aave-zrx'... Skipped.
+	Creating sequence for 'cybervein'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1785000f0>
+[]
+Done.
+	Creating sequence for 'bscpad'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500140>
+[]
+Done.
+	Creating sequence for 'ally'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500050>
+[]
+Done.
+	Creating sequence for 'ambire-wallet'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1785005a0>
+[]
+Done.
+	Creating sequence for 'amazy'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500640>
+[]
+Done.
+	Creating sequence for 'cyberconnect'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500730>
+[]
+Done.
+	Creating sequence for 'covalent'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500780>
+[]
+Done.
+	Creating sequence for 'cypherium'... Len price:<pandas.core.indexing._iLocIndexer object at 0x1785005a0>
+[]
+Done.
+	Creating sequence for 'bancor'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500230>
+[]
+Done.
+	Creating sequence for 'blockbank'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500730>
+[]
+Done.
+	Creating sequence for 'crabada'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500780>
+[]
+Done.
+	Creating sequence for 'beyond-protocol'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500aa0>
+[]
+Done.
+	Creating sequence for 'axis-defi'... Len price:<pandas.core.indexing._iLocIndexer object at 0x178500b40>
+[]
+Done.
+Actual training set: 253 entries
+Actual testing set:  108 entries
+Actual training/total ratio: 0.6675461741424802

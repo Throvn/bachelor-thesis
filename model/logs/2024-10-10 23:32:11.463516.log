@@ -1,0 +1,1007 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 23:32:11.463516'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alphabet-erc404'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'across-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'clore-ai'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alchemist'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cnns'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bnktothefuture'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cornucopias'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aave-busd'... Skipped.
+	Creating sequence for 'base-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'algorand'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bytom'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'as-roma-fan-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cajutel'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'chainbing'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'calcium'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'belt'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'baasid'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cobak-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'agatech'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'clearpool'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bridge-mutual'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitget-wallet-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'chainx'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'anyswap'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'botto'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitcoin'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'centrifuge'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'basis-cash'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bolt'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'creo-engine'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'band-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'celestia'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'antimatter'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bistroo'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aipad'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bidao'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitmart-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'blocknet'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aviator'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ark'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bifrost'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'assemble-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aergo'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'artrade'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'access-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aurusx'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'affyn'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'adapad'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'crypto-asset-governance-alliance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'compound-basic-attention-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aave-usdt'... Skipped.
+	Creating sequence for 'apy-finance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'arweave'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ageofgods'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'biswap'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'dafi-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'biconomy'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cumrocket'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'beoble'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'apm-coin'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bottos'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aave-usdc'... Skipped.
+	Creating sequence for 'bullperks'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bittorrent'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aurory'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'acala'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'banano'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aston-martin-cognizant-fan-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'argent'... Skipped.
+	Creating sequence for 'celo-dollar'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'blendr-network'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'adamant-messenger'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'compound-ether'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cloudbric'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'achain'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ben-the-dog'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'arkham'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cellframe'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'basic-attention-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'connex'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'coinsbit-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'chronicle'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'dacxi'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'arcs'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'billionhappiness'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'burger-swap'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for '1inch'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'binance-usd'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'beyond-finance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'binemon'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'b20'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bemo-staked-ton'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aeron'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'coldstack'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'brz'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'blockstack'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bamboo-defi'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'astroswap'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'barnbridge'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitcoin-wizards'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'commune-ai'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alva'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'balpha'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cardano'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alvey-chain'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'adreward'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'acorn-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitcoin-cash'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bazaars'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cere-network'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bnsd-finance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitball-treasure'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'airight'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'auto'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'comtech-gold'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bluzelle'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitkub-coin'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aston-villa-fan-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'crash-on-base'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aeon'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alchemix'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitball'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'beefy-finance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'calamari-network'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'crown-by-third-time-games'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'apeswap-finance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ait-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ampleforth-governance-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aion'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'autonio'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'airtor-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'acquire-fi'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aptos'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cyberfi'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'carvertical'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'captain-tsubasa'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitcoin-diamond'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitcoin-gold'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cotrader'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'coin98'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'convex-finance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alpine-f1-team-fan-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ampleforth'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'airswap'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aerodrome-finance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'blackcardcoin'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ambo'... Skipped.
+	Creating sequence for 'bepro-network'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'azuki'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aioz-network'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'astar'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'augur'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'adshares'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ceres'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'constitutiondao'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aragon'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'areon-network'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ai-analysis-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'armor'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitshares'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cryptozoon'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitdao'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'convergence'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'contentos'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alitas'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'akita-inu'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aeternity'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'brainlet'... Skipped.
+	Creating sequence for 'bread'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'contentbox'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bad-idea-ai'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'crypto-ai-robo'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'blind-boxes'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'beam'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alien-worlds'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'banana-gun'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aave-mana'... Skipped.
+	Creating sequence for 'amino'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cashaa'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'catcoin'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'birake'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'altered-state-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bonfida'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bakerytoken'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aave-link'... Skipped.
+	Creating sequence for 'credefi'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bella-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ardor'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'acknoledger'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cryptogpt'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'civic'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bifi'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'axelar'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'amepay'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'clube-atletico-mineiro-fan-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cyclone-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'apenft'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'celo'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'coinweb'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'concordium'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'chex-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'coinex-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'appcoins'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'boba-network'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'arcona'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'azuro-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aave-tusd'... Skipped.
+	Creating sequence for 'babb'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cult-dao'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'avail'... Skipped.
+	Creating sequence for 'amond'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'akash-network'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitcicoin'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aave-knc'... Skipped.
+	Creating sequence for '0x'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'billy'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bbs-network'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'atlas-navi'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'api3'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'andy-on-sol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'credits'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for '5ire'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aethir'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'axie-infinity'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'compound-uniswap'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'beta-finance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'blockasset'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'art-de-finance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for '3space-art'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'carry'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'amber'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alephium'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bibox-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'boson-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'arcblock'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'circuits-of-value'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'book-of-meme'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aventus'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'adappter-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for '404aliens'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cratos'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cartesi'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'choise'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'amaterasu-omikami'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'adventure-gold'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'celer-network'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitpanda-ecosystem-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'celo-euro'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bomb'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cosmos'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cudos'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bora'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'altlayer'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aave-dai'... Skipped.
+	Creating sequence for 'aimalls'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitrock'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'acute-angle-cloud'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'blocery'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'beamswap'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alkimi'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'attila'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'brickken'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alethea-artificial-liquid-intelligence-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+Preparing data for testing...
+	Creating sequence for 'cetus-protocol'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aave-snx'... Skipped.
+	Creating sequence for 'axel'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bao-finance'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'babyswap'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'blockchain-monster-hunt'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'conun'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'brn-metaverse'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'berry-data'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aave-bat'... Skipped.
+	Creating sequence for 'ankr'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bondly'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'cryptofranc'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'crowns'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bosagora'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bobo-coin'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'coinfi'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'crvusd'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for '88mph'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for '0chain'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'autonolas'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'byte'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'corite'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'breederdao'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'coti'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'blockv'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aurora-near'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'audius'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'cropbytes'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'cheems'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'conceal'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'ariva'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'blockchain-certified-data-token'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'auctus'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bitcoin-atom'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aave-mkr'... Skipped.
+	Creating sequence for 'alchemy-pay'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'befe'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'archloot'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aelf'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'arsenal-fan-token'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'cookie'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'counterparty'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'binamon'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'blast'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'coinpoker'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'cvault-finance'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'alpaca-finance'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aigentx'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bouncebit'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'balancer'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'cindicator'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'altava'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'clintex-cti'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'anchor-protocol'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aave'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'daex'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'carbon-browser'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'blazestake-staked-sol'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'city-tycoon-games'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aura-finance'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'cryptoblades'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'atlas-protocol'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'covesting'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'boringdao'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'coreum'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bald'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'cryptex-finance'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'daddy-tate'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'catheon-gaming'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aave-susd'... Skipped.
+	Creating sequence for 'cargox'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bone-shibaswap'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'cortex'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'contracoin'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bittensor'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'big-time'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aurora'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aryacoin'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'allianceblock-nexera'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'alanyaspor-fan-token'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'curate'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for '8pay'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'big-data-protocol'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'coinbase-wrapped-staked-eth'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'analos'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'coreto'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'blox'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'avinoc'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bitcore'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'akropolis'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'compound-0x'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bird-money'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'apyswap'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aave-wbtc'... Skipped.
+	Creating sequence for 'bridge-oracle'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'ancient8'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'catman'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'astrotools'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'azbit'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'aave-zrx'... Skipped.
+	Creating sequence for 'cybervein'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bscpad'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'ally'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'ambire-wallet'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'amazy'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'cyberconnect'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'covalent'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'cypherium'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'bancor'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'blockbank'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'crabada'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'beyond-protocol'... Insufficient data for window size 60. Skipping.
+Done.
+	Creating sequence for 'axis-defi'... Insufficient data for window size 60. Skipping.
+Done.
+Actual training set: 253 entries
+Actual testing set:  108 entries
+Actual training/total ratio: 0.6675461741424802

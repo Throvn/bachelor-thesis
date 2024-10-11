@@ -33,23 +33,24 @@ app.get("/api/:slug", (req, res) => {
 });
 
 app.post("/api/:slug", (req, res) => {
-    if (!req.body.timestamp) {
+    if (!Object.keys(req.body).includes("timestamp")) {
         res.status(400).send({
             msg: "timestamp field missing",
             error: "provide the timestamp at which the dao turned inactive. or 0/1 for a DAO being in-/active through the entire timespan."
         });
+        return;
     }
 
     const data = searchBySlug(allDAOs, req.params.slug);
     data.santiment["isActive"] = [];
     const prediction = new Date(req.body.timestamp).getTime()
     for (const price of data.santiment.priceUSD) {
-        price["time"] = new Date(price["datetime"]).getTime()
+        const time = new Date(price["datetime"]).getTime()
         if (prediction > 1) {
             // Before the time event coin was active.
             // After the time, coin was inactive.
             // Works, because date format goes from biggest to smallest unit and prefixes single digits with 0s.
-            data.santiment.isActive.push(Number(price["time"] < prediction));
+            data.santiment.isActive.push(Number(time < prediction));
         } else {
             data.santiment.isActive.push(prediction);
         }
@@ -62,7 +63,16 @@ app.post("/api/:slug", (req, res) => {
     console.log("isActive Length: ", data.santiment.isActive.length);
     console.log("priceUSD Length: ", data.santiment.priceUSD.length);
 
-    res.status(500).send();
+    try {
+        fs.appendFileSync("classifiedDAOs.json", ",\n" + JSON.stringify({
+            slug: req.params.slug,
+            ...data.santiment
+        }));
+        console.log("Classified '" + req.params.slug + "'");
+        res.status(200).send();
+    } catch (e) {
+        res.status(500).send();
+    }
 })
 
 app.get("/", (req, res) => {

@@ -1,0 +1,329 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-09-27 19:39:16.402354'.
+Reading '../classifiedDAOs_preview(2).json'... Done.
+Total training Data: 313
+Size of training set: 219
+Size of test set: 94
+Preparing data for training...
+	Creating sequence for 'billionhappiness'... Done.
+	Creating sequence for 'blox'... Done.
+	Creating sequence for 'altava'... Done.
+	Creating sequence for 'bitkub-coin'... Done.
+	Creating sequence for 'aethir'... Done.
+	Creating sequence for 'amaterasu-omikami'... Done.
+	Creating sequence for 'breederdao'... Done.
+	Creating sequence for 'barnbridge'... Done.
+	Creating sequence for 'coinweb'... Done.
+	Creating sequence for 'aergo'... Done.
+	Creating sequence for 'access-protocol'... Done.
+	Creating sequence for 'areon-network'... Done.
+	Creating sequence for 'ampleforth'... Done.
+	Creating sequence for 'apyswap'... Done.
+	Creating sequence for 'centrifuge'... Done.
+	Creating sequence for 'cajutel'... Done.
+	Creating sequence for 'cloudbric'... Done.
+	Creating sequence for 'beoble'... Done.
+	Creating sequence for 'bitcoin-atom'... Done.
+	Creating sequence for 'artrade'... Done.
+	Creating sequence for 'celo'... Done.
+	Creating sequence for 'binance-usd'... Done.
+	Creating sequence for 'altered-state-token'... Done.
+	Creating sequence for 'byte'... Done.
+	Creating sequence for 'bytom'... Done.
+	Creating sequence for 'carry'... Done.
+	Creating sequence for 'bald'... Done.
+	Creating sequence for 'aurory'... Done.
+	Creating sequence for 'adreward'... Done.
+	Creating sequence for 'algorand'... Done.
+	Creating sequence for 'bnsd-finance'... Done.
+	Creating sequence for 'bitshares'... Done.
+	Creating sequence for 'avail'... Skipped.
+	Creating sequence for 'compound-ether'... Done.
+	Creating sequence for 'clore-ai'... Done.
+	Creating sequence for 'bitcoin-wizards'... Done.
+	Creating sequence for 'calamari-network'... Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... Done.
+	Creating sequence for 'akropolis'... Done.
+	Creating sequence for 'binamon'... Done.
+	Creating sequence for 'banana-gun'... Done.
+	Creating sequence for 'bitcoin'... Done.
+	Creating sequence for 'brz'... Done.
+	Creating sequence for 'beta-finance'... Done.
+	Creating sequence for 'attila'... Done.
+	Creating sequence for 'chainx'... Done.
+	Creating sequence for 'auctus'... Done.
+	Creating sequence for 'aeron'... Done.
+	Creating sequence for 'bottos'... Done.
+	Creating sequence for 'alanyaspor-fan-token'... Done.
+	Creating sequence for 'celer-network'... Done.
+	Creating sequence for 'babb'... Done.
+	Creating sequence for 'biconomy'... Done.
+	Creating sequence for 'baasid'... Done.
+	Creating sequence for 'alien-worlds'... Done.
+	Creating sequence for 'armor'... Done.
+	Creating sequence for 'carvertical'... Done.
+	Creating sequence for 'autonolas'... Done.
+	Creating sequence for 'ankr'... Done.
+	Creating sequence for 'bemo-staked-ton'... Done.
+	Creating sequence for 'aigentx'... Done.
+	Creating sequence for 'cargox'... Done.
+	Creating sequence for 'aipad'... Done.
+	Creating sequence for 'akita-inu'... Done.
+	Creating sequence for 'autonio'... Done.
+	Creating sequence for 'art-de-finance'... Done.
+	Creating sequence for 'bbs-network'... Done.
+	Creating sequence for 'bistroo'... Done.
+	Creating sequence for 'bittensor'... Done.
+	Creating sequence for 'berry-data'... Done.
+	Creating sequence for 'agatech'... Done.
+	Creating sequence for 'carbon-browser'... Done.
+	Creating sequence for 'bitrock'... Done.
+	Creating sequence for 'alkimi'... Done.
+	Creating sequence for 'aeternity'... Done.
+	Creating sequence for 'aurora'... Done.
+	Creating sequence for 'billy'... Done.
+	Creating sequence for 'bitball'... Done.
+	Creating sequence for 'ark'... Done.
+	Creating sequence for 'aryacoin'... Done.
+	Creating sequence for 'bao-finance'... Done.
+	Creating sequence for 'alephium'... Done.
+	Creating sequence for 'cindicator'... Done.
+	Creating sequence for 'aston-martin-cognizant-fan-token'... Done.
+	Creating sequence for 'cetus-protocol'... Done.
+	Creating sequence for 'ampleforth-governance-token'... Done.
+	Creating sequence for 'auto'... Done.
+	Creating sequence for 'apy-finance'... Done.
+	Creating sequence for 'airswap'... Done.
+	Creating sequence for 'alitas'... Done.
+	Creating sequence for 'bittorrent'... Done.
+	Creating sequence for 'atlas-protocol'... Done.
+	Creating sequence for 'api3'... Done.
+	Creating sequence for 'aeon'... Done.
+	Creating sequence for 'ardor'... Done.
+	Creating sequence for 'alethea-artificial-liquid-intelligence-token'... Done.
+	Creating sequence for 'bella-protocol'... Done.
+	Creating sequence for 'basic-attention-token'... Done.
+	Creating sequence for 'aimalls'... Done.
+	Creating sequence for 'blocery'... Done.
+	Creating sequence for 'beam'... Done.
+	Creating sequence for 'commune-ai'... Done.
+	Creating sequence for 'alchemist'... Done.
+	Creating sequence for 'cnns'... Done.
+	Creating sequence for 'cashaa'... Done.
+	Creating sequence for 'aelf'... Done.
+	Creating sequence for 'astrotools'... Done.
+	Creating sequence for 'captain-tsubasa'... Done.
+	Creating sequence for 'beyond-protocol'... Done.
+	Creating sequence for 'bibox-token'... Done.
+	Creating sequence for 'cardano'... Done.
+	Creating sequence for 'amber'... Done.
+	Creating sequence for 'alpaca-finance'... Done.
+	Creating sequence for 'ait-protocol'... Done.
+	Creating sequence for 'airtor-protocol'... Done.
+	Creating sequence for 'bitcoin-gold'... Done.
+	Creating sequence for 'aura-finance'... Done.
+	Creating sequence for 'bitdao'... Done.
+	Creating sequence for 'astroswap'... Done.
+	Creating sequence for 'allianceblock-nexera'... Done.
+	Creating sequence for 'blockstack'... Done.
+	Creating sequence for 'coinbase-wrapped-staked-eth'... Done.
+	Creating sequence for 'belt'... Done.
+	Creating sequence for 'aurusx'... Done.
+	Creating sequence for 'amazy'... Done.
+	Creating sequence for 'babyswap'... Done.
+	Creating sequence for 'acquire-fi'... Done.
+	Creating sequence for 'appcoins'... Done.
+	Creating sequence for 'boringdao'... Done.
+	Creating sequence for 'connex'... Done.
+	Creating sequence for 'anchor-protocol'... Done.
+	Creating sequence for 'basis-cash'... Done.
+	Creating sequence for 'acorn-protocol'... Done.
+	Creating sequence for 'blockchain-monster-hunt'... Done.
+	Creating sequence for 'aston-villa-fan-token'... Done.
+	Creating sequence for 'aerodrome-finance'... Done.
+	Creating sequence for 'coinsbit-token'... Done.
+	Creating sequence for 'boson-protocol'... Done.
+	Creating sequence for 'apm-coin'... Done.
+	Creating sequence for 'befe'... Done.
+	Creating sequence for 'ariva'... Done.
+	Creating sequence for 'blendr-network'... Done.
+	Creating sequence for 'bifrost'... Done.
+	Creating sequence for 'cellframe'... Done.
+	Creating sequence for 'bridge-mutual'... Done.
+	Creating sequence for 'binemon'... Done.
+	Creating sequence for 'arsenal-fan-token'... Done.
+	Creating sequence for 'brainlet'... Skipped.
+	Creating sequence for 'bondly'... Done.
+	Creating sequence for 'adapad'... Done.
+	Creating sequence for 'city-tycoon-games'... Done.
+	Creating sequence for 'bolt'... Done.
+	Creating sequence for 'aptos'... Done.
+	Creating sequence for 'ally'... Done.
+	Creating sequence for 'acknoledger'... Done.
+	Creating sequence for '0x'... Done.
+	Creating sequence for 'aviator'... Done.
+	Creating sequence for 'arkham'... Done.
+	Creating sequence for 'arcona'... Done.
+	Creating sequence for 'beyond-finance'... Done.
+	Creating sequence for '5ire'... Done.
+	Creating sequence for 'akash-network'... Done.
+	Creating sequence for 'banano'... Done.
+	Creating sequence for 'bullperks'... Done.
+	Creating sequence for 'compound-uniswap'... Done.
+	Creating sequence for 'augur'... Done.
+	Creating sequence for 'bitball-treasure'... Done.
+	Creating sequence for 'bread'... Done.
+	Creating sequence for 'bosagora'... Done.
+	Creating sequence for 'blockbank'... Done.
+	Creating sequence for 'bitget-wallet-token'... Done.
+	Creating sequence for 'as-roma-fan-token'... Done.
+	Creating sequence for 'big-time'... Done.
+	Creating sequence for 'balancer'... Done.
+	Creating sequence for 'ai-analysis-token'... Done.
+	Creating sequence for '404aliens'... Done.
+	Creating sequence for 'catman'... Done.
+	Creating sequence for 'antimatter'... Done.
+	Creating sequence for 'aion'... Done.
+	Creating sequence for 'blockv'... Done.
+	Creating sequence for 'bomb'... Done.
+	Creating sequence for 'blazestake-staked-sol'... Done.
+	Creating sequence for 'coldstack'... Done.
+	Creating sequence for 'ancient8'... Done.
+	Creating sequence for 'chex-token'... Done.
+	Creating sequence for 'alchemy-pay'... Done.
+	Creating sequence for 'affyn'... Done.
+	Creating sequence for 'bifi'... Done.
+	Creating sequence for 'ambire-wallet'... Done.
+	Creating sequence for 'bnktothefuture'... Done.
+	Creating sequence for 'axel'... Done.
+	Creating sequence for '3space-art'... Done.
+	Creating sequence for 'alvey-chain'... Done.
+	Creating sequence for 'bitcicoin'... Done.
+	Creating sequence for 'acute-angle-cloud'... Done.
+	Creating sequence for 'bamboo-defi'... Done.
+	Creating sequence for 'bepro-network'... Done.
+	Creating sequence for 'bazaars'... Done.
+	Creating sequence for 'andy-on-sol'... Done.
+	Creating sequence for 'bridge-oracle'... Done.
+	Creating sequence for 'b20'... Done.
+	Creating sequence for 'bird-money'... Done.
+	Creating sequence for 'chainbing'... Done.
+	Creating sequence for 'blackcardcoin'... Done.
+	Creating sequence for 'birake'... Done.
+	Creating sequence for 'acala'... Done.
+	Creating sequence for 'arcs'... Done.
+	Creating sequence for 'axis-defi'... Done.
+	Creating sequence for 'ageofgods'... Done.
+	Creating sequence for 'blocknet'... Done.
+	Creating sequence for 'celo-euro'... Done.
+	Creating sequence for 'coinpoker'... Done.
+	Creating sequence for 'catheon-gaming'... Done.
+	Creating sequence for 'airight'... Done.
+	Creating sequence for 'coinex-token'... Done.
+	Creating sequence for 'celo-dollar'... Done.
+	Creating sequence for 'alva'... Done.
+	Creating sequence for 'cobak-token'... Done.
+	Creating sequence for 'bone-shibaswap'... Done.
+Preparing data for testing...
+	Creating sequence for '88mph'... [[[ 1.60617600e+09  5.74619725e+01  7.50000000e+01  2.40000000e+01]
+  [ 1.60626240e+09  3.93822831e+01  7.50000000e+01  1.30000000e+01]
+  [ 1.60634880e+09  3.00039965e+01  4.20000000e+01  5.00000000e+00]
+  ...
+  [ 1.61110080e+09  1.69725984e+02  2.22000000e+02  8.00000000e+00]
+  [ 1.61118720e+09  1.25112810e+02  1.70000000e+02  3.00000000e+00]
+  [ 1.61127360e+09  1.69877809e+02  1.40000000e+02  1.00000000e+00]]
+
+ [[ 1.60626240e+09  3.93822831e+01  7.50000000e+01  1.30000000e+01]
+  [ 1.60634880e+09  3.00039965e+01  4.20000000e+01  5.00000000e+00]
+  [ 1.60643520e+09  3.90297078e+01  6.20000000e+01  1.00000000e+00]
+  ...
+  [ 1.61118720e+09  1.25112810e+02  1.70000000e+02  3.00000000e+00]
+  [ 1.61127360e+09  1.69877809e+02  1.40000000e+02  1.00000000e+00]
+  [ 1.61136000e+09  1.63162509e+02  1.30000000e+02  0.00000000e+00]]
+
+ [[ 1.60634880e+09  3.00039965e+01  4.20000000e+01  5.00000000e+00]
+  [ 1.60643520e+09  3.90297078e+01  6.20000000e+01  1.00000000e+00]
+  [ 1.60652160e+09  4.12779516e+01  9.90000000e+01  2.00000000e+00]
+  ...
+  [ 1.61127360e+09  1.69877809e+02  1.40000000e+02  1.00000000e+00]
+  [ 1.61136000e+09  1.63162509e+02  1.30000000e+02  0.00000000e+00]
+  [ 1.61144640e+09  1.60170501e+02  1.95000000e+02  3.00000000e+00]]
+
+ ...
+
+ [[ 1.72177920e+09  4.77560143e-01 -1.20000000e+01  0.00000000e+00]
+  [ 1.72186560e+09  4.74922684e-01 -3.00000000e+00  0.00000000e+00]
+  [ 1.72195200e+09  4.91969854e-01  5.00000000e+00  0.00000000e+00]
+  ...
+  [ 1.72670400e+09  4.19512809e-01 -8.00000000e+00  0.00000000e+00]
+  [ 1.72679040e+09  4.15385011e-01 -7.00000000e+00  0.00000000e+00]
+  [ 1.72687680e+09  4.61750037e-01  0.00000000e+00  0.00000000e+00]]
+
+ [[ 1.72186560e+09  4.74922684e-01 -3.00000000e+00  0.00000000e+00]
+  [ 1.72195200e+09  4.91969854e-01  5.00000000e+00  0.00000000e+00]
+  [ 1.72203840e+09  4.55723135e-01 -8.00000000e+00  0.00000000e+00]
+  ...
+  [ 1.72679040e+09  4.15385011e-01 -7.00000000e+00  0.00000000e+00]
+  [ 1.72687680e+09  4.61750037e-01  0.00000000e+00  0.00000000e+00]
+  [ 1.72696320e+09  4.38296687e-01 -2.00000000e+00  0.00000000e+00]]
+
+ [[ 1.72195200e+09  4.91969854e-01  5.00000000e+00  0.00000000e+00]
+  [ 1.72203840e+09  4.55723135e-01 -8.00000000e+00  0.00000000e+00]
+  [ 1.72212480e+09  4.91141603e-01 -9.00000000e+00  0.00000000e+00]
+  ...
+  [ 1.72687680e+09  4.61750037e-01  0.00000000e+00  0.00000000e+00]
+  [ 1.72696320e+09  4.38296687e-01 -2.00000000e+00  0.00000000e+00]
+  [ 1.72704960e+09  4.17251314e-01 -2.00000000e+00  0.00000000e+00]]]
+Done.
+	Creating sequence for 'bitpanda-ecosystem-token'... [[[1571356800.0 0.068437533082 -6 None]
+  [1571443200.0 0.069870712007 16 None]
+  [1571529600.0 0.069229473506 7 None]
+  ...
+  [1576281600.0 0.054940319259 199 None]
+  [1576368000.0 0.056659448806 108 None]
+  [1576454400.0 0.056775741519 31 None]]
+
+ [[1571443200.0 0.069870712007 16 None]
+  [1571529600.0 0.069229473506 7 None]
+  [1571616000.0 0.06773605021 12 None]
+  ...
+  [1576368000.0 0.056659448806 108 None]
+  [1576454400.0 0.056775741519 31 None]
+  [1576540800.0 0.05623072077 1 None]]
+
+ [[1571529600.0 0.069229473506 7 None]
+  [1571616000.0 0.06773605021 12 None]
+  [1571702400.0 0.067018298163 6 None]
+  ...
+  [1576454400.0 0.056775741519 31 None]
+  [1576540800.0 0.05623072077 1 None]
+  [1576627200.0 0.056576666053 33 None]]
+
+ ...
+
+ [[1721779200.0 0.60222 35 None]
+  [1721865600.0 0.5875 10 None]
+  [1721952000.0 0.587 30 None]
+  ...
+  [1726704000.0 0.50349 9 None]
+  [1726790400.0 0.5038 14 None]
+  [1726876800.0 0.50419 17 None]]
+
+ [[1721865600.0 0.5875 10 None]
+  [1721952000.0 0.587 30 None]
+  [1722038400.0 0.587 -8 None]
+  ...
+  [1726790400.0 0.5038 14 None]
+  [1726876800.0 0.50419 17 None]
+  [1726963200.0 0.50429 13 None]]
+
+ [[1721952000.0 0.587 30 None]
+  [1722038400.0 0.587 -8 None]
+  [1722124800.0 0.587 28 None]
+  ...
+  [1726876800.0 0.50419 17 None]
+  [1726963200.0 0.50429 13 None]
+  [1727049600.0 0.50429 -6 None]]]

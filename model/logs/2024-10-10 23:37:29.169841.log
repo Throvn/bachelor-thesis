@@ -1,0 +1,16 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 23:37:29.169841'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'... slug                                                           chiliz
+priceUSD            [{'datetime': '2019-07-01T00:00:00Z', 'value':...
+twitterFollowers    [{'datetime': '2019-07-09T00:00:00Z', 'value':...
+devActivity                                                        []
+isActive            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+Name: 0, dtype: object

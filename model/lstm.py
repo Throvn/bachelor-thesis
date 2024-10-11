@@ -7,18 +7,18 @@ from sklearn.model_selection import TimeSeriesSplit
 from sklearn.metrics import classification_report
 import xgboost as xgb
 
-from typing import Final, Sequence
+from typing import Final, Sequence, Any
 from datetime import datetime
 import json
-
+print(torch.__version__)
 script_start = datetime.now()
 
-def print(*args, end="\n"):
+def print(*args, end="\n", flush=False):
     with open('./logs/' + str(script_start) + '.log', "a") as f:
         for arg in args:
             f.write(str(arg))
         f.write(end)
-    __builtins__.print(*args, end=end)
+    __builtins__["print"](*args, end=end, flush=flush)
 
 
 print("\n\n")
@@ -27,7 +27,7 @@ print("Starting lstm.py at '" + str(script_start) + "'.")
 
 
 # CONSTANTS
-DATA_FILE_NAME: Final[str] = "./isDaoActiveData(2).json"
+DATA_FILE_NAME: Final[str] = "./isDaoActiveData(4).json"
 
 # Is this how many 'days' the time series should be predicted?
 WINDOW_SIZE: Final[int] = 60 # TODO: 120
@@ -35,7 +35,7 @@ TIMESERIES_SPLITS: Final[int] = 3
 
 MIN_DATA_OBSERVATIONS: Final[int] = WINDOW_SIZE + (TIMESERIES_SPLITS + 1)
 
-print("Reading '" + DATA_FILE_NAME + "'... ", end="")
+print("Reading '" + DATA_FILE_NAME + "'... ", end="", flush=True)
 total_training_data = json.load(open(DATA_FILE_NAME))
 total_training_data = pd.DataFrame(total_training_data).sample(frac=1, random_state=1337).reset_index(drop=True)
 print("Done.") 
@@ -52,22 +52,61 @@ print("Size of test set: ", len(grouped_test))
 
 ##1 Init function for TimeSeriesSplit (ensures robustness of prediction results, by implementing 'granular' training)
 
-def create_sequences(observation: Sequence, window_size: int):
+def create_sequences(observation: pd.Series, window_size: int):
     X_seq, y_seq = [], []
-    # print(observation.prices)
-    # print(observation["prices"])
-    df = pd.DataFrame(observation["prices"])
-    # print(df)
-    feature_columns = df.columns.drop(['isActive'])  # Exclude the target column from features
-    # print(len(df))
-    # print("Range: ", range(len(df) - WINDOW_SIZE))
-    # TODO: Explain
-    for i in range(len(df) - window_size):
-        X_seq.append(df[feature_columns].iloc[i:(i + window_size)].to_numpy())
-        y_seq.append(df['isActive'].iloc[i + window_size - 1])  # Ensure y is aligned correctly
-    # print("Y SEQ: ", len(y_seq))
-    return np.array(X_seq), np.array(y_seq)
 
+    # Convert each subcategory of observation into a DataFrame, indexed by datetime
+    price_df = pd.DataFrame(observation['priceUSD']).rename(columns={'value': 'priceUSD'})
+    dev_df = pd.DataFrame(observation['devActivity']).rename(columns={'value': 'devActivity'})
+    twitter_df = pd.DataFrame(observation['twitterFollowers']).rename(columns={'value': 'twitterFollowers'})
+    
+    # Handle empty DataFrames by creating a 'datetime' column if necessary
+    if price_df.empty or 'datetime' not in price_df.columns:
+        print("Price data is missing or empty.")
+        return np.array([]), np.array([])
+
+    # Ensure 'datetime' column exists in dev_df and twitter_df, or else add it as NaN for alignment
+    if dev_df.empty:
+        dev_df = pd.DataFrame({'datetime': price_df['datetime'], 'devActivity': [np.nan] * len(price_df)})
+    if twitter_df.empty:
+        twitter_df = pd.DataFrame({'datetime': price_df['datetime'], 'twitterFollowers': [np.nan] * len(price_df)})
+
+    # The isActive is already aligned with priceUSD, so no need to merge on datetime
+    isActive = observation['isActive']
+
+    # print(dev_df)
+    # Merge the dataframes on datetime
+    df = price_df.merge(dev_df, on='datetime', how='outer') \
+                 .merge(twitter_df, on='datetime', how='outer')
+
+    # Sort by datetime to ensure proper sequence
+    df = df.sort_values(by='datetime').reset_index(drop=True)
+
+    # Fill any missing values with interpolation for the features
+    df[['priceUSD', 'devActivity', 'twitterFollowers']] = df[['priceUSD', 'devActivity', 'twitterFollowers']].interpolate(method='linear')
+
+    # Ensure we have enough data points for the specified window size
+    if len(df) < window_size:
+        print(f"Insufficient data for window size {window_size}. Skipping.")
+        return np.array([]), np.array([])
+
+    # Iterate and create sequences
+    for i in range(len(isActive) - window_size):
+        # Extract the window of features
+        X_window = df[['priceUSD', 'devActivity', 'twitterFollowers']].iloc[i:(i + window_size)].values
+        X_seq.append(X_window)
+
+        # print("Lengths:", len(isActive), i + window_size - 1, len(df['priceUSD']))
+        # Extract the target value for the end of the window from isActive array
+        y_seq.append(isActive[i + window_size - 1])
+
+    # Convert lists to numpy arrays
+    X_seq = np.array(X_seq)
+    y_seq = np.array(y_seq)
+
+    return X_seq, y_seq
+
+# TODO: GET THE FUCKING LSTM TO WORK AGAIN. FASTER THAN BEFORE. AND IMPLEMENT SAVING OF THE MODEL!
 
 ##2 define tensor structure
 input_streams = {}
@@ -75,46 +114,48 @@ target_streams = {}
 print("Preparing data for training...") 
 num_training_observations = 0
 num_testing_observations = 0
-for index, observation in grouped_train.iterrows():
-    index: int
-    observation: Sequence[any]
+def trainIterator():
+    global num_training_observations
+    for index, observation in grouped_train.iterrows():
+        index: int
+        observation: pd.Series
 
-    print("\tCreating sequence for '" + observation.id + "'... ", end="")
-    if len(observation.prices) < MIN_DATA_OBSERVATIONS:
-        print("Skipped.")
-        continue
+        print("\tCreating sequence for '" + observation.slug + "'... ", end="")
+        if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
+            print("Skipped.")
+            continue
 
-    X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
-    input_streams[index] = X_seq
-    target_streams[index] = y_seq
-    # print("  " + str(y_seq) + "  ", end="")
-    num_training_observations += 1
-    print("Done.")
+        X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
+        # print(X_seq)
+        input_streams[index] = X_seq
+        target_streams[index] = y_seq
+        yield X_seq, y_seq
+        # print("  " + str(y_seq) + "  ", end="")
+        num_training_observations += 1
+        print("Done.")
 
 print("Preparing data for testing...") 
 # Check if a GPU is available
-device = torch.device('cpu')
+device = torch.device('mps')
 
-val_input_streams = {}
-val_target_streams = {}
-for index, observation in grouped_test.iterrows():
-    index: int
-    observation: Sequence[any]
+# TODO: Figure out what we need this for. Currently unused.
+def testIterator():
+    global num_testing_observations
+    for index, observation in grouped_test.iterrows():
+        index: int
+        observation: pd.Series
 
-    print("\tCreating sequence for '" + observation.id + "'... ", end="")
-    if len(observation.prices) < MIN_DATA_OBSERVATIONS:
-        print("Skipped.")
-        continue
+        print("\tCreating sequence for '" + observation.slug + "'... ", end="")
+        if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
+            print("Skipped.")
+            continue
 
-    X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
-    val_input_streams[index] = torch.tensor(X_seq, dtype=torch.float32).to(device)
-    val_target_streams[index] = torch.tensor(y_seq, dtype=torch.float32).to(device)
-    num_testing_observations += 1
-    print("Done.")
-
-print("Actual training set: ", num_training_observations, " entries")
-print("Actual testing set:  ", num_testing_observations, " entries")
-print("Actual training/total ratio: ", num_training_observations / len(total_training_data))
+        X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
+        val_input = torch.tensor(X_seq, dtype=torch.float32, device=device)
+        val_target = torch.tensor(y_seq, dtype=torch.float32, device=device)
+        yield val_input, val_target
+        num_testing_observations += 1
+        print("Done.")
 
 ##3 Init Single Input LSTM
 
@@ -152,15 +193,10 @@ class SingleInputLSTMClassifier(nn.Module):
 
 
 ##4 extract input_dim and initialize model. 
-
-num_features = input_streams[0].shape[2] #Input_dim = length of vector that contains unique feature columns.
-num_streams = len(input_streams)
+num_features = 3 # devActivity, twitterFollowers, priceUSD # input_streams[0].shape[2] #Input_dim = length of vector that contains unique feature columns.
 input_dim=(num_features)
 
 model = SingleInputLSTMClassifier(input_dim).to(device)
-
-input_tensors = {key: torch.tensor(value, dtype=torch.float32).to(device) for key, value in input_streams.items()}
-target_tensors = {key: torch.tensor(value, dtype=torch.float32).to(device) for key, value in target_streams.items()}
 
 
 ##5 Run the Model -> Gives output as classification report
@@ -189,7 +225,8 @@ gbm_params = {
     # 'scale_pos_weight': 0.8
 }
 print("Gradient boosting params: \n\t", json.dumps(gbm_params))
-criterion = nn.BCELoss()
+# TODO: Explain in thesis: https://stackoverflow.com/a/68368157
+criterion = nn.BCEWithLogitsLoss()
 
 # Training and validation
 model.train()
@@ -206,14 +243,15 @@ all_y_true = []
 all_y_pred = []
 all_y_prob = []
 
+tscv = TimeSeriesSplit(n_splits=TIMESERIES_SPLITS)
 # Grouped time series split
-for name in input_streams.keys():
-    X = input_streams[name]
-    y = target_streams[name]
-    tscv = TimeSeriesSplit(n_splits=TIMESERIES_SPLITS)
-    splits = list(tscv.split(X))
+for name, (X, y) in enumerate(trainIterator()):
+    # X = input_streams[name]
+    # y = target_streams[name]
+    splits = tscv.split(X)
 
     for split_id, (train_index, val_index) in enumerate(splits):
+        torch.mps.empty_cache()
         print(f"Training group {name}, split {split_id + 1}")
 
         X_train, X_val = X[train_index], X[val_index]
@@ -225,7 +263,7 @@ for name in input_streams.keys():
         y_val_tensor = torch.tensor(y_val, dtype=torch.float32).to(device)
 
         optimizer = torch.optim.Adam(model.parameters(), lr=initial_lr)
-        scheduler_plateau = ReduceLROnPlateau(optimizer, 'min', patience=patience, factor=0.1, verbose=True)
+        scheduler_plateau = ReduceLROnPlateau(optimizer, 'min', patience=patience, factor=0.1)
         scheduler_cyclic = torch.optim.lr_scheduler.CyclicLR(optimizer, base_lr=0.001, max_lr=0.01, step_size_up=10, mode='triangular2', cycle_momentum=False)
         early_stopping_counter = 0
         best_val_loss = float('inf')
@@ -280,7 +318,7 @@ for name in input_streams.keys():
             scheduler_plateau.step(avg_val_loss)
 
             # Print epoch summary
-            __builtins__.print(f'Group {name}, Split {split_id + 1}, Epoch {epoch + 1}/{num_epochs}, '
+            __builtins__['print'](f'Group {name}, Split {split_id + 1}, Epoch {epoch + 1}/{num_epochs}, '
                   f'Train Loss: {avg_train_loss:.4f}, Validation Loss: {avg_val_loss:.4f}, '
                   f'Learning Rate: {optimizer.param_groups[0]["lr"]:.6f}')
 
@@ -315,6 +353,11 @@ for name in input_streams.keys():
         #predict probabilities for ROC AUC
         val_prob = gbm.predict(val_output) # [:, 1]  # Get probabilities for the positive class
         all_y_prob.extend(val_prob)
+
+print("Actual training set: ", num_training_observations, " entries")
+print("Actual testing set:  ", num_testing_observations, " entries")
+print("Actual training/total ratio: ", num_training_observations / len(total_training_data))
+
 
 # Print final classification report for all splits and groups
 print("Final Classification Report with Gradient Boosting:")

@@ -1,0 +1,11 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 13:17:39.022856'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'... 

@@ -1,0 +1,33 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 11:37:59.196246'.
+Reading '../classifiedDAOs_preview(2).json'... Done.
+Total training Data: 313
+Size of training set: 219
+Size of test set: 94
+Preparing data for training...
+	Creating sequence for 'billionhappiness'... Done.
+	Creating sequence for 'blox'... Done.
+	Creating sequence for 'altava'... Done.
+	Creating sequence for 'bitkub-coin'... Done.
+	Creating sequence for 'aethir'... Done.
+	Creating sequence for 'amaterasu-omikami'... Done.
+	Creating sequence for 'breederdao'... Done.
+	Creating sequence for 'barnbridge'... Done.
+	Creating sequence for 'coinweb'... Done.
+	Creating sequence for 'aergo'... Done.
+	Creating sequence for 'access-protocol'... Done.
+	Creating sequence for 'areon-network'... Done.
+	Creating sequence for 'ampleforth'... Done.
+	Creating sequence for 'apyswap'... Done.
+	Creating sequence for 'centrifuge'... Done.
+	Creating sequence for 'cajutel'... Done.
+	Creating sequence for 'cloudbric'... Done.
+	Creating sequence for 'beoble'... Done.
+	Creating sequence for 'bitcoin-atom'... Done.
+	Creating sequence for 'artrade'... Done.
+	Creating sequence for 'celo'... Done.
+	Creating sequence for 'binance-usd'... Done.
+	Creating sequence for 'altered-state-token'... 

@@ -1,0 +1,17 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-11 14:31:08.644757'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'... Done.
+	Creating sequence for 'alphabet-erc404'... Done.
+	Creating sequence for 'across-protocol'... Done.
+	Creating sequence for 'clore-ai'... Done.
+	Creating sequence for 'alchemist'... Done.
+	Creating sequence for 'cnns'... Done.
+	Creating sequence for 'bnktothefuture'... 

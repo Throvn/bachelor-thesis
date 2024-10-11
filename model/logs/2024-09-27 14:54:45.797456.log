@@ -1,0 +1,171 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-09-27 14:54:45.797456'.
+Reading '../classifiedDAOs_preview.json'... Done.
+Total training Data: 159
+Size of training set: 111
+Size of test set: 48
+Preparing data for training...
+	Creating sequence for 'adreward'... Done.
+	Creating sequence for 'alethea-artificial-liquid-intelligence-token'... Done.
+	Creating sequence for 'aave-tusd'... Skipped.
+	Creating sequence for 'adventure-gold'... Done.
+	Creating sequence for 'acala'... Done.
+	Creating sequence for 'aragon'... Done.
+	Creating sequence for 'aptos'... Done.
+	Creating sequence for 'arcs'... Done.
+	Creating sequence for 'alchemix'... Done.
+	Creating sequence for 'aave-knc'... Skipped.
+	Creating sequence for 'aave-usdt'... Skipped.
+	Creating sequence for 'aeon'... Done.
+	Creating sequence for 'aurusx'... Done.
+	Creating sequence for 'aeternity'... Done.
+	Creating sequence for 'airight'... Done.
+	Creating sequence for 'adshares'... Done.
+	Creating sequence for 'aethir'... Done.
+	Creating sequence for 'access-protocol'... Done.
+	Creating sequence for 'aipad'... Done.
+	Creating sequence for 'arsenal-fan-token'... Done.
+	Creating sequence for 'aurory'... Done.
+	Creating sequence for 'aave-link'... Skipped.
+	Creating sequence for 'akash-network'... Done.
+	Creating sequence for 'apenft'... Done.
+	Creating sequence for 'art-de-finance'... Done.
+	Creating sequence for 'aura-finance'... Done.
+	Creating sequence for 'alkimi'... Done.
+	Creating sequence for 'azuki'... Done.
+	Creating sequence for 'acquire-fi'... Done.
+	Creating sequence for 'alva'... Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... Done.
+	Creating sequence for 'adamant-messenger'... Done.
+	Creating sequence for 'axel'... Done.
+	Creating sequence for 'akita-inu'... Done.
+	Creating sequence for 'aave-snx'... Skipped.
+	Creating sequence for 'andy-on-sol'... Done.
+	Creating sequence for 'across-protocol'... Done.
+	Creating sequence for 'aurora-near'... Done.
+	Creating sequence for 'attila'... Done.
+	Creating sequence for 'airswap'... Done.
+	Creating sequence for 'alphabet-erc404'... Done.
+	Creating sequence for 'autonolas'... Done.
+	Creating sequence for 'arcblock'... Done.
+	Creating sequence for 'arcona'... Done.
+	Creating sequence for 'acute-angle-cloud'... Done.
+	Creating sequence for 'apm-coin'... Done.
+	Creating sequence for 'aioz-network'... Done.
+	Creating sequence for 'axie-infinity'... Done.
+	Creating sequence for 'apeswap-finance'... Done.
+	Creating sequence for 'antimatter'... Done.
+	Creating sequence for 'acorn-protocol'... Done.
+	Creating sequence for 'aergo'... Done.
+	Creating sequence for 'amino'... Done.
+	Creating sequence for 'astar'... Done.
+	Creating sequence for '0x'... Done.
+	Creating sequence for 'aave-busd'... Skipped.
+	Creating sequence for 'argent'... Skipped.
+	Creating sequence for '88mph'... Done.
+	Creating sequence for 'alchemist'... Done.
+	Creating sequence for 'ambo'... Skipped.
+	Creating sequence for 'aave-mana'... Skipped.
+	Creating sequence for 'azuro-protocol'... Done.
+	Creating sequence for 'aave-dai'... Skipped.
+	Creating sequence for 'aerodrome-finance'... Done.
+	Creating sequence for 'areon-network'... Done.
+	Creating sequence for 'alvey-chain'... Done.
+	Creating sequence for 'amber'... Done.
+	Creating sequence for 'alpine-f1-team-fan-token'... Done.
+	Creating sequence for 'alitas'... Done.
+	Creating sequence for 'aave-bat'... Skipped.
+	Creating sequence for 'avinoc'... Done.
+	Creating sequence for 'aurora'... Done.
+	Creating sequence for '404aliens'... Done.
+	Creating sequence for 'aave-mkr'... Skipped.
+	Creating sequence for 'alchemy-pay'... Done.
+	Creating sequence for 'ampleforth'... Done.
+	Creating sequence for 'aelf'... Done.
+	Creating sequence for 'artrade'... Done.
+	Creating sequence for 'assemble-protocol'... Done.
+	Creating sequence for 'api3'... Done.
+	Creating sequence for 'aviator'... Done.
+	Creating sequence for 'astroswap'... Done.
+	Creating sequence for 'amepay'... Done.
+	Creating sequence for 'alpaca-finance'... Done.
+	Creating sequence for 'aigentx'... Done.
+	Creating sequence for '0chain'... Done.
+	Creating sequence for 'axelar'... Done.
+	Creating sequence for 'adapad'... Done.
+	Creating sequence for 'airtor-protocol'... Done.
+	Creating sequence for 'aion'... Done.
+	Creating sequence for 'affyn'... Done.
+	Creating sequence for 'ai-analysis-token'... Done.
+	Creating sequence for 'as-roma-fan-token'... Done.
+	Creating sequence for 'aimalls'... Done.
+	Creating sequence for 'altered-state-token'... Done.
+	Creating sequence for 'babb'... Done.
+	Creating sequence for 'aston-villa-fan-token'... Done.
+	Creating sequence for 'atlas-protocol'... Done.
+	Creating sequence for 'ark'... Done.
+	Creating sequence for '3space-art'... Done.
+	Creating sequence for 'atlas-navi'... Done.
+	Creating sequence for 'ageofgods'... Done.
+	Creating sequence for 'archloot'... Done.
+	Creating sequence for 'aventus'... Done.
+	Creating sequence for 'amond'... Done.
+	Creating sequence for '1inch'... Done.
+	Creating sequence for 'appcoins'... Done.
+	Creating sequence for 'altlayer'... Done.
+	Creating sequence for 'auctus'... Done.
+	Creating sequence for 'arweave'... Done.
+	Creating sequence for 'aeron'... Done.
+Preparing data for testing...
+	Creating sequence for 'adappter-token'... [[[datetime.time(0, 0) 0.020280654881 -1 -1]
+  [datetime.time(0, 0) 0.020755266126 -1 -1]
+  [datetime.time(0, 0) 0.018526940008 -1 -1]
+  ...
+  [datetime.time(0, 0) 0.016307940274 -1 -1]
+  [datetime.time(0, 0) 0.017557521483 -1 -1]
+  [datetime.time(0, 0) 0.017231502178 -1 -1]]
+
+ [[datetime.time(0, 0) 0.020755266126 -1 -1]
+  [datetime.time(0, 0) 0.018526940008 -1 -1]
+  [datetime.time(0, 0) 0.018929201177 -1 -1]
+  ...
+  [datetime.time(0, 0) 0.017557521483 -1 -1]
+  [datetime.time(0, 0) 0.017231502178 -1 -1]
+  [datetime.time(0, 0) 0.016419771156 -1 -1]]
+
+ [[datetime.time(0, 0) 0.018526940008 -1 -1]
+  [datetime.time(0, 0) 0.018929201177 -1 -1]
+  [datetime.time(0, 0) 0.018796583429 -1 -1]
+  ...
+  [datetime.time(0, 0) 0.017231502178 -1 -1]
+  [datetime.time(0, 0) 0.016419771156 -1 -1]
+  [datetime.time(0, 0) 0.016921577347 -1 -1]]
+
+ ...
+
+ [[datetime.time(0, 0) 0.001926003034 -1 -1]
+  [datetime.time(0, 0) 0.001862877754 -1 -1]
+  [datetime.time(0, 0) 0.001952764144 -1 -1]
+  ...
+  [datetime.time(0, 0) 0.002080207893 -1 -1]
+  [datetime.time(0, 0) 0.002131645102 -1 -1]
+  [datetime.time(0, 0) 0.00213804048 -1 -1]]
+
+ [[datetime.time(0, 0) 0.001862877754 -1 -1]
+  [datetime.time(0, 0) 0.001952764144 -1 -1]
+  [datetime.time(0, 0) 0.001951543105 -1 -1]
+  ...
+  [datetime.time(0, 0) 0.002131645102 -1 -1]
+  [datetime.time(0, 0) 0.00213804048 -1 -1]
+  [datetime.time(0, 0) 0.002108032951 -1 -1]]
+
+ [[datetime.time(0, 0) 0.001952764144 -1 -1]
+  [datetime.time(0, 0) 0.001951543105 -1 -1]
+  [datetime.time(0, 0) 0.001987616085 -1 -1]
+  ...
+  [datetime.time(0, 0) 0.00213804048 -1 -1]
+  [datetime.time(0, 0) 0.002108032951 -1 -1]
+  [datetime.time(0, 0) 0.002112232229 -1 -1]]]

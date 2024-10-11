@@ -1,0 +1,190 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 14:09:14.442204'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'... []
+[]
+Done.
+	Creating sequence for 'alphabet-erc404'... []
+[]
+Done.
+	Creating sequence for 'across-protocol'... []
+[]
+Done.
+	Creating sequence for 'clore-ai'... []
+[]
+Done.
+	Creating sequence for 'alchemist'... []
+[]
+Done.
+	Creating sequence for 'cnns'... []
+[]
+Done.
+	Creating sequence for 'bnktothefuture'... []
+[]
+Done.
+	Creating sequence for 'cornucopias'... []
+[]
+Done.
+	Creating sequence for 'aave-busd'... Skipped.
+	Creating sequence for 'base-protocol'... []
+[]
+Done.
+	Creating sequence for 'algorand'... []
+[]
+Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... []
+[]
+Done.
+	Creating sequence for 'bytom'... []
+[]
+Done.
+	Creating sequence for 'as-roma-fan-token'... []
+[]
+Done.
+	Creating sequence for 'cajutel'... []
+[]
+Done.
+	Creating sequence for 'chainbing'... []
+[]
+Done.
+	Creating sequence for 'calcium'... []
+[]
+Done.
+	Creating sequence for 'belt'... []
+[]
+Done.
+	Creating sequence for 'baasid'... []
+[]
+Done.
+	Creating sequence for 'cobak-token'... []
+[]
+Done.
+	Creating sequence for 'agatech'... []
+[]
+Done.
+	Creating sequence for 'clearpool'... []
+[]
+Done.
+	Creating sequence for 'bridge-mutual'... []
+[]
+Done.
+	Creating sequence for 'bitget-wallet-token'... []
+[]
+Done.
+	Creating sequence for 'chainx'... []
+[]
+Done.
+	Creating sequence for 'anyswap'... []
+[]
+Done.
+	Creating sequence for 'botto'... []
+[]
+Done.
+	Creating sequence for 'bitcoin'... []
+[]
+Done.
+	Creating sequence for 'centrifuge'... []
+[]
+Done.
+	Creating sequence for 'basis-cash'... []
+[]
+Done.
+	Creating sequence for 'bolt'... []
+[]
+Done.
+	Creating sequence for 'creo-engine'... []
+[]
+Done.
+	Creating sequence for 'band-protocol'... []
+[]
+Done.
+	Creating sequence for 'celestia'... []
+[]
+Done.
+	Creating sequence for 'antimatter'... []
+[]
+Done.
+	Creating sequence for 'bistroo'... []
+[]
+Done.
+	Creating sequence for 'aipad'... []
+[]
+Done.
+	Creating sequence for 'bidao'... []
+[]
+Done.
+	Creating sequence for 'bitmart-token'... []
+[]
+Done.
+	Creating sequence for 'blocknet'... []
+[]
+Done.
+	Creating sequence for 'aviator'... []
+[]
+Done.
+	Creating sequence for 'ark'... []
+[]
+Done.
+	Creating sequence for 'bifrost'... []
+[]
+Done.
+	Creating sequence for 'assemble-protocol'... []
+[]
+Done.
+	Creating sequence for 'aergo'... []
+[]
+Done.
+	Creating sequence for 'artrade'... []
+[]
+Done.
+	Creating sequence for 'access-protocol'... []
+[]
+Done.
+	Creating sequence for 'aurusx'... []
+[]
+Done.
+	Creating sequence for 'affyn'... []
+[]
+Done.
+	Creating sequence for 'adapad'... []
+[]
+Done.
+	Creating sequence for 'crypto-asset-governance-alliance'... []
+[]
+Done.
+	Creating sequence for 'compound-basic-attention-token'... []
+[]
+Done.
+	Creating sequence for 'aave-usdt'... Skipped.
+	Creating sequence for 'apy-finance'... []
+[]
+Done.
+	Creating sequence for 'arweave'... []
+[]
+Done.
+	Creating sequence for 'ageofgods'... []
+[]
+Done.
+	Creating sequence for 'biswap'... []
+[]
+Done.
+	Creating sequence for 'dafi-protocol'... []
+[]
+Done.
+	Creating sequence for 'biconomy'... []
+[]
+Done.
+	Creating sequence for 'cumrocket'... []
+[]
+Done.
+	Creating sequence for 'beoble'... []
+[]
+Done.
+	Creating sequence for 'apm-coin'... 

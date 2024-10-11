@@ -1,0 +1,754 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 13:44:13.992478'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alphabet-erc404'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'across-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'clore-ai'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alchemist'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cnns'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bnktothefuture'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cornucopias'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-busd'... Skipped.
+	Creating sequence for 'base-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'algorand'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bytom'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'as-roma-fan-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cajutel'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'chainbing'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'calcium'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'belt'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'baasid'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cobak-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'agatech'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'clearpool'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bridge-mutual'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitget-wallet-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'chainx'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'anyswap'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'botto'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitcoin'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'centrifuge'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'basis-cash'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bolt'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'creo-engine'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'band-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'celestia'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'antimatter'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bistroo'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aipad'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bidao'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitmart-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blocknet'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aviator'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ark'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bifrost'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'assemble-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aergo'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'artrade'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'access-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aurusx'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'affyn'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'adapad'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'crypto-asset-governance-alliance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'compound-basic-attention-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-usdt'... Skipped.
+	Creating sequence for 'apy-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'arweave'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ageofgods'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'biswap'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'dafi-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'biconomy'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cumrocket'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'beoble'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'apm-coin'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bottos'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-usdc'... Skipped.
+	Creating sequence for 'bullperks'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bittorrent'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aurory'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'acala'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'banano'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aston-martin-cognizant-fan-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'argent'... Skipped.
+	Creating sequence for 'celo-dollar'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blendr-network'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'adamant-messenger'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'compound-ether'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cloudbric'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'achain'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ben-the-dog'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'arkham'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cellframe'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'basic-attention-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'connex'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'coinsbit-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'chronicle'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'dacxi'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'arcs'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'billionhappiness'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'burger-swap'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for '1inch'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'binance-usd'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'beyond-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'binemon'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'b20'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bemo-staked-ton'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aeron'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'coldstack'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'brz'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blockstack'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bamboo-defi'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'astroswap'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'barnbridge'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitcoin-wizards'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'commune-ai'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alva'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'balpha'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cardano'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alvey-chain'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'adreward'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'acorn-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitcoin-cash'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bazaars'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cere-network'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bnsd-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitball-treasure'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'airight'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'auto'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'comtech-gold'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bluzelle'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitkub-coin'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aston-villa-fan-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'crash-on-base'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aeon'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alchemix'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitball'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'beefy-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'calamari-network'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'crown-by-third-time-games'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'apeswap-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ait-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ampleforth-governance-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aion'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'autonio'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'airtor-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'acquire-fi'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aptos'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cyberfi'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'carvertical'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'captain-tsubasa'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitcoin-diamond'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitcoin-gold'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cotrader'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'coin98'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'convex-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alpine-f1-team-fan-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ampleforth'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'airswap'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aerodrome-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blackcardcoin'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ambo'... Skipped.
+	Creating sequence for 'bepro-network'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'azuki'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aioz-network'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'astar'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'augur'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'adshares'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ceres'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'constitutiondao'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aragon'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'areon-network'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ai-analysis-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'armor'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitshares'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cryptozoon'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitdao'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'convergence'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'contentos'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alitas'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'akita-inu'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aeternity'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'brainlet'... Skipped.
+	Creating sequence for 'bread'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'contentbox'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bad-idea-ai'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'crypto-ai-robo'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blind-boxes'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'beam'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alien-worlds'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'banana-gun'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-mana'... Skipped.
+	Creating sequence for 'amino'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cashaa'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'catcoin'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'birake'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'altered-state-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bonfida'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bakerytoken'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-link'... Skipped.
+	Creating sequence for 'credefi'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bella-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ardor'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'acknoledger'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cryptogpt'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'civic'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bifi'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'axelar'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'amepay'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'clube-atletico-mineiro-fan-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cyclone-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'apenft'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'celo'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'coinweb'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'concordium'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'chex-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'coinex-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'appcoins'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'boba-network'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'arcona'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'azuro-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-tusd'... Skipped.
+	Creating sequence for 'babb'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cult-dao'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'avail'... Skipped.
+	Creating sequence for 'amond'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'akash-network'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitcicoin'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-knc'... Skipped.
+	Creating sequence for '0x'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'billy'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bbs-network'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'atlas-navi'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'api3'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'andy-on-sol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'credits'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for '5ire'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aethir'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'axie-infinity'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'compound-uniswap'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'beta-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blockasset'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'art-de-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for '3space-art'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'carry'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'amber'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alephium'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bibox-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'boson-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'arcblock'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'circuits-of-value'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'book-of-meme'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aventus'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'adappter-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for '404aliens'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cratos'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cartesi'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'choise'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'amaterasu-omikami'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'adventure-gold'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'celer-network'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitpanda-ecosystem-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'celo-euro'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bomb'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cosmos'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cudos'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bora'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'altlayer'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-dai'... Skipped.
+	Creating sequence for 'aimalls'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitrock'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'acute-angle-cloud'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blocery'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'beamswap'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alkimi'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'attila'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'brickken'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alethea-artificial-liquid-intelligence-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+Preparing data for testing...
+	Creating sequence for 'cetus-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-snx'... Skipped.
+	Creating sequence for 'axel'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bao-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'babyswap'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blockchain-monster-hunt'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'conun'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'brn-metaverse'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'berry-data'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-bat'... Skipped.
+	Creating sequence for 'ankr'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bondly'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cryptofranc'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'crowns'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bosagora'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bobo-coin'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'coinfi'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'crvusd'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for '88mph'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for '0chain'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'autonolas'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'byte'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'corite'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'breederdao'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'coti'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blockv'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aurora-near'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'audius'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cropbytes'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cheems'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'conceal'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ariva'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blockchain-certified-data-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'auctus'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitcoin-atom'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-mkr'... Skipped.
+	Creating sequence for 'alchemy-pay'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'befe'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'archloot'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aelf'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'arsenal-fan-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cookie'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'counterparty'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'binamon'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blast'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'coinpoker'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cvault-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alpaca-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aigentx'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bouncebit'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'balancer'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cindicator'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'altava'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'clintex-cti'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'anchor-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'daex'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'carbon-browser'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blazestake-staked-sol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'city-tycoon-games'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aura-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cryptoblades'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'atlas-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'covesting'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'boringdao'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'coreum'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bald'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cryptex-finance'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'daddy-tate'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'catheon-gaming'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-susd'... Skipped.
+	Creating sequence for 'cargox'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bone-shibaswap'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cortex'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'contracoin'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bittensor'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'big-time'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aurora'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aryacoin'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'allianceblock-nexera'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'alanyaspor-fan-token'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'curate'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for '8pay'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'big-data-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'coinbase-wrapped-staked-eth'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'analos'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'coreto'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blox'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'avinoc'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bitcore'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'akropolis'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'compound-0x'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bird-money'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'apyswap'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-wbtc'... Skipped.
+	Creating sequence for 'bridge-oracle'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ancient8'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'catman'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'astrotools'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'azbit'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'aave-zrx'... Skipped.
+	Creating sequence for 'cybervein'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bscpad'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ally'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'ambire-wallet'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'amazy'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cyberconnect'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'covalent'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'cypherium'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'bancor'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'blockbank'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'crabada'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'beyond-protocol'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+	Creating sequence for 'axis-defi'... Index(['slug', 'priceUSD', 'twitterFollowers', 'devActivity'], dtype='object')
+Done.
+Actual training set: 253 entries
+Actual testing set:  108 entries
+Actual training/total ratio: 0.6675461741424802

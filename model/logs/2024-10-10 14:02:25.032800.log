@@ -1,0 +1,1368 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 14:02:25.032800'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'alphabet-erc404'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'across-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'clore-ai'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'alchemist'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cnns'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bnktothefuture'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cornucopias'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aave-busd'... Skipped.
+	Creating sequence for 'base-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'algorand'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bytom'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'as-roma-fan-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cajutel'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'chainbing'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'calcium'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'belt'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'baasid'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cobak-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'agatech'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'clearpool'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bridge-mutual'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitget-wallet-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'chainx'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'anyswap'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'botto'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'centrifuge'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'basis-cash'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bolt'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'creo-engine'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'band-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'celestia'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'antimatter'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bistroo'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aipad'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bidao'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitmart-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'blocknet'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aviator'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'ark'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bifrost'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'assemble-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aergo'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'artrade'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'access-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aurusx'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'affyn'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'adapad'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'crypto-asset-governance-alliance'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'compound-basic-attention-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aave-usdt'... Skipped.
+	Creating sequence for 'apy-finance'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'arweave'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'ageofgods'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'biswap'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'dafi-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'biconomy'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cumrocket'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'beoble'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'apm-coin'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bottos'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aave-usdc'... Skipped.
+	Creating sequence for 'bullperks'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bittorrent'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aurory'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'acala'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'banano'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aston-martin-cognizant-fan-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'argent'... Skipped.
+	Creating sequence for 'celo-dollar'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'blendr-network'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'adamant-messenger'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'compound-ether'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cloudbric'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'achain'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'ben-the-dog'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'arkham'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cellframe'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'basic-attention-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'connex'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'coinsbit-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'chronicle'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'dacxi'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'arcs'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'billionhappiness'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'burger-swap'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for '1inch'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'binance-usd'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'beyond-finance'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'binemon'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'b20'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bemo-staked-ton'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aeron'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'coldstack'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'brz'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'blockstack'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bamboo-defi'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'astroswap'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'barnbridge'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-wizards'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'commune-ai'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'alva'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'balpha'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cardano'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'alvey-chain'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'adreward'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'acorn-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-cash'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bazaars'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cere-network'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bnsd-finance'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitball-treasure'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'airight'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'auto'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'comtech-gold'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bluzelle'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitkub-coin'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aston-villa-fan-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'crash-on-base'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aeon'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'alchemix'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitball'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'beefy-finance'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'calamari-network'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'crown-by-third-time-games'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'apeswap-finance'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'ait-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'ampleforth-governance-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aion'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'autonio'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'airtor-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'acquire-fi'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aptos'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cyberfi'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'carvertical'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'captain-tsubasa'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-diamond'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitcoin-gold'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cotrader'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'coin98'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'convex-finance'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'alpine-f1-team-fan-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'ampleforth'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'airswap'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aerodrome-finance'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'blackcardcoin'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'ambo'... Skipped.
+	Creating sequence for 'bepro-network'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'azuki'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aioz-network'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'astar'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'augur'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'adshares'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'ceres'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'constitutiondao'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aragon'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'areon-network'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'ai-analysis-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'armor'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitshares'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cryptozoon'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitdao'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'convergence'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'contentos'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'alitas'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'akita-inu'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aeternity'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'brainlet'... Skipped.
+	Creating sequence for 'bread'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'contentbox'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bad-idea-ai'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'crypto-ai-robo'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'blind-boxes'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'beam'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'alien-worlds'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'banana-gun'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aave-mana'... Skipped.
+	Creating sequence for 'amino'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cashaa'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'catcoin'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'birake'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'altered-state-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bonfida'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bakerytoken'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aave-link'... Skipped.
+	Creating sequence for 'credefi'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bella-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'ardor'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'acknoledger'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cryptogpt'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'civic'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bifi'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'axelar'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'amepay'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'clube-atletico-mineiro-fan-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cyclone-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'apenft'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'celo'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'coinweb'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'concordium'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'chex-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'coinex-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'appcoins'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'boba-network'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'arcona'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'azuro-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aave-tusd'... Skipped.
+	Creating sequence for 'babb'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cult-dao'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'avail'... Skipped.
+	Creating sequence for 'amond'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'akash-network'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitcicoin'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aave-knc'... Skipped.
+	Creating sequence for '0x'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'billy'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bbs-network'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'atlas-navi'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'api3'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'andy-on-sol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'credits'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for '5ire'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aethir'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'axie-infinity'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'compound-uniswap'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'beta-finance'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'blockasset'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'art-de-finance'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for '3space-art'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'carry'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'amber'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'alephium'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bibox-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'boson-protocol'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'arcblock'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'circuits-of-value'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'book-of-meme'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aventus'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'adappter-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for '404aliens'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cratos'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cartesi'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'choise'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'amaterasu-omikami'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'adventure-gold'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'celer-network'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitpanda-ecosystem-token'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'celo-euro'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bomb'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cosmos'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'cudos'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bora'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'altlayer'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'aave-dai'... Skipped.
+	Creating sequence for 'aimalls'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'bitrock'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'acute-angle-cloud'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'blocery'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'beamswap'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'alkimi'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'attila'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'brickken'... Len price:1
+[]
+[]
+Done.
+	Creating sequence for 'alethea-artificial-liquid-intelligence-token'... Len price:1
+[]
+[]
+Done.
+Preparing data for testing...
+	Creating sequence for 'cetus-protocol'... Len price:1
+[]
+Done.
+	Creating sequence for 'aave-snx'... Skipped.
+	Creating sequence for 'axel'... Len price:1
+[]
+Done.
+	Creating sequence for 'bao-finance'... Len price:1
+[]
+Done.
+	Creating sequence for 'babyswap'... Len price:1
+[]
+Done.
+	Creating sequence for 'blockchain-monster-hunt'... Len price:1
+[]
+Done.
+	Creating sequence for 'conun'... Len price:1
+[]
+Done.
+	Creating sequence for 'brn-metaverse'... Len price:1
+[]
+Done.
+	Creating sequence for 'berry-data'... Len price:1
+[]
+Done.
+	Creating sequence for 'aave-bat'... Skipped.
+	Creating sequence for 'ankr'... Len price:1
+[]
+Done.
+	Creating sequence for 'bondly'... Len price:1
+[]
+Done.
+	Creating sequence for 'cryptofranc'... Len price:1
+[]
+Done.
+	Creating sequence for 'crowns'... Len price:1
+[]
+Done.
+	Creating sequence for 'bosagora'... Len price:1
+[]
+Done.
+	Creating sequence for 'bobo-coin'... Len price:1
+[]
+Done.
+	Creating sequence for 'coinfi'... Len price:1
+[]
+Done.
+	Creating sequence for 'crvusd'... Len price:1
+[]
+Done.
+	Creating sequence for '88mph'... Len price:1
+[]
+Done.
+	Creating sequence for '0chain'... Len price:1
+[]
+Done.
+	Creating sequence for 'autonolas'... Len price:1
+[]
+Done.
+	Creating sequence for 'byte'... Len price:1
+[]
+Done.
+	Creating sequence for 'corite'... Len price:1
+[]
+Done.
+	Creating sequence for 'breederdao'... Len price:1
+[]
+Done.
+	Creating sequence for 'coti'... Len price:1
+[]
+Done.
+	Creating sequence for 'blockv'... Len price:1
+[]
+Done.
+	Creating sequence for 'aurora-near'... Len price:1
+[]
+Done.
+	Creating sequence for 'audius'... Len price:1
+[]
+Done.
+	Creating sequence for 'cropbytes'... Len price:1
+[]
+Done.
+	Creating sequence for 'cheems'... Len price:1
+[]
+Done.
+	Creating sequence for 'conceal'... Len price:1
+[]
+Done.
+	Creating sequence for 'ariva'... Len price:1
+[]
+Done.
+	Creating sequence for 'blockchain-certified-data-token'... Len price:1
+[]
+Done.
+	Creating sequence for 'auctus'... Len price:1
+[]
+Done.
+	Creating sequence for 'bitcoin-atom'... Len price:1
+[]
+Done.
+	Creating sequence for 'aave-mkr'... Skipped.
+	Creating sequence for 'alchemy-pay'... Len price:1
+[]
+Done.
+	Creating sequence for 'befe'... Len price:1
+[]
+Done.
+	Creating sequence for 'archloot'... Len price:1
+[]
+Done.
+	Creating sequence for 'aelf'... Len price:1
+[]
+Done.
+	Creating sequence for 'arsenal-fan-token'... Len price:1
+[]
+Done.
+	Creating sequence for 'cookie'... Len price:1
+[]
+Done.
+	Creating sequence for 'counterparty'... Len price:1
+[]
+Done.
+	Creating sequence for 'binamon'... Len price:1
+[]
+Done.
+	Creating sequence for 'blast'... Len price:1
+[]
+Done.
+	Creating sequence for 'coinpoker'... Len price:1
+[]
+Done.
+	Creating sequence for 'cvault-finance'... Len price:1
+[]
+Done.
+	Creating sequence for 'alpaca-finance'... Len price:1
+[]
+Done.
+	Creating sequence for 'aigentx'... Len price:1
+[]
+Done.
+	Creating sequence for 'bouncebit'... Len price:1
+[]
+Done.
+	Creating sequence for 'balancer'... Len price:1
+[]
+Done.
+	Creating sequence for 'cindicator'... Len price:1
+[]
+Done.
+	Creating sequence for 'altava'... Len price:1
+[]
+Done.
+	Creating sequence for 'clintex-cti'... Len price:1
+[]
+Done.
+	Creating sequence for 'anchor-protocol'... Len price:1
+[]
+Done.
+	Creating sequence for 'aave'... Len price:1
+[]
+Done.
+	Creating sequence for 'daex'... Len price:1
+[]
+Done.
+	Creating sequence for 'carbon-browser'... Len price:1
+[]
+Done.
+	Creating sequence for 'blazestake-staked-sol'... Len price:1
+[]
+Done.
+	Creating sequence for 'city-tycoon-games'... Len price:1
+[]
+Done.
+	Creating sequence for 'aura-finance'... Len price:1
+[]
+Done.
+	Creating sequence for 'cryptoblades'... Len price:1
+[]
+Done.
+	Creating sequence for 'atlas-protocol'... Len price:1
+[]
+Done.
+	Creating sequence for 'covesting'... Len price:1
+[]
+Done.
+	Creating sequence for 'boringdao'... Len price:1
+[]
+Done.
+	Creating sequence for 'coreum'... Len price:1
+[]
+Done.
+	Creating sequence for 'bald'... Len price:1
+[]
+Done.
+	Creating sequence for 'cryptex-finance'... Len price:1
+[]
+Done.
+	Creating sequence for 'daddy-tate'... Len price:1
+[]
+Done.
+	Creating sequence for 'catheon-gaming'... Len price:1
+[]
+Done.
+	Creating sequence for 'aave-susd'... Skipped.
+	Creating sequence for 'cargox'... Len price:1
+[]
+Done.
+	Creating sequence for 'bone-shibaswap'... Len price:1
+[]
+Done.
+	Creating sequence for 'cortex'... Len price:1
+[]
+Done.
+	Creating sequence for 'contracoin'... Len price:1
+[]
+Done.
+	Creating sequence for 'bittensor'... Len price:1
+[]
+Done.
+	Creating sequence for 'big-time'... Len price:1
+[]
+Done.
+	Creating sequence for 'aurora'... Len price:1
+[]
+Done.
+	Creating sequence for 'aryacoin'... Len price:1
+[]
+Done.
+	Creating sequence for 'allianceblock-nexera'... Len price:1
+[]
+Done.
+	Creating sequence for 'alanyaspor-fan-token'... Len price:1
+[]
+Done.
+	Creating sequence for 'curate'... Len price:1
+[]
+Done.
+	Creating sequence for '8pay'... Len price:1
+[]
+Done.
+	Creating sequence for 'big-data-protocol'... Len price:1
+[]
+Done.
+	Creating sequence for 'coinbase-wrapped-staked-eth'... Len price:1
+[]
+Done.
+	Creating sequence for 'analos'... Len price:1
+[]
+Done.
+	Creating sequence for 'coreto'... Len price:1
+[]
+Done.
+	Creating sequence for 'blox'... Len price:1
+[]
+Done.
+	Creating sequence for 'avinoc'... Len price:1
+[]
+Done.
+	Creating sequence for 'bitcore'... Len price:1
+[]
+Done.
+	Creating sequence for 'akropolis'... Len price:1
+[]
+Done.
+	Creating sequence for 'compound-0x'... Len price:1
+[]
+Done.
+	Creating sequence for 'bird-money'... Len price:1
+[]
+Done.
+	Creating sequence for 'apyswap'... Len price:1
+[]
+Done.
+	Creating sequence for 'aave-wbtc'... Skipped.
+	Creating sequence for 'bridge-oracle'... Len price:1
+[]
+Done.
+	Creating sequence for 'ancient8'... Len price:1
+[]
+Done.
+	Creating sequence for 'catman'... Len price:1
+[]
+Done.
+	Creating sequence for 'astrotools'... Len price:1
+[]
+Done.
+	Creating sequence for 'azbit'... Len price:1
+[]
+Done.
+	Creating sequence for 'aave-zrx'... Skipped.
+	Creating sequence for 'cybervein'... Len price:1
+[]
+Done.
+	Creating sequence for 'bscpad'... Len price:1
+[]
+Done.
+	Creating sequence for 'ally'... Len price:1
+[]
+Done.
+	Creating sequence for 'ambire-wallet'... Len price:1
+[]
+Done.
+	Creating sequence for 'amazy'... Len price:1
+[]
+Done.
+	Creating sequence for 'cyberconnect'... Len price:1
+[]
+Done.
+	Creating sequence for 'covalent'... Len price:1
+[]
+Done.
+	Creating sequence for 'cypherium'... Len price:1
+[]
+Done.
+	Creating sequence for 'bancor'... Len price:1
+[]
+Done.
+	Creating sequence for 'blockbank'... Len price:1
+[]
+Done.
+	Creating sequence for 'crabada'... Len price:1
+[]
+Done.
+	Creating sequence for 'beyond-protocol'... Len price:1
+[]
+Done.
+	Creating sequence for 'axis-defi'... Len price:1
+[]
+Done.
+Actual training set: 253 entries
+Actual testing set:  108 entries
+Actual training/total ratio: 0.6675461741424802

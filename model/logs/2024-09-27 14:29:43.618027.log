@@ -1,0 +1,222 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-09-27 14:29:43.618027'.
+Reading '../classifiedDAOs_preview.json'... Done.
+Total training Data: 159
+Size of training set: 111
+Size of test set: 48
+Preparing data for training...
+	Creating sequence for 'adreward'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'alethea-artificial-liquid-intelligence-token'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aave-tusd'... Skipped.
+	Creating sequence for 'adventure-gold'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'acala'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aragon'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aptos'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'arcs'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'alchemix'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aave-knc'... Skipped.
+	Creating sequence for 'aave-usdt'... Skipped.
+	Creating sequence for 'aeon'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aurusx'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aeternity'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'airight'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'adshares'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aethir'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'access-protocol'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aipad'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'arsenal-fan-token'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aurory'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aave-link'... Skipped.
+	Creating sequence for 'akash-network'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'apenft'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'art-de-finance'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aura-finance'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'alkimi'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'azuki'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'acquire-fi'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'alva'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'adamant-messenger'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'axel'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'akita-inu'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aave-snx'... Skipped.
+	Creating sequence for 'andy-on-sol'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'across-protocol'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aurora-near'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'attila'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'airswap'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'alphabet-erc404'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'autonolas'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'arcblock'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'arcona'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'acute-angle-cloud'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'apm-coin'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aioz-network'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'axie-infinity'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'apeswap-finance'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'antimatter'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'acorn-protocol'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aergo'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'amino'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'astar'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for '0x'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aave-busd'... Skipped.
+	Creating sequence for 'argent'... Skipped.
+	Creating sequence for '88mph'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'alchemist'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'ambo'... Skipped.
+	Creating sequence for 'aave-mana'... Skipped.
+	Creating sequence for 'azuro-protocol'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aave-dai'... Skipped.
+	Creating sequence for 'aerodrome-finance'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'areon-network'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'alvey-chain'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'amber'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'alpine-f1-team-fan-token'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'alitas'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aave-bat'... Skipped.
+	Creating sequence for 'avinoc'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aurora'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for '404aliens'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aave-mkr'... Skipped.
+	Creating sequence for 'alchemy-pay'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'ampleforth'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aelf'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'artrade'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'assemble-protocol'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'api3'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aviator'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'astroswap'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'amepay'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'alpaca-finance'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aigentx'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for '0chain'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'axelar'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'adapad'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'airtor-protocol'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aion'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'affyn'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'ai-analysis-token'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'as-roma-fan-token'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aimalls'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'altered-state-token'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'babb'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aston-villa-fan-token'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'atlas-protocol'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'ark'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for '3space-art'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'atlas-navi'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'ageofgods'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'archloot'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aventus'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'amond'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for '1inch'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'appcoins'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'altlayer'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'auctus'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'arweave'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+	Creating sequence for 'aeron'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']
+Done.
+Preparing data for testing...
+	Creating sequence for 'adappter-token'... ['datetime', 'priceUSD', 'twitterFollowers', 'devActivity', 'isActive']

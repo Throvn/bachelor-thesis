@@ -1,0 +1,195 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-10 23:36:20.975835'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+	Creating sequence for 'chiliz'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alphabet-erc404'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'across-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'clore-ai'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'alchemist'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cnns'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bnktothefuture'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cornucopias'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aave-busd'... Skipped.
+	Creating sequence for 'base-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'algorand'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bytom'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'as-roma-fan-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cajutel'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'chainbing'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'calcium'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'belt'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'baasid'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cobak-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'agatech'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'clearpool'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bridge-mutual'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitget-wallet-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'chainx'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'anyswap'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'botto'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitcoin'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'centrifuge'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'basis-cash'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bolt'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'creo-engine'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'band-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'celestia'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'antimatter'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bistroo'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aipad'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bidao'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bitmart-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'blocknet'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aviator'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ark'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'bifrost'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'assemble-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aergo'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'artrade'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'access-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aurusx'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'affyn'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'adapad'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'crypto-asset-governance-alliance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'compound-basic-attention-token'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'aave-usdt'... Skipped.
+	Creating sequence for 'apy-finance'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'arweave'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'ageofgods'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'biswap'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'dafi-protocol'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'biconomy'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'cumrocket'... Insufficient data for window size 60. Skipping.
+[]
+Done.
+	Creating sequence for 'beoble'... []
+[]
+Done.
+	Creating sequence for 'apm-coin'... 61    [{'datetime': '2019-12-27T00:00:00Z', 'value':...
+Name: priceUSD, dtype: object
+                                             priceUSD  ...                                        devActivity
+61  [{'datetime': '2019-12-27T00:00:00Z', 'value':...  ...  [{'datetime': '2009-01-02T00:00:00Z', 'value':...
+
+[1 rows x 3 columns]
