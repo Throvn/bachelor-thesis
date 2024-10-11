@@ -1,0 +1,21 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-11 20:05:28.228245'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Preparing data for training...
+<torch.utils.data.dataloader.DataLoader object at 0x121ebc980>
+Preparing data for testing...
+Trained so far:224
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'cindicator'... 

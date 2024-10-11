@@ -1,0 +1,23 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-11 18:27:00.962934'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 265
+Size of test set: 114
+Preparing data for training...
+<torch.utils.data.dataloader.DataLoader object at 0x125f6f770>
+Preparing data for testing...
+Parameters:
+	Num epochs: 30
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'covalent'... Done.
+Training group 0, split 1

@@ -10,6 +10,9 @@ import xgboost as xgb
 from typing import Final, Sequence, Any
 from datetime import datetime
 import json
+
+from model import SingleInputLSTMClassifier
+from preparation import create_sequences
 print(torch.__version__)
 script_start = datetime.now()
 
@@ -43,69 +46,6 @@ print("Done.")
 total_entries = len(total_training_data)
 print("Total training Data: ", total_entries)
 
-# Split total_training_data into training and testing datasets (70/30)
-split_index = int(total_entries * 0.7)
-grouped_train = total_training_data[:split_index]
-grouped_test = total_training_data[split_index:]
-print("Size of training set: ", len(grouped_train))
-print("Size of test set: ", len(grouped_test))
-
-##1 Init function for TimeSeriesSplit (ensures robustness of prediction results, by implementing 'granular' training)
-
-def create_sequences(observation: pd.Series, window_size: int):
-    X_seq, y_seq = [], []
-
-    # Convert each subcategory of observation into a DataFrame, indexed by datetime
-    price_df = pd.DataFrame(observation['priceUSD']).rename(columns={'value': 'priceUSD'})
-    dev_df = pd.DataFrame(observation['devActivity']).rename(columns={'value': 'devActivity'})
-    twitter_df = pd.DataFrame(observation['twitterFollowers']).rename(columns={'value': 'twitterFollowers'})
-    
-    # Handle empty DataFrames by creating a 'datetime' column if necessary
-    if price_df.empty or 'datetime' not in price_df.columns:
-        print("Price data is missing or empty.")
-        return np.array([]), np.array([])
-
-    # Ensure 'datetime' column exists in dev_df and twitter_df, or else add it as NaN for alignment
-    if dev_df.empty:
-        dev_df = pd.DataFrame({'datetime': price_df['datetime'], 'devActivity': [np.nan] * len(price_df)})
-    if twitter_df.empty:
-        twitter_df = pd.DataFrame({'datetime': price_df['datetime'], 'twitterFollowers': [np.nan] * len(price_df)})
-
-    # The isActive is already aligned with priceUSD, so no need to merge on datetime
-    isActive = observation['isActive']
-
-    # print(dev_df)
-    # Merge the dataframes on datetime
-    df = price_df.merge(dev_df, on='datetime', how='outer') \
-                 .merge(twitter_df, on='datetime', how='outer')
-
-    # Sort by datetime to ensure proper sequence
-    df = df.sort_values(by='datetime').reset_index(drop=True)
-
-    # Fill any missing values with interpolation for the features
-    df[['priceUSD', 'devActivity', 'twitterFollowers']] = df[['priceUSD', 'devActivity', 'twitterFollowers']].interpolate(method='linear')
-
-    # Ensure we have enough data points for the specified window size
-    if len(df) < window_size:
-        print(f"Insufficient data for window size {window_size}. Skipping.")
-        return np.array([]), np.array([])
-
-    # Iterate and create sequences
-    # Limit to 3000 to not run out of mps space.
-    for i in range(min(len(isActive) - window_size, 3000)):
-        # Extract the window of features
-        X_window = df[['priceUSD', 'devActivity', 'twitterFollowers']].iloc[i:(i + window_size)].values
-        X_seq.append(X_window)
-
-        # print("Lengths:", len(isActive), i + window_size - 1, len(df['priceUSD']))
-        # Extract the target value for the end of the window from isActive array
-        y_seq.append(isActive[i + window_size - 1])
-
-    # Convert lists to numpy arrays
-    X_seq = np.asarray(X_seq)
-    y_seq = np.asarray(y_seq)
-
-    return X_seq, y_seq
 
 # TODO: GET THE FUCKING LSTM TO WORK AGAIN. FASTER THAN BEFORE. AND IMPLEMENT SAVING OF THE MODEL!
 
@@ -136,7 +76,7 @@ class TrainingDataset(torch.utils.data.Dataset):
             return np.array([]), np.array([])
 
         X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
-        # print(X_seq)
+        print(X_seq, y_seq)
         num_training_observations += 1
         print("Done.")
 
@@ -147,79 +87,12 @@ training_data = TrainingDataset()
 train_dataloader = torch.utils.data.DataLoader(training_data, batch_size=1, shuffle=True)
 print(train_dataloader)
 
-# def trainIterator():
-#     global num_training_observations
-#     for index, observation in grouped_train.iterrows():
-#         index: int
-#         observation: pd.Series
-
-#         print("\tCreating sequence for '" + observation.slug + "'... ", end="")
-#         if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
-#             print("Skipped.")
-#             continue
-
-#         X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
-#         # print(X_seq)
-#         yield X_seq, y_seq
-#         # print("  " + str(y_seq) + "  ", end="")
-#         num_training_observations += 1
-#         print("Done.")
 
 print("Preparing data for testing...") 
 # Check if a GPU is available
 device = torch.device('mps')
 
-# TODO: Figure out what we need this for. Currently unused.
-# def testIterator():
-#     global num_testing_observations
-#     for index, observation in grouped_test.iterrows():
-#         index: int
-#         observation: pd.Series
 
-#         print("\tCreating sequence for '" + observation.slug + "'... ", end="")
-#         if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
-#             print("Skipped.")
-#             continue
-
-#         X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
-#         val_input = torch.tensor(X_seq, dtype=torch.float32, device=device)
-#         val_target = torch.tensor(y_seq, dtype=torch.float32, device=device)
-#         yield val_input, val_target
-#         num_testing_observations += 1
-#         print("Done.")
-
-##3 Init Single Input LSTM
-
-class SingleInputLSTMClassifier(nn.Module):
-    def __init__(self, input_dim, hidden_units=128):
-        super(SingleInputLSTMClassifier, self).__init__()
-        self.hidden_units = hidden_units
-        self.lstm1 = nn.LSTM(input_dim, hidden_units, batch_first=True, bidirectional=True) #not bidirectional architecture
-        self.dropout1 = nn.Dropout(0.5) #note Dropout
-        self.relu1 = nn.ReLU() #note ReLU activation function
-        self.lstm2 = nn.LSTM(hidden_units * 2, hidden_units, batch_first=True, bidirectional=True)
-        self.dropout2 = nn.Dropout(0.3) #note Dropout
-        self.relu2 = nn.ReLU()
-        self.fc = nn.Linear(hidden_units * 2, 1)
-        self.sigmoid = nn.Sigmoid() #note Sigmoid Output (min val: 0/ max val: 1)
-
-    def forward(self, x):
-        batch_size = x.size(0)
-        h0 = torch.zeros(2, batch_size, self.hidden_units, device=x.device)
-        c0 = torch.zeros(2, batch_size, self.hidden_units, device=x.device)
-        out, _ = self.lstm1(x, (h0, c0))
-        out = self.dropout1(out)
-        out = self.relu1(out)
-
-        h1 = torch.zeros(2, batch_size, self.hidden_units, device=x.device)
-        c1 = torch.zeros(2, batch_size, self.hidden_units, device=x.device)
-        out, _ = self.lstm2(out, (h1, c1))
-        out = self.dropout2(out)
-        out = self.relu2(out)
-
-        out = self.fc(out[:, -1, :])
-        out = self.sigmoid(out)
-        return out
 
 
 
@@ -229,15 +102,20 @@ input_dim=(num_features)
 
 model = SingleInputLSTMClassifier(input_dim).to(device)
 
-checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True)
-model.load_state_dict(checkpoint['model_state_dict'])
+MODEL_SAVE_PATH = "./model_file"
+import os
+checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
+daosTrainedOn = checkpoint['daosTrainedOn'] if checkpoint else 0
+print("Trained so far:", daosTrainedOn)
+if checkpoint:
+    model.load_state_dict(checkpoint['model_state_dict'])
 
 
 ##5 Run the Model -> Gives output as classification report
 
 # Parameters
 print("Parameters:")
-num_epochs = 30 # 60
+num_epochs = 60
 print("\tNum epochs: ", num_epochs)
 initial_lr = 0.001 # 0.005
 print("\tInitial learning rate: ", initial_lr)
@@ -263,9 +141,6 @@ criterion = nn.BCEWithLogitsLoss()
 
 # Training and validation
 model.train()
-train_losses = []
-val_losses = []
-avg_gradient_norms = []
 
 # For tracking results
 train_results = {}
@@ -274,42 +149,38 @@ val_results = {}
 # Aggregated predictions and true labels for final evaluation
 all_y_true = []
 all_y_pred = []
-all_y_prob = []
 
 tscv = TimeSeriesSplit(n_splits=TIMESERIES_SPLITS)
 # Grouped time series split
 for name, (X, y) in enumerate(train_dataloader):
     # Bring tensor into the right shape for TimeSplit (from: (1, n_timesteps, n_windows, n_features), to: (n_samples, n_features))
+    # Move to tensors to gpu if possible
     X = torch.nan_to_num(X, nan=0.0).squeeze().to(torch.float32).to(device)
     y = y.squeeze().to(torch.float32).to(device)
-    # X = input_streams[name]
-    # y = target_streams[name]
     splits = tscv.split(X.cpu().numpy())
 
     for split_id, (train_index, val_index) in enumerate(splits):
-        torch.mps.empty_cache()
         print(f"Training group {name}, split {split_id + 1}")
 
         X_train, X_val = X[train_index], X[val_index]
         y_train, y_val = y[train_index], y[val_index]
 
-        # X_train_tensor = torch.tensor(X_train, dtype=torch.float32, device=device)
-        # y_train_tensor = torch.tensor(y_train, dtype=torch.float32, device=device)
-        # X_val_tensor = torch.tensor(X_val, dtype=torch.float32, device=device)
-        # y_val_tensor = torch.tensor(y_val, dtype=torch.float32, device=device)
         X_train_tensor = X_train
         y_train_tensor = y_train
         X_val_tensor = X_val
         y_val_tensor = y_val
 
         optimizer = torch.optim.Adam(model.parameters(), lr=initial_lr)
-        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+        if checkpoint:
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
         scheduler_plateau = ReduceLROnPlateau(optimizer, 'min', patience=patience, factor=0.1)
         scheduler_cyclic = torch.optim.lr_scheduler.CyclicLR(optimizer, base_lr=0.001, max_lr=0.01, step_size_up=10, mode='triangular2', cycle_momentum=False)
         early_stopping_counter = 0
         best_val_loss = float('inf')
 
         for epoch in range(num_epochs):
+            if epoch % 20:
+                torch.mps.empty_cache()
             model.train()
             epoch_train_loss = 0.0
             epoch_val_loss = 0.0
@@ -344,7 +215,6 @@ for name, (X, y) in enumerate(train_dataloader):
 
             avg_train_loss = epoch_train_loss / len(train_index)
             avg_val_loss = epoch_val_loss / len(val_index)
-            avg_gradient_norm = sum(epoch_gradients) / len(epoch_gradients)
 
             # Track losses and gradients
             if (name, split_id) not in train_results:
@@ -353,14 +223,13 @@ for name, (X, y) in enumerate(train_dataloader):
 
             train_results[(name, split_id)].append(avg_train_loss)
             val_results[(name, split_id)].append(avg_val_loss)
-            avg_gradient_norms.append(avg_gradient_norm)
 
             # Step the scheduler based on the validation loss
             scheduler_plateau.step(avg_val_loss)
 
             # Print epoch summary
             __builtins__['print'](f'Group {name}, Split {split_id + 1}, Epoch {epoch + 1}/{num_epochs}, '
-                  f'Train Loss: {avg_train_loss:.4f}, Validation Loss: {avg_val_loss:.4f}, '
+                  f'Train Loss: {avg_train_loss:.6f}, Validation Loss: {avg_val_loss:.6f}, '
                   f'Learning Rate: {optimizer.param_groups[0]["lr"]:.6f}')
 
             # Early stopping
@@ -393,7 +262,13 @@ for name, (X, y) in enumerate(train_dataloader):
         
         #predict probabilities for ROC AUC
         val_prob = gbm.predict(val_output) # [:, 1]  # Get probabilities for the positive class
-        all_y_prob.extend(val_prob)
+    
+    daosTrainedOn += 1
+    torch.save({
+        'daosTrainedOn': daosTrainedOn,
+        'model_state_dict': model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict(),
+    }, MODEL_SAVE_PATH)
 
 print("Actual training set: ", num_training_observations, " entries")
 print("Actual testing set:  ", num_testing_observations, " entries")
