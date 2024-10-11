@@ -91,7 +91,8 @@ def create_sequences(observation: pd.Series, window_size: int):
         return np.array([]), np.array([])
 
     # Iterate and create sequences
-    for i in range(len(isActive) - window_size):
+    # Limit to 3000 to not run out of mps space.
+    for i in range(min(len(isActive) - window_size, 3000)):
         # Extract the window of features
         X_window = df[['priceUSD', 'devActivity', 'twitterFollowers']].iloc[i:(i + window_size)].values
         X_seq.append(X_window)
@@ -101,61 +102,91 @@ def create_sequences(observation: pd.Series, window_size: int):
         y_seq.append(isActive[i + window_size - 1])
 
     # Convert lists to numpy arrays
-    X_seq = np.array(X_seq)
-    y_seq = np.array(y_seq)
+    X_seq = np.asarray(X_seq)
+    y_seq = np.asarray(y_seq)
 
     return X_seq, y_seq
 
 # TODO: GET THE FUCKING LSTM TO WORK AGAIN. FASTER THAN BEFORE. AND IMPLEMENT SAVING OF THE MODEL!
 
 ##2 define tensor structure
-input_streams = {}
-target_streams = {}
 print("Preparing data for training...") 
 num_training_observations = 0
 num_testing_observations = 0
-def trainIterator():
-    global num_training_observations
-    for index, observation in grouped_train.iterrows():
-        index: int
-        observation: pd.Series
 
+class TrainingDataset(torch.utils.data.Dataset):
+    def _check_lengths(self, row):
+        return len(row['twitterFollowers'] or "") >= WINDOW_SIZE and len(row['priceUSD'] or "") >= WINDOW_SIZE and len(row['devActivity'] or "") >= WINDOW_SIZE
+
+    def __init__(self, transform=None, target_transform=None):
+        self.data = pd.read_json(DATA_FILE_NAME)
+        self.data = self.data[self.data.apply(self._check_lengths, axis=1)]
+        self.transform = transform
+        self.target_transform = target_transform
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        global num_training_observations
+        observation = self.data.iloc[idx]
         print("\tCreating sequence for '" + observation.slug + "'... ", end="")
         if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
             print("Skipped.")
-            continue
+            return np.array([]), np.array([])
 
         X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
         # print(X_seq)
-        input_streams[index] = X_seq
-        target_streams[index] = y_seq
-        yield X_seq, y_seq
-        # print("  " + str(y_seq) + "  ", end="")
         num_training_observations += 1
         print("Done.")
+
+        return X_seq.squeeze(), y_seq.squeeze()
+        # print("  " + str(y_seq) + "  ", end="")
+
+training_data = TrainingDataset()
+train_dataloader = torch.utils.data.DataLoader(training_data, batch_size=1, shuffle=True)
+print(train_dataloader)
+
+# def trainIterator():
+#     global num_training_observations
+#     for index, observation in grouped_train.iterrows():
+#         index: int
+#         observation: pd.Series
+
+#         print("\tCreating sequence for '" + observation.slug + "'... ", end="")
+#         if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
+#             print("Skipped.")
+#             continue
+
+#         X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
+#         # print(X_seq)
+#         yield X_seq, y_seq
+#         # print("  " + str(y_seq) + "  ", end="")
+#         num_training_observations += 1
+#         print("Done.")
 
 print("Preparing data for testing...") 
 # Check if a GPU is available
 device = torch.device('mps')
 
 # TODO: Figure out what we need this for. Currently unused.
-def testIterator():
-    global num_testing_observations
-    for index, observation in grouped_test.iterrows():
-        index: int
-        observation: pd.Series
+# def testIterator():
+#     global num_testing_observations
+#     for index, observation in grouped_test.iterrows():
+#         index: int
+#         observation: pd.Series
 
-        print("\tCreating sequence for '" + observation.slug + "'... ", end="")
-        if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
-            print("Skipped.")
-            continue
+#         print("\tCreating sequence for '" + observation.slug + "'... ", end="")
+#         if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
+#             print("Skipped.")
+#             continue
 
-        X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
-        val_input = torch.tensor(X_seq, dtype=torch.float32, device=device)
-        val_target = torch.tensor(y_seq, dtype=torch.float32, device=device)
-        yield val_input, val_target
-        num_testing_observations += 1
-        print("Done.")
+#         X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
+#         val_input = torch.tensor(X_seq, dtype=torch.float32, device=device)
+#         val_target = torch.tensor(y_seq, dtype=torch.float32, device=device)
+#         yield val_input, val_target
+#         num_testing_observations += 1
+#         print("Done.")
 
 ##3 Init Single Input LSTM
 
@@ -198,12 +229,15 @@ input_dim=(num_features)
 
 model = SingleInputLSTMClassifier(input_dim).to(device)
 
+checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True)
+model.load_state_dict(checkpoint['model_state_dict'])
+
 
 ##5 Run the Model -> Gives output as classification report
 
 # Parameters
 print("Parameters:")
-num_epochs = 60
+num_epochs = 30 # 60
 print("\tNum epochs: ", num_epochs)
 initial_lr = 0.001 # 0.005
 print("\tInitial learning rate: ", initial_lr)
@@ -220,7 +254,6 @@ gbm_params = {
     'n_estimators': 100,
     'objective': 'binary:logistic',
     'eval_metric': 'logloss',
-    'use_label_encoder': False,
     # TODO: Check that this value is actually true according to credible research.
     # 'scale_pos_weight': 0.8
 }
@@ -245,10 +278,13 @@ all_y_prob = []
 
 tscv = TimeSeriesSplit(n_splits=TIMESERIES_SPLITS)
 # Grouped time series split
-for name, (X, y) in enumerate(trainIterator()):
+for name, (X, y) in enumerate(train_dataloader):
+    # Bring tensor into the right shape for TimeSplit (from: (1, n_timesteps, n_windows, n_features), to: (n_samples, n_features))
+    X = torch.nan_to_num(X, nan=0.0).squeeze().to(torch.float32).to(device)
+    y = y.squeeze().to(torch.float32).to(device)
     # X = input_streams[name]
     # y = target_streams[name]
-    splits = tscv.split(X)
+    splits = tscv.split(X.cpu().numpy())
 
     for split_id, (train_index, val_index) in enumerate(splits):
         torch.mps.empty_cache()
@@ -257,12 +293,17 @@ for name, (X, y) in enumerate(trainIterator()):
         X_train, X_val = X[train_index], X[val_index]
         y_train, y_val = y[train_index], y[val_index]
 
-        X_train_tensor = torch.tensor(X_train, dtype=torch.float32).to(device)
-        y_train_tensor = torch.tensor(y_train, dtype=torch.float32).to(device)
-        X_val_tensor = torch.tensor(X_val, dtype=torch.float32).to(device)
-        y_val_tensor = torch.tensor(y_val, dtype=torch.float32).to(device)
+        # X_train_tensor = torch.tensor(X_train, dtype=torch.float32, device=device)
+        # y_train_tensor = torch.tensor(y_train, dtype=torch.float32, device=device)
+        # X_val_tensor = torch.tensor(X_val, dtype=torch.float32, device=device)
+        # y_val_tensor = torch.tensor(y_val, dtype=torch.float32, device=device)
+        X_train_tensor = X_train
+        y_train_tensor = y_train
+        X_val_tensor = X_val
+        y_val_tensor = y_val
 
         optimizer = torch.optim.Adam(model.parameters(), lr=initial_lr)
+        optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
         scheduler_plateau = ReduceLROnPlateau(optimizer, 'min', patience=patience, factor=0.1)
         scheduler_cyclic = torch.optim.lr_scheduler.CyclicLR(optimizer, base_lr=0.001, max_lr=0.01, step_size_up=10, mode='triangular2', cycle_momentum=False)
         early_stopping_counter = 0
