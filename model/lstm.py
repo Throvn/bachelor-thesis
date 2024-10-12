@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+from IPython.display import clear_output
 import numpy as np
 import pandas as pd
 import torch
@@ -7,9 +9,10 @@ from sklearn.model_selection import TimeSeriesSplit
 from sklearn.metrics import classification_report
 import xgboost as xgb
 
-from typing import Final, Sequence, Any
+from typing import Final
 from datetime import datetime
 import json
+import os
 
 from model import SingleInputLSTMClassifier
 from preparation import create_sequences
@@ -46,6 +49,18 @@ print("Done.")
 total_entries = len(total_training_data)
 print("Total training Data: ", total_entries)
 
+MODEL_SAVE_PATH = "./model_file"
+checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
+daosTrainedOn = checkpoint['daosTrainedOn'] if checkpoint else 0
+print("DAOs trained so far:", daosTrainedOn)
+
+# Split total_training_data into training and testing datasets (70/30)
+split_index = int(total_entries * 0.7)
+grouped_train = total_training_data[daosTrainedOn:split_index]
+grouped_test = total_training_data[split_index:]
+print("Size of training set: ", len(grouped_train))
+print("Size of test set: ", len(grouped_test))
+
 
 # TODO: GET THE FUCKING LSTM TO WORK AGAIN. FASTER THAN BEFORE. AND IMPLEMENT SAVING OF THE MODEL!
 
@@ -54,38 +69,55 @@ print("Preparing data for training...")
 num_training_observations = 0
 num_testing_observations = 0
 
-class TrainingDataset(torch.utils.data.Dataset):
-    def _check_lengths(self, row):
-        return len(row['twitterFollowers'] or "") >= WINDOW_SIZE and len(row['priceUSD'] or "") >= WINDOW_SIZE and len(row['devActivity'] or "") >= WINDOW_SIZE
+def trainIterator():
+    global num_training_observations
+    for index, observation in grouped_train.iterrows():
+        index: int
+        observation: pd.Series
 
-    def __init__(self, transform=None, target_transform=None):
-        self.data = pd.read_json(DATA_FILE_NAME)
-        self.data = self.data[self.data.apply(self._check_lengths, axis=1)]
-        self.transform = transform
-        self.target_transform = target_transform
-
-    def __len__(self):
-        return len(self.data)
-
-    def __getitem__(self, idx):
-        global num_training_observations
-        observation = self.data.iloc[idx]
         print("\tCreating sequence for '" + observation.slug + "'... ", end="")
         if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
             print("Skipped.")
-            return np.array([]), np.array([])
+            continue
 
         X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
-        print(X_seq, y_seq)
+        # print(X_seq)
+        yield X_seq, y_seq
+        # print("  " + str(y_seq) + "  ", end="")
         num_training_observations += 1
         print("Done.")
 
-        return X_seq.squeeze(), y_seq.squeeze()
-        # print("  " + str(y_seq) + "  ", end="")
+# class TrainingDataset(torch.utils.data.Dataset):
+#     def _check_lengths(self, row):
+#         return len(row['twitterFollowers'] or "") >= WINDOW_SIZE and len(row['priceUSD'] or "") >= WINDOW_SIZE and len(row['devActivity'] or "") >= WINDOW_SIZE
 
-training_data = TrainingDataset()
-train_dataloader = torch.utils.data.DataLoader(training_data, batch_size=1, shuffle=True)
-print(train_dataloader)
+#     def __init__(self):
+#         self.data = pd.read_json(DATA_FILE_NAME)
+#         self.data = self.data[self.data.apply(self._check_lengths, axis=1)]
+#         self.offset = 0
+
+#     def __len__(self):
+#         return len(self.data)
+
+#     def __getitem__(self, idx):
+#         global num_training_observations
+#         observation = self.data.iloc[idx]
+#         print("\tCreating sequence for '" + observation.slug + "'... ", end="")
+#         if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
+#             print("Skipped.")
+#             return np.array([]), np.array([])
+
+#         X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
+#         print(X_seq, y_seq)
+#         num_training_observations += 1
+#         print("Done.")
+
+#         return X_seq.squeeze(), y_seq.squeeze()
+#         # print("  " + str(y_seq) + "  ", end="")
+
+# training_data = TrainingDataset()
+# train_dataloader = torch.utils.data.DataLoader(training_data, batch_size=32, shuffle=True)
+# print(train_dataloader)
 
 
 print("Preparing data for testing...") 
@@ -102,11 +134,6 @@ input_dim=(num_features)
 
 model = SingleInputLSTMClassifier(input_dim).to(device)
 
-MODEL_SAVE_PATH = "./model_file"
-import os
-checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
-daosTrainedOn = checkpoint['daosTrainedOn'] if checkpoint else 0
-print("Trained so far:", daosTrainedOn)
 if checkpoint:
     model.load_state_dict(checkpoint['model_state_dict'])
 
@@ -137,7 +164,8 @@ gbm_params = {
 }
 print("Gradient boosting params: \n\t", json.dumps(gbm_params))
 # TODO: Explain in thesis: https://stackoverflow.com/a/68368157
-criterion = nn.BCEWithLogitsLoss()
+criterion = nn.BCELoss()
+# criterion = nn.BCEWithLogitsLoss()
 
 # Training and validation
 model.train()
@@ -150,16 +178,33 @@ val_results = {}
 all_y_true = []
 all_y_pred = []
 
+# Plotting
+fig, ax = plt.subplots(figsize=(10, 6))
+train_line, = ax.plot([], [], label='Training Loss')  # Empty plot for training loss
+val_line, = ax.plot([], [], label='Validation Loss')  # Empty plot for validation loss
+ax.set_xlabel('Epochs')
+ax.set_ylabel('Loss')
+ax.set_title('Training and Validation Loss Over Time')
+ax.legend()
+
+train_losses = []
+val_losses = []
+
 tscv = TimeSeriesSplit(n_splits=TIMESERIES_SPLITS)
 # Grouped time series split
-for name, (X, y) in enumerate(train_dataloader):
+for name, (X, y) in enumerate(trainIterator()):
+    if X.size <= 3 or y.size <= 3:
+        print(X.size, y.size)
+        continue
     # Bring tensor into the right shape for TimeSplit (from: (1, n_timesteps, n_windows, n_features), to: (n_samples, n_features))
     # Move to tensors to gpu if possible
-    X = torch.nan_to_num(X, nan=0.0).squeeze().to(torch.float32).to(device)
-    y = y.squeeze().to(torch.float32).to(device)
+    X = torch.tensor(X.squeeze().squeeze()).to(torch.float32).to(device)
+    X = torch.nan_to_num(X, nan=0.0)
+    y = torch.tensor(y).to(torch.float32).to(device)
     splits = tscv.split(X.cpu().numpy())
 
     for split_id, (train_index, val_index) in enumerate(splits):
+        torch.mps.empty_cache()
         print(f"Training group {name}, split {split_id + 1}")
 
         X_train, X_val = X[train_index], X[val_index]
@@ -179,8 +224,6 @@ for name, (X, y) in enumerate(train_dataloader):
         best_val_loss = float('inf')
 
         for epoch in range(num_epochs):
-            if epoch % 20:
-                torch.mps.empty_cache()
             model.train()
             epoch_train_loss = 0.0
             epoch_val_loss = 0.0
@@ -232,6 +275,10 @@ for name, (X, y) in enumerate(train_dataloader):
                   f'Train Loss: {avg_train_loss:.6f}, Validation Loss: {avg_val_loss:.6f}, '
                   f'Learning Rate: {optimizer.param_groups[0]["lr"]:.6f}')
 
+            # Plotting: Append the loss values to track them over time
+            train_losses.append(avg_train_loss)
+            val_losses.append(avg_val_loss)
+
             # Early stopping
             if avg_val_loss < best_val_loss:
                 best_val_loss = avg_val_loss
@@ -262,6 +309,17 @@ for name, (X, y) in enumerate(train_dataloader):
         
         #predict probabilities for ROC AUC
         val_prob = gbm.predict(val_output) # [:, 1]  # Get probabilities for the positive class
+
+
+        # Plot the losses dynamically
+        clear_output(wait=True)
+        # Update the plot data
+        train_line.set_data(range(len(train_losses)), train_losses)
+        val_line.set_data(range(len(val_losses)), val_losses)
+        ax.relim()  # Recalculate limits
+        ax.autoscale_view()  # Autoscale the view to see all data
+        plt.draw()
+        plt.pause(0.001)  # Small pause to update the plot
     
     daosTrainedOn += 1
     torch.save({
@@ -289,3 +347,11 @@ print(classification_report(all_y_true, all_y_pred_class, target_names=["Abandon
 print("Finished execution at '", str(datetime.now()), "'.")
 print("Execution took: ", (datetime.now() - script_start).total_seconds())
 print("-" * 50)
+
+# Assuming train_results and val_results are dictionaries containing the losses for each split.
+# Flatten out the results from each split if needed
+train_losses = [loss for key, values in train_results.items() for loss in values]
+val_losses = [loss for key, values in val_results.items() for loss in values]
+
+
+plt.show()

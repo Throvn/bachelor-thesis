@@ -41,7 +41,7 @@ def create_sequences(observation: pd.Series, window_size: int):
 
     # Iterate and create sequences
     # Limit to 3000 to not run out of mps space.
-    for i in range(len(df) - window_size, 0, -1):
+    for i in range(len(df) - window_size): # , 0, -1):
         # Extract the window of features
         X_window = df[['priceUSD', 'devActivity', 'twitterFollowers']].iloc[i:(i + window_size)].values
         X_seq.append(X_window)

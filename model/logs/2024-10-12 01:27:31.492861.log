@@ -1,0 +1,34 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-12 01:27:31.492861'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+Size of training set: 94
+Size of test set: 114
+Preparing data for training...
+Preparing data for testing...
+Trained so far:171
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'contentbox'... Training group 0, split 1
+	Early stopping at epoch 28
+	Y Train Labels:(array([0., 1.], dtype=float32), array([207, 331]))
+	Y Val Labels:(array([0.], dtype=float32), array([537]))
+Training group 0, split 2
+	Y Train Labels:(array([0., 1.], dtype=float32), array([744, 331]))
+	Y Val Labels:(array([0.], dtype=float32), array([537]))
+Training group 0, split 3
+	Early stopping at epoch 24
+	Y Train Labels:(array([0., 1.], dtype=float32), array([1281,  331]))
+	Y Val Labels:(array([0.], dtype=float32), array([537]))
+Done.
+	Creating sequence for 'bad-idea-ai'... 

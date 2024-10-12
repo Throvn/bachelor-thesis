@@ -1,0 +1,22 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-12 00:57:53.031132'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 335
+Size of training set: 234
+Size of test set: 101
+Preparing data for training...
+Preparing data for testing...
+Trained so far:121
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'aergo'... Training group 0, split 1
