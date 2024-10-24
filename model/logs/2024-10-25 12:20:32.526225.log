@@ -1,0 +1,95 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-25 12:20:32.526225'.
+Reading './balancedDataset.json'... Done.
+Total training Data: 1030
+DAOs trained so far:559
+Size of training set: 162
+Size of test set: 309
+Preparing data for training...
+Preparing data for testing...
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'compound-0x'... Training group 0, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([264]))
+	Y Val Labels:(array([1.], dtype=float32), array([263]))
+Training group 0, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([527]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([201,  62]))
+Training group 0, split 3
+	Early stopping at epoch 34
+	Y Train Labels:(array([0., 1.], dtype=float32), array([201, 589]))
+	Y Val Labels:(array([0.], dtype=float32), array([263]))
+Done.
+	Creating sequence for 'creo-engine'... Training group 1, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([205]))
+	Y Val Labels:(array([1.], dtype=float32), array([203]))
+Training group 1, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([408]))
+	Y Val Labels:(array([1.], dtype=float32), array([203]))
+Training group 1, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([611]))
+	Y Val Labels:(array([1.], dtype=float32), array([203]))
+Done.
+	Creating sequence for 'wormhole'... Training group 2, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([31]))
+	Y Val Labels:(array([1.], dtype=float32), array([28]))
+Training group 2, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([59]))
+	Y Val Labels:(array([1.], dtype=float32), array([28]))
+Training group 2, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([87]))
+	Y Val Labels:(array([1.], dtype=float32), array([28]))
+Done.
+	Creating sequence for 'epik-prime'... Training group 3, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([234]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([ 53, 178]))
+Training group 3, split 2
+	Early stopping at epoch 43
+	Y Train Labels:(array([0., 1.], dtype=float32), array([ 53, 412]))
+	Y Val Labels:(array([0.], dtype=float32), array([231]))
+Training group 3, split 3
+	Early stopping at epoch 27
+	Y Train Labels:(array([0., 1.], dtype=float32), array([284, 412]))
+	Y Val Labels:(array([0.], dtype=float32), array([231]))
+Done.
+	Creating sequence for 'etherland'... Training group 4, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([296]))
+	Y Val Labels:(array([1.], dtype=float32), array([296]))
+Training group 4, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([592]))
+	Y Val Labels:(array([1.], dtype=float32), array([296]))
+Training group 4, split 3
+	Early stopping at epoch 26
+	Y Train Labels:(array([1.], dtype=float32), array([888]))
+	Y Val Labels:(array([1.], dtype=float32), array([296]))
+Done.
+	Creating sequence for 'avinoc'... Training group 5, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([209]))
+	Y Val Labels:(array([1.], dtype=float32), array([208]))
+Training group 5, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([417]))
+	Y Val Labels:(array([1.], dtype=float32), array([208]))
+Training group 5, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([625]))
+	Y Val Labels:(array([1.], dtype=float32), array([208]))
+Done.
+	Creating sequence for 'graviocoin'... Training group 6, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([536]))
+	Y Val Labels:(array([1.], dtype=float32), array([536]))
+Training group 6, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([1072]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([387, 149]))
+Training group 6, split 3

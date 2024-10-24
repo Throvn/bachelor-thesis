@@ -18,7 +18,7 @@ torch.backends.cudnn.benchmark = False
 # CONSTANTS
 DATA_FILE_NAME = "../classifiedDAOs.json"
 WINDOW_SIZE = 60
-MODEL_SAVE_PATH = "./unidirectional_bce_model_full"
+MODEL_SAVE_PATH = "./unidirectional_bce_model_balanced"
 print(MODEL_SAVE_PATH)
 
 def testByName(name):
@@ -127,6 +127,7 @@ if sys.argv[1] == "batch":
 
     # Generate the classification report
     print("Final Classification Report:")
+    print("File: ", MODEL_SAVE_PATH)
     print(classification_report(all_y_true, all_y_pred_class, target_names=["Abandoned", "Operating"]))
 
     print(f"Evaluated on {num_testing_observations} test observations.")

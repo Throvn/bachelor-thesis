@@ -39,7 +39,7 @@ torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
 # CONSTANTS
-DATA_FILE_NAME: Final[str] = "../classifiedDAOs.json"
+DATA_FILE_NAME: Final[str] = "./balancedDataset.json"
 
 # Is this how many 'days' the time series should be predicted?
 WINDOW_SIZE: Final[int] = 60 # TODO: 120
@@ -55,7 +55,7 @@ print("Done.")
 total_entries = len(total_training_data)
 print("Total training Data: ", total_entries)
 
-MODEL_SAVE_PATH = "./unidirectional_bce_model_full"
+MODEL_SAVE_PATH = "./unidirectional_bce_model_balanced"
 checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
 daosTrainedOn = checkpoint['daosTrainedOn'] if checkpoint else 0
 print("DAOs trained so far:", daosTrainedOn)
