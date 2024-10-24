@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import torch
 import torch.nn as nn
+import random
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from sklearn.model_selection import TimeSeriesSplit
 from sklearn.metrics import classification_report
@@ -15,8 +16,8 @@ import json
 import os
 
 from model import SingleInputLSTMClassifier
+from focal_loss import FocalLoss
 from preparation import create_sequences
-print(torch.__version__)
 script_start = datetime.now()
 
 def print(*args, end="\n", flush=False):
@@ -24,16 +25,21 @@ def print(*args, end="\n", flush=False):
         for arg in args:
             f.write(str(arg))
         f.write(end)
-    __builtins__["print"](*args, end=end, flush=flush)
+    __builtins__.print(*args, end=end, flush=flush)
 
 
 print("\n\n")
 print("-" * 50)
 print("Starting lstm.py at '" + str(script_start) + "'.")
 
+torch.manual_seed(1337)
+np.random.seed(1337)
+random.seed(1337)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
 
 # CONSTANTS
-DATA_FILE_NAME: Final[str] = "./isDaoActiveData(4).json"
+DATA_FILE_NAME: Final[str] = "../classifiedDAOs.json"
 
 # Is this how many 'days' the time series should be predicted?
 WINDOW_SIZE: Final[int] = 60 # TODO: 120
@@ -49,7 +55,7 @@ print("Done.")
 total_entries = len(total_training_data)
 print("Total training Data: ", total_entries)
 
-MODEL_SAVE_PATH = "./model_file"
+MODEL_SAVE_PATH = "./unidirectional_bce_model_full"
 checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
 daosTrainedOn = checkpoint['daosTrainedOn'] if checkpoint else 0
 print("DAOs trained so far:", daosTrainedOn)
@@ -71,8 +77,7 @@ num_testing_observations = 0
 
 def trainIterator():
     global num_training_observations
-    for index, observation in grouped_train.iterrows():
-        index: int
+    for _, observation in grouped_train.iterrows():
         observation: pd.Series
 
         print("\tCreating sequence for '" + observation.slug + "'... ", end="")
@@ -86,38 +91,6 @@ def trainIterator():
         # print("  " + str(y_seq) + "  ", end="")
         num_training_observations += 1
         print("Done.")
-
-# class TrainingDataset(torch.utils.data.Dataset):
-#     def _check_lengths(self, row):
-#         return len(row['twitterFollowers'] or "") >= WINDOW_SIZE and len(row['priceUSD'] or "") >= WINDOW_SIZE and len(row['devActivity'] or "") >= WINDOW_SIZE
-
-#     def __init__(self):
-#         self.data = pd.read_json(DATA_FILE_NAME)
-#         self.data = self.data[self.data.apply(self._check_lengths, axis=1)]
-#         self.offset = 0
-
-#     def __len__(self):
-#         return len(self.data)
-
-#     def __getitem__(self, idx):
-#         global num_training_observations
-#         observation = self.data.iloc[idx]
-#         print("\tCreating sequence for '" + observation.slug + "'... ", end="")
-#         if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
-#             print("Skipped.")
-#             return np.array([]), np.array([])
-
-#         X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
-#         print(X_seq, y_seq)
-#         num_training_observations += 1
-#         print("Done.")
-
-#         return X_seq.squeeze(), y_seq.squeeze()
-#         # print("  " + str(y_seq) + "  ", end="")
-
-# training_data = TrainingDataset()
-# train_dataloader = torch.utils.data.DataLoader(training_data, batch_size=32, shuffle=True)
-# print(train_dataloader)
 
 
 print("Preparing data for testing...") 
@@ -165,6 +138,7 @@ gbm_params = {
 print("Gradient boosting params: \n\t", json.dumps(gbm_params))
 # TODO: Explain in thesis: https://stackoverflow.com/a/68368157
 criterion = nn.BCELoss()
+# criterion = FocalLoss(alpha=(1-0.77), gamma=2)
 # criterion = nn.BCEWithLogitsLoss()
 
 # Training and validation
@@ -179,13 +153,14 @@ all_y_true = []
 all_y_pred = []
 
 # Plotting
-fig, ax = plt.subplots(figsize=(10, 6))
-train_line, = ax.plot([], [], label='Training Loss')  # Empty plot for training loss
-val_line, = ax.plot([], [], label='Validation Loss')  # Empty plot for validation loss
-ax.set_xlabel('Epochs')
-ax.set_ylabel('Loss')
-ax.set_title('Training and Validation Loss Over Time')
-ax.legend()
+# plt.ion()
+# fig, ax = plt.subplots(figsize=(10, 6))
+# train_line, = ax.plot([], [], label='Training Loss')  # Empty plot for training loss
+# val_line, = ax.plot([], [], label='Validation Loss')  # Empty plot for validation loss
+# ax.set_xlabel('Epochs')
+# ax.set_ylabel('Loss')
+# ax.set_title('Training and Validation Loss Over Time')
+# ax.legend()
 
 train_losses = []
 val_losses = []
@@ -198,9 +173,10 @@ for name, (X, y) in enumerate(trainIterator()):
         continue
     # Bring tensor into the right shape for TimeSplit (from: (1, n_timesteps, n_windows, n_features), to: (n_samples, n_features))
     # Move to tensors to gpu if possible
-    X = torch.tensor(X.squeeze().squeeze()).to(torch.float32).to(device)
-    X = torch.nan_to_num(X, nan=0.0)
-    y = torch.tensor(y).to(torch.float32).to(device)
+    X = torch.tensor(X.squeeze().squeeze(), dtype=torch.float32, device=device)
+    torch.nan_to_num_(X, nan=0.0)
+    y = torch.tensor(y, dtype=torch.float32, device=device)
+    torch.nan_to_num_(y, nan=0.0)
     splits = tscv.split(X.cpu().numpy())
 
     for split_id, (train_index, val_index) in enumerate(splits):
@@ -271,8 +247,8 @@ for name, (X, y) in enumerate(trainIterator()):
             scheduler_plateau.step(avg_val_loss)
 
             # Print epoch summary
-            __builtins__['print'](f'Group {name}, Split {split_id + 1}, Epoch {epoch + 1}/{num_epochs}, '
-                  f'Train Loss: {avg_train_loss:.6f}, Validation Loss: {avg_val_loss:.6f}, '
+            __builtins__.print(f'Group {name}, Split {split_id + 1}, Epoch {epoch + 1}/{num_epochs}, '
+                  f'Train Loss: {avg_train_loss:.4f}, Validation Loss: {avg_val_loss:.4f}, '
                   f'Learning Rate: {optimizer.param_groups[0]["lr"]:.6f}')
 
             # Plotting: Append the loss values to track them over time
@@ -311,21 +287,26 @@ for name, (X, y) in enumerate(trainIterator()):
         val_prob = gbm.predict(val_output) # [:, 1]  # Get probabilities for the positive class
 
 
-        # Plot the losses dynamically
-        clear_output(wait=True)
-        # Update the plot data
-        train_line.set_data(range(len(train_losses)), train_losses)
-        val_line.set_data(range(len(val_losses)), val_losses)
-        ax.relim()  # Recalculate limits
-        ax.autoscale_view()  # Autoscale the view to see all data
-        plt.draw()
-        plt.pause(0.001)  # Small pause to update the plot
+        # # Plot the losses dynamically
+        # clear_output(wait=True)
+        # # Update the plot data
+        # train_line.set_data(range(len(train_losses)), train_losses)
+        # val_line.set_data(range(len(val_losses)), val_losses)
+        # ax.relim()  # Recalculate limits
+        # ax.autoscale_view()  # Autoscale the view to see all data
+        # plt.draw()
+        # plt.pause(0.1)  # Small pause to update the plot
     
     daosTrainedOn += 1
     torch.save({
         'daosTrainedOn': daosTrainedOn,
         'model_state_dict': model.state_dict(),
         'optimizer_state_dict': optimizer.state_dict(),
+        'inputFileName': DATA_FILE_NAME,
+        'optimizerName': str(optimizer),
+        'wasBidirectional': model.isBidirectional,
+        'windowSize': WINDOW_SIZE,
+        'timeseriesSplits': TIMESERIES_SPLITS,
     }, MODEL_SAVE_PATH)
 
 print("Actual training set: ", num_training_observations, " entries")
@@ -348,10 +329,6 @@ print("Finished execution at '", str(datetime.now()), "'.")
 print("Execution took: ", (datetime.now() - script_start).total_seconds())
 print("-" * 50)
 
-# Assuming train_results and val_results are dictionaries containing the losses for each split.
-# Flatten out the results from each split if needed
-train_losses = [loss for key, values in train_results.items() for loss in values]
-val_losses = [loss for key, values in val_results.items() for loss in values]
 
-
-plt.show()
+# plt.ioff()
+# plt.show(block=False)

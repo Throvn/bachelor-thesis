@@ -6,3 +6,5 @@ preprocessing/smallerStructuredEnrichedCoins.json
 preprocessing/enrichedCoins.json
 preprocessing/spaces.json
 preprocessing/structuredEnrichedCoins.json
+model/classifiedDAOs.json
+*.zip

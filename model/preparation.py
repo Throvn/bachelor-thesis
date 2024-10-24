@@ -20,8 +20,7 @@ def create_sequences(observation: pd.Series, window_size: int):
     if twitter_df.empty:
         twitter_df = pd.DataFrame({'datetime': price_df['datetime'], 'twitterFollowers': [np.nan] * len(price_df)})
 
-    # The isActive is already aligned with priceUSD, so no need to merge on datetime
-    isActive = observation['isActive']
+
 
     # print(dev_df)
     # Merge the dataframes on datetime
@@ -30,6 +29,13 @@ def create_sequences(observation: pd.Series, window_size: int):
 
     # Sort by datetime to ensure proper sequence
     df = df.sort_values(by='datetime').reset_index(drop=True)
+
+    isActive = observation['isActive']
+    # Only activate if outer join.
+    # # The isActive is already aligned with priceUSD, so no need to merge on datetime
+    # isActive = pd.Series(observation['isActive'], index=price_df['datetime'])
+    # # Reindex isActive to match the datetime index in df
+    # isActive = isActive.reindex(df['datetime']).reset_index(drop=True)
 
     # Fill any missing values with interpolation for the features
     df[['priceUSD', 'devActivity', 'twitterFollowers']] = df[['priceUSD', 'devActivity', 'twitterFollowers']].interpolate(method='linear')
@@ -44,6 +50,8 @@ def create_sequences(observation: pd.Series, window_size: int):
     for i in range(len(df) - window_size): # , 0, -1):
         # Extract the window of features
         X_window = df[['priceUSD', 'devActivity', 'twitterFollowers']].iloc[i:(i + window_size)].values
+        
+        # Make sure that 
         X_seq.append(X_window)
 
         # print("Lengths:", len(isActive), i + window_size - 1, len(df['priceUSD']))

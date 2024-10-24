@@ -9,15 +9,15 @@
 
 <body>
     <h1>List of Coingecko ∩ Santiment Projects</h1>
-    <table id="table">
-    </table>
+    <ol id="table">
+    </ol>
     <script>
         fetch('./preprocessing/geckoSantiSlugs.json')
             .then(res => res.json())
             .then(json => {
                 let str = "";
                 for (slug of json) {
-                    str += `<tr><td><a href='./coin.html?id=${slug}'>${slug}</a></td></tr>`;
+                    str += `<li><a href='./coin.html?id=${slug}'>${slug}</a></li>`;
                 }
                 document.getElementById('table').insertAdjacentHTML('beforeend', str);
             })

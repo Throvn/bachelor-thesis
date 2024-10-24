@@ -1,0 +1,97 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-16 13:18:07.594810'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+DAOs trained so far:67
+Size of training set: 198
+Size of test set: 114
+Preparing data for training...
+Preparing data for testing...
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'acala'... Training group 0, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([220]))
+	Y Val Labels:(array([1.], dtype=float32), array([220]))
+Training group 0, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([440]))
+	Y Val Labels:(array([1.], dtype=float32), array([220]))
+Training group 0, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([660]))
+	Y Val Labels:(array([1.], dtype=float32), array([220]))
+Done.
+	Creating sequence for 'banano'... Training group 1, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([414]))
+	Y Val Labels:(array([1.], dtype=float32), array([411]))
+Training group 1, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([825]))
+	Y Val Labels:(array([1.], dtype=float32), array([411]))
+Training group 1, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([1236]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([202, 209]))
+Done.
+	Creating sequence for 'aston-martin-cognizant-fan-token'... Training group 2, split 1
+	Y Train Labels:(array([0.], dtype=float32), array([279]))
+	Y Val Labels:(array([0.], dtype=float32), array([279]))
+Training group 2, split 2
+	Y Train Labels:(array([0.], dtype=float32), array([558]))
+	Y Val Labels:(array([0.], dtype=float32), array([279]))
+Training group 2, split 3
+	Y Train Labels:(array([0.], dtype=float32), array([837]))
+	Y Val Labels:(array([0.], dtype=float32), array([279]))
+Done.
+	Creating sequence for 'argent'... Skipped.
+	Creating sequence for 'celo-dollar'... Training group 3, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([242]))
+	Y Val Labels:(array([1.], dtype=float32), array([240]))
+Training group 3, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([482]))
+	Y Val Labels:(array([1.], dtype=float32), array([240]))
+Training group 3, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([722]))
+	Y Val Labels:(array([1.], dtype=float32), array([240]))
+Done.
+	Creating sequence for 'blendr-network'... Training group 4, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([38]))
+	Y Val Labels:(array([1.], dtype=float32), array([35]))
+Training group 4, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([73]))
+	Y Val Labels:(array([1.], dtype=float32), array([35]))
+Training group 4, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([108]))
+	Y Val Labels:(array([1.], dtype=float32), array([35]))
+Done.
+	Creating sequence for 'adamant-messenger'... Training group 5, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([485]))
+	Y Val Labels:(array([1.], dtype=float32), array([485]))
+Training group 5, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([970]))
+	Y Val Labels:(array([1.], dtype=float32), array([485]))
+Training group 5, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([1455]))
+	Y Val Labels:(array([1.], dtype=float32), array([485]))
+Done.
+	Creating sequence for 'compound-ether'... Training group 6, split 1
+	Y Train Labels:(array([0.], dtype=float32), array([57]))
+	Y Val Labels:(array([0.], dtype=float32), array([56]))
+Training group 6, split 2
+	Y Train Labels:(array([0.], dtype=float32), array([113]))
+	Y Val Labels:(array([0.], dtype=float32), array([56]))
+Training group 6, split 3
+	Y Train Labels:(array([0.], dtype=float32), array([169]))
+	Y Val Labels:(array([0.], dtype=float32), array([56]))
+Done.
+	Creating sequence for 'cloudbric'... Training group 7, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([487]))
+	Y Val Labels:(array([1.], dtype=float32), array([487]))
+Training group 7, split 2

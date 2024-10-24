@@ -1,0 +1,133 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-23 21:15:35.301702'.
+Reading '../classifiedDAOs.json'... Done.
+Total training Data: 1578
+DAOs trained so far:1083
+Size of training set: 21
+Size of test set: 474
+Preparing data for training...
+Preparing data for testing...
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'neon'... Training group 0, split 1
+	Early stopping at epoch 25
+	Y Train Labels:(array([1.], dtype=float32), array([85]))
+	Y Val Labels:(array([1.], dtype=float32), array([85]))
+Training group 0, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([170]))
+	Y Val Labels:(array([1.], dtype=float32), array([85]))
+Training group 0, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([255]))
+	Y Val Labels:(array([1.], dtype=float32), array([85]))
+Done.
+	Creating sequence for 'tokocrypto'... Training group 1, split 1
+	Early stopping at epoch 15
+	Y Train Labels:(array([1.], dtype=float32), array([278]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([249,  29]))
+Training group 1, split 2
+	Early stopping at epoch 19
+	Y Train Labels:(array([0., 1.], dtype=float32), array([249, 307]))
+	Y Val Labels:(array([0.], dtype=float32), array([278]))
+Training group 1, split 3
+	Early stopping at epoch 15
+	Y Train Labels:(array([0., 1.], dtype=float32), array([527, 307]))
+	Y Val Labels:(array([0.], dtype=float32), array([278]))
+Done.
+	Creating sequence for 'genesysgo-shadow'... Training group 2, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([234]))
+	Y Val Labels:(array([1.], dtype=float32), array([233]))
+Training group 2, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([467]))
+	Y Val Labels:(array([1.], dtype=float32), array([233]))
+Training group 2, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([700]))
+	Y Val Labels:(array([1.], dtype=float32), array([233]))
+Done.
+	Creating sequence for 'islamicoin'... Training group 3, split 1
+	Early stopping at epoch 42
+	Y Train Labels:(array([0., 1.], dtype=float32), array([172,  39]))
+	Y Val Labels:(array([0.], dtype=float32), array([209]))
+Training group 3, split 2
+	Early stopping at epoch 54
+	Y Train Labels:(array([0., 1.], dtype=float32), array([381,  39]))
+	Y Val Labels:(array([0.], dtype=float32), array([209]))
+Training group 3, split 3
+	Early stopping at epoch 53
+	Y Train Labels:(array([0., 1.], dtype=float32), array([590,  39]))
+	Y Val Labels:(array([0.], dtype=float32), array([209]))
+Done.
+	Creating sequence for 'nuco-cloud'... Training group 4, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([355]))
+	Y Val Labels:(array([1.], dtype=float32), array([354]))
+Training group 4, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([709]))
+	Y Val Labels:(array([1.], dtype=float32), array([354]))
+Training group 4, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([1063]))
+	Y Val Labels:(array([1.], dtype=float32), array([354]))
+Done.
+	Creating sequence for 'book-of-meme'... Training group 5, split 1
+	Early stopping at epoch 24
+	Y Train Labels:(array([1.], dtype=float32), array([36]))
+	Y Val Labels:(array([1.], dtype=float32), array([33]))
+Training group 5, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([69]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([17, 16]))
+Training group 5, split 3
+	Early stopping at epoch 48
+	Y Train Labels:(array([0., 1.], dtype=float32), array([17, 85]))
+	Y Val Labels:(array([0.], dtype=float32), array([33]))
+Done.
+	Creating sequence for 'wonderman-nation'... Training group 6, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([203]))
+	Y Val Labels:(array([1.], dtype=float32), array([202]))
+Training group 6, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([405]))
+	Y Val Labels:(array([1.], dtype=float32), array([202]))
+Training group 6, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([607]))
+	Y Val Labels:(array([1.], dtype=float32), array([202]))
+Done.
+	Creating sequence for 'lossless'... Training group 7, split 1
+	Early stopping at epoch 36
+	Y Train Labels:(array([1.], dtype=float32), array([245]))
+	Y Val Labels:(array([1.], dtype=float32), array([242]))
+Training group 7, split 2
+	Early stopping at epoch 15
+	Y Train Labels:(array([1.], dtype=float32), array([487]))
+	Y Val Labels:(array([1.], dtype=float32), array([242]))
+Training group 7, split 3
+	Early stopping at epoch 14
+	Y Train Labels:(array([1.], dtype=float32), array([729]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([ 60, 182]))
+Done.
+	Creating sequence for 'taiko'... Training group 8, split 1
+	Y Train Labels:(array([0.], dtype=float32), array([13]))
+	Y Val Labels:(array([0.], dtype=float32), array([13]))
+Training group 8, split 2
+	Y Train Labels:(array([0.], dtype=float32), array([26]))
+	Y Val Labels:(array([0.], dtype=float32), array([13]))
+Training group 8, split 3
+	Y Train Labels:(array([0.], dtype=float32), array([39]))
+	Y Val Labels:(array([0.], dtype=float32), array([13]))
+Done.
+	Creating sequence for 'band-protocol'... Training group 9, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([437]))
+	Y Val Labels:(array([1.], dtype=float32), array([437]))
+Training group 9, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([874]))
+	Y Val Labels:(array([1.], dtype=float32), array([437]))
+Training group 9, split 3

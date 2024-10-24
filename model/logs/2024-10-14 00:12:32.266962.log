@@ -1,0 +1,59 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-14 00:12:32.266962'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+DAOs trained so far:38
+Size of training set: 227
+Size of test set: 114
+Preparing data for training...
+Preparing data for testing...
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'bitmart-token'... Training group 0, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([541]))
+	Y Val Labels:(array([1.], dtype=float32), array([541]))
+Training group 0, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([1082]))
+	Y Val Labels:(array([1.], dtype=float32), array([541]))
+Training group 0, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([1623]))
+	Y Val Labels:(array([1.], dtype=float32), array([541]))
+Done.
+	Creating sequence for 'blocknet'... Training group 1, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([562]))
+	Y Val Labels:(array([1.], dtype=float32), array([561]))
+Training group 1, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([1123]))
+	Y Val Labels:(array([1.], dtype=float32), array([561]))
+Training group 1, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([1684]))
+	Y Val Labels:(array([1.], dtype=float32), array([561]))
+Done.
+	Creating sequence for 'aviator'... Training group 2, split 1
+	Y Train Labels:(array([0.], dtype=float32), array([13]))
+	Y Val Labels:(array([0.], dtype=float32), array([13]))
+Training group 2, split 2
+	Y Train Labels:(array([0.], dtype=float32), array([26]))
+	Y Val Labels:(array([0.], dtype=float32), array([13]))
+Training group 2, split 3
+	Y Train Labels:(array([0.], dtype=float32), array([39]))
+	Y Val Labels:(array([0.], dtype=float32), array([13]))
+Done.
+	Creating sequence for 'ark'... Training group 3, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([594]))
+	Y Val Labels:(array([1.], dtype=float32), array([592]))
+Training group 3, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([1186]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([126, 466]))
+Training group 3, split 3

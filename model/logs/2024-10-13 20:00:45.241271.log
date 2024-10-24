@@ -1,0 +1,61 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-13 20:00:45.241271'.
+Reading './isDaoActiveData(4).json'... Done.
+Total training Data: 379
+DAOs trained so far:9
+Size of training set: 256
+Size of test set: 114
+Preparing data for training...
+Preparing data for testing...
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'base-protocol'... Training group 0, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([298]))
+	Y Val Labels:(array([1.], dtype=float32), array([298]))
+Training group 0, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([596]))
+	Y Val Labels:(array([1.], dtype=float32), array([298]))
+Training group 0, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([894]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([  6, 292]))
+Done.
+	Creating sequence for 'algorand'... Training group 1, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([453]))
+	Y Val Labels:(array([1.], dtype=float32), array([451]))
+Training group 1, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([904]))
+	Y Val Labels:(array([1.], dtype=float32), array([451]))
+Training group 1, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([1355]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([351, 100]))
+Done.
+	Creating sequence for '0x0-ai-ai-smart-contract'... Training group 2, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([3]))
+	Y Val Labels:(array([1.], dtype=float32), array([2]))
+Training group 2, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([5]))
+	Y Val Labels:(array([1.], dtype=float32), array([2]))
+Training group 2, split 3
+	Early stopping at epoch 24
+	Y Train Labels:(array([1.], dtype=float32), array([7]))
+	Y Val Labels:(array([1.], dtype=float32), array([2]))
+Done.
+	Creating sequence for 'bytom'... Training group 3, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([565]))
+	Y Val Labels:(array([1.], dtype=float32), array([562]))
+Training group 3, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([1127]))
+	Y Val Labels:(array([1.], dtype=float32), array([562]))
+Training group 3, split 3
