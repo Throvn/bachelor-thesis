@@ -8,3 +8,4 @@ preprocessing/spaces.json
 preprocessing/structuredEnrichedCoins.json
 model/classifiedDAOs.json
 *.zip
+classifiedDAOs.json
