@@ -1,0 +1,115 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-24 23:34:12.599400'.
+Reading './balancedDataset.json'... Done.
+Total training Data: 1030
+DAOs trained so far:389
+Size of training set: 332
+Size of test set: 309
+Preparing data for training...
+Preparing data for testing...
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'bosagora'... Training group 0, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([450]))
+	Y Val Labels:(array([1.], dtype=float32), array([448]))
+Training group 0, split 2
+	Early stopping at epoch 26
+	Y Train Labels:(array([1.], dtype=float32), array([898]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([303, 145]))
+Training group 0, split 3
+	Y Train Labels:(array([0., 1.], dtype=float32), array([ 303, 1043]))
+	Y Val Labels:(array([0.], dtype=float32), array([448]))
+Done.
+	Creating sequence for 'lambda'... Training group 1, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([504]))
+	Y Val Labels:(array([1.], dtype=float32), array([504]))
+Training group 1, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([1008]))
+	Y Val Labels:(array([1.], dtype=float32), array([504]))
+Training group 1, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([1512]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([327, 177]))
+Done.
+	Creating sequence for 'ark'... Training group 2, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([594]))
+	Y Val Labels:(array([1.], dtype=float32), array([592]))
+Training group 2, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([1186]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([126, 466]))
+Training group 2, split 3
+	Early stopping at epoch 50
+	Y Train Labels:(array([0., 1.], dtype=float32), array([ 126, 1652]))
+	Y Val Labels:(array([0.], dtype=float32), array([592]))
+Done.
+	Creating sequence for 'reflexer-ungovernance-token'... Training group 3, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([289]))
+	Y Val Labels:(array([1.], dtype=float32), array([287]))
+Training group 3, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([576]))
+	Y Val Labels:(array([1.], dtype=float32), array([287]))
+Training group 3, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([863]))
+	Y Val Labels:(array([1.], dtype=float32), array([287]))
+Done.
+	Creating sequence for 'singularitydao'... Training group 4, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([131]))
+	Y Val Labels:(array([1.], dtype=float32), array([130]))
+Training group 4, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([261]))
+	Y Val Labels:(array([1.], dtype=float32), array([130]))
+Training group 4, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([391]))
+	Y Val Labels:(array([1.], dtype=float32), array([130]))
+Done.
+	Creating sequence for 'safeblast'... Training group 5, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([293]))
+	Y Val Labels:(array([1.], dtype=float32), array([290]))
+Training group 5, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([583]))
+	Y Val Labels:(array([1.], dtype=float32), array([290]))
+Training group 5, split 3
+	Y Train Labels:(array([1.], dtype=float32), array([873]))
+	Y Val Labels:(array([1.], dtype=float32), array([290]))
+Done.
+	Creating sequence for 'ageofgods'... Training group 6, split 1
+	Y Train Labels:(array([0., 1.], dtype=float32), array([68,  9]))
+	Y Val Labels:(array([0.], dtype=float32), array([75]))
+Training group 6, split 2
+	Y Train Labels:(array([0., 1.], dtype=float32), array([143,   9]))
+	Y Val Labels:(array([0.], dtype=float32), array([75]))
+Training group 6, split 3
+	Early stopping at epoch 15
+	Y Train Labels:(array([0., 1.], dtype=float32), array([218,   9]))
+	Y Val Labels:(array([0.], dtype=float32), array([75]))
+Done.
+	Creating sequence for 'flare-finance'... Training group 7, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([235]))
+	Y Val Labels:(array([1.], dtype=float32), array([232]))
+Training group 7, split 2
+	Early stopping at epoch 16
+	Y Train Labels:(array([1.], dtype=float32), array([467]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([114, 118]))
+Training group 7, split 3
+	Early stopping at epoch 60
+	Y Train Labels:(array([0., 1.], dtype=float32), array([114, 585]))
+	Y Val Labels:(array([0.], dtype=float32), array([232]))
+Done.
+	Creating sequence for 'dydx'... Training group 8, split 1
+	Y Train Labels:(array([1.], dtype=float32), array([253]))
+	Y Val Labels:(array([1.], dtype=float32), array([250]))
+Training group 8, split 2
+	Y Train Labels:(array([1.], dtype=float32), array([503]))
+	Y Val Labels:(array([1.], dtype=float32), array([250]))
+Training group 8, split 3

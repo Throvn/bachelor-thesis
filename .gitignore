@@ -9,3 +9,4 @@ preprocessing/structuredEnrichedCoins.json
 model/classifiedDAOs.json
 *.zip
 classifiedDAOs.json
+model/balancedDataset.json
