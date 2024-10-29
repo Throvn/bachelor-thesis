@@ -18,7 +18,7 @@ torch.backends.cudnn.benchmark = False
 # CONSTANTS
 DATA_FILE_NAME = "../classifiedDAOs.json"
 WINDOW_SIZE = 60
-MODEL_SAVE_PATH = "./unidirectional_bce_model_balanced"
+MODEL_SAVE_PATH = "./unidirectional_bce_model_full"
 print(MODEL_SAVE_PATH)
 
 def testByName(name):
@@ -53,7 +53,7 @@ def testByName(name):
     # Now use classification_report
     print(np.min(np.around(new_pred.squeeze(), 4)), np.max(np.around(new_pred.squeeze(), 4)))
 
-if sys.argv[1] != "batch":
+if len(sys.argv) > 1 and sys.argv[1] != "batch":
     checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True)
 
     input_dim=(3)
@@ -69,12 +69,10 @@ if sys.argv[1] != "batch":
 
 
 
+if len(sys.argv) <= 1:
+    print("Forgot to specify mode. (batch mode?)")
 
-
-
-if sys.argv[1] == "batch":
-    # from preparation import create_sequences
-
+if len(sys.argv) > 1 and sys.argv[1] == "batch":
 
     # Load model checkpoint if available
     checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
@@ -93,7 +91,7 @@ if sys.argv[1] == "batch":
     # Define the model
     num_features = 3  # devActivity, twitterFollowers, priceUSD
     input_dim = num_features
-    model = SingleInputLSTMClassifier(input_dim).to(device)
+    model = SingleInputLSTMClassifier(input_dim, isBidirectional=MODEL_SAVE_PATH.startswith("bidirectional")).to(device)
 
     if checkpoint:
         model.load_state_dict(checkpoint['model_state_dict'])
@@ -104,14 +102,13 @@ if sys.argv[1] == "batch":
     all_y_pred = []
 
     for index, observation in grouped_test.iterrows():
-        print("\n", observation.slug, end="")
 
         X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
         if not len(X_seq) or not len(y_seq):
             continue
-        X = torch.tensor(X_seq.squeeze().squeeze()).to(torch.float32).to(device)
+        X = torch.tensor(X_seq.squeeze().squeeze(), device=device, dtype=torch.float32)
         X = torch.nan_to_num(X, nan=0.0)
-        y = torch.tensor(y_seq).to(torch.float32).to(device)
+        y = torch.tensor(y_seq, device=device, dtype=torch.float32)
 
         with torch.no_grad():
             model.eval()
@@ -120,6 +117,8 @@ if sys.argv[1] == "batch":
 
             all_y_true.extend(y.cpu().numpy())
             all_y_pred.extend(output.cpu().numpy())
+
+        print("\n", observation.slug, "(" + str(np.average(output.cpu().numpy())) + ")", end="")
 
     # Set a threshold for classification
     threshold = 0.5

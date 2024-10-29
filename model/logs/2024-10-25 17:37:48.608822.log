@@ -1,0 +1,82 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-25 17:37:48.608822'.
+Reading './balancedDataset.json'... Done.
+Total training Data: 1030
+DAOs trained so far:534
+Size of training set: 187
+Size of test set: 309
+Preparing data for training...
+Preparing data for testing...
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'attila'... Training group 0, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([0., 1.], dtype=float32), array([ 76, 307]))
+	Y Val Labels:(array([0.], dtype=float32), array([380]))
+Training group 0, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([0., 1.], dtype=float32), array([456, 307]))
+	Y Val Labels:(array([0.], dtype=float32), array([380]))
+Training group 0, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([0., 1.], dtype=float32), array([836, 307]))
+	Y Val Labels:(array([0.], dtype=float32), array([380]))
+Done.
+	Creating sequence for 'tellor'... Training group 1, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([416]))
+	Y Val Labels:(array([1.], dtype=float32), array([413]))
+Training group 1, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([829]))
+	Y Val Labels:(array([1.], dtype=float32), array([413]))
+Training group 1, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([1242]))
+	Y Val Labels:(array([1.], dtype=float32), array([413]))
+Done.
+	Creating sequence for 'league-of-kingdoms'... Training group 2, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([221]))
+	Y Val Labels:(array([1.], dtype=float32), array([221]))
+Training group 2, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([442]))
+	Y Val Labels:(array([1.], dtype=float32), array([221]))
+Training group 2, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([663]))
+	Y Val Labels:(array([1.], dtype=float32), array([221]))
+Done.
+	Creating sequence for 'trias-token'... Training group 3, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([291]))
+	Y Val Labels:(array([1.], dtype=float32), array([288]))
+Training group 3, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([579]))
+	Y Val Labels:(array([1.], dtype=float32), array([288]))
+Training group 3, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([867]))
+	Y Val Labels:(array([1.], dtype=float32), array([288]))
+Done.
+	Creating sequence for 'mimblewimblecoin'... Training group 4, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([195]))
+	Y Val Labels:(array([1.], dtype=float32), array([193]))
+Training group 4, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([388]))
+	Y Val Labels:(array([1.], dtype=float32), array([193]))
+Training group 4, split 3

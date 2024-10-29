@@ -1,0 +1,80 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-26 22:13:04.021424'.
+Reading '../classifiedDAOs.json'... Done.
+Total training Data: 1578
+DAOs trained so far:57
+Size of training set: 1047
+Size of test set: 474
+Preparing data for training...
+Preparing data for testing...
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'beam'... Training group 0, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([496]))
+	Y Val Labels:(array([1.], dtype=float32), array([496]))
+Training group 0, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([992]))
+	Y Val Labels:(array([1.], dtype=float32), array([496]))
+Training group 0, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([1488]))
+	Y Val Labels:(array([1.], dtype=float32), array([496]))
+Done.
+	Creating sequence for 'measurable-data-token'... Training group 1, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([311]))
+	Y Val Labels:(array([1.], dtype=float32), array([308]))
+Training group 1, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([619]))
+	Y Val Labels:(array([1.], dtype=float32), array([308]))
+Training group 1, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([927]))
+	Y Val Labels:(array([1.], dtype=float32), array([308]))
+Done.
+	Creating sequence for 'osmosis'... Training group 2, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([222]))
+	Y Val Labels:(array([1.], dtype=float32), array([219]))
+Training group 2, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([441]))
+	Y Val Labels:(array([1.], dtype=float32), array([219]))
+Training group 2, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([660]))
+	Y Val Labels:(array([1.], dtype=float32), array([219]))
+Done.
+	Creating sequence for 'layerzero'... Training group 3, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([10]))
+	Y Val Labels:(array([1.], dtype=float32), array([9]))
+Training group 3, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([19]))
+	Y Val Labels:(array([1.], dtype=float32), array([9]))
+Training group 3, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([28]))
+	Y Val Labels:(array([1.], dtype=float32), array([9]))
+Done.
+	Creating sequence for 'moon'... 5403
+Done.
+	Creating sequence for 'lemochain'... Training group 5, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([523]))
+	Y Val Labels:(array([1.], dtype=float32), array([522]))
+Training group 5, split 2

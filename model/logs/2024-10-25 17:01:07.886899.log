@@ -1,0 +1,69 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-25 17:01:07.886899'.
+Reading './balancedDataset.json'... Done.
+Total training Data: 1030
+DAOs trained so far:296
+Size of training set: 425
+Size of test set: 309
+Preparing data for training...
+Preparing data for testing...
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'waltonchain'... Training group 0, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([565]))
+	Y Val Labels:(array([1.], dtype=float32), array([564]))
+Training group 0, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([1129]))
+	Y Val Labels:(array([1.], dtype=float32), array([564]))
+Training group 0, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([1693]))
+	Y Val Labels:(array([1.], dtype=float32), array([564]))
+Done.
+	Creating sequence for 'neurai'... Training group 1, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([99]))
+	Y Val Labels:(array([1.], dtype=float32), array([99]))
+Training group 1, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([198]))
+	Y Val Labels:(array([1.], dtype=float32), array([99]))
+Training group 1, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([297]))
+	Y Val Labels:(array([1.], dtype=float32), array([99]))
+Done.
+	Creating sequence for 'bakerytoken'... Training group 2, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([290]))
+	Y Val Labels:(array([1.], dtype=float32), array([287]))
+Training group 2, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([577]))
+	Y Val Labels:(array([1.], dtype=float32), array([287]))
+Training group 2, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([864]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([135, 152]))
+Done.
+	Creating sequence for 'stronghold-token'... Training group 3, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([333]))
+	Y Val Labels:(array([1.], dtype=float32), array([332]))
+Training group 3, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([665]))
+	Y Val Labels:(array([1.], dtype=float32), array([332]))
+Training group 3, split 3

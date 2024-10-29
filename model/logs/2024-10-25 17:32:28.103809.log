@@ -1,0 +1,69 @@
+
+
+
+--------------------------------------------------
+Starting lstm.py at '2024-10-25 17:32:28.103809'.
+Reading './balancedDataset.json'... Done.
+Total training Data: 1030
+DAOs trained so far:498
+Size of training set: 223
+Size of test set: 309
+Preparing data for training...
+Preparing data for testing...
+Parameters:
+	Num epochs: 60
+	Initial learning rate: 0.001
+	Patience: 12
+	Window size: 60
+	Timeseries splits: 3
+	Minimum number of timeseries datapoints: 64
+Gradient boosting params: 
+	{"max_depth": 3, "learning_rate": 0.05, "n_estimators": 100, "objective": "binary:logistic", "eval_metric": "logloss"}
+	Creating sequence for 'alanyaspor-fan-token'... Training group 0, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([256]))
+	Y Val Labels:(array([0., 1.], dtype=float32), array([175,  79]))
+Training group 0, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([0., 1.], dtype=float32), array([175, 335]))
+	Y Val Labels:(array([0.], dtype=float32), array([254]))
+Training group 0, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([0., 1.], dtype=float32), array([429, 335]))
+	Y Val Labels:(array([0.], dtype=float32), array([254]))
+Done.
+	Creating sequence for 'lumerin'... Training group 1, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([214]))
+	Y Val Labels:(array([1.], dtype=float32), array([212]))
+Training group 1, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([426]))
+	Y Val Labels:(array([1.], dtype=float32), array([212]))
+Training group 1, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([638]))
+	Y Val Labels:(array([1.], dtype=float32), array([212]))
+Done.
+	Creating sequence for 'as-roma-fan-token'... Training group 2, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([0., 1.], dtype=float32), array([ 93, 281]))
+	Y Val Labels:(array([0.], dtype=float32), array([374]))
+Training group 2, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([0., 1.], dtype=float32), array([467, 281]))
+	Y Val Labels:(array([0.], dtype=float32), array([374]))
+Training group 2, split 3
+	Early stopping at epoch 13
+	Y Train Labels:(array([0., 1.], dtype=float32), array([841, 281]))
+	Y Val Labels:(array([0.], dtype=float32), array([374]))
+Done.
+	Creating sequence for 'insights-network'... Training group 3, split 1
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([438]))
+	Y Val Labels:(array([1.], dtype=float32), array([436]))
+Training group 3, split 2
+	Early stopping at epoch 13
+	Y Train Labels:(array([1.], dtype=float32), array([874]))
+	Y Val Labels:(array([1.], dtype=float32), array([436]))
+Training group 3, split 3

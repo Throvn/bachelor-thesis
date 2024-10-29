@@ -1,5 +1,3 @@
-import matplotlib.pyplot as plt
-from IPython.display import clear_output
 import numpy as np
 import pandas as pd
 import torch
@@ -39,7 +37,7 @@ torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
 # CONSTANTS
-DATA_FILE_NAME: Final[str] = "./balancedDataset.json"
+DATA_FILE_NAME: Final[str] = "../classifiedDAOs.json"
 
 # Is this how many 'days' the time series should be predicted?
 WINDOW_SIZE: Final[int] = 60 # TODO: 120
@@ -55,7 +53,7 @@ print("Done.")
 total_entries = len(total_training_data)
 print("Total training Data: ", total_entries)
 
-MODEL_SAVE_PATH = "./unidirectional_bce_model_balanced"
+MODEL_SAVE_PATH = "./bidirectional_bce_model_full"
 checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
 daosTrainedOn = checkpoint['daosTrainedOn'] if checkpoint else 0
 print("DAOs trained so far:", daosTrainedOn)
@@ -105,7 +103,7 @@ device = torch.device('mps')
 num_features = 3 # devActivity, twitterFollowers, priceUSD # input_streams[0].shape[2] #Input_dim = length of vector that contains unique feature columns.
 input_dim=(num_features)
 
-model = SingleInputLSTMClassifier(input_dim).to(device)
+model = SingleInputLSTMClassifier(input_dim, isBidirectional=True).to(device)
 
 if checkpoint:
     model.load_state_dict(checkpoint['model_state_dict'])

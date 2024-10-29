@@ -33,4 +33,4 @@ for i, d in total_training_data.iterrows():
     overallCount.update(Counter(d['isActive']))
 
 print("Counts:", overallCount)
-print("Ratio:", overallCount[1] / overallCount[0])
+print("Ratio:", overallCount[0] / (overallCount[1] + overallCount[0]))
