@@ -1,8 +1,5 @@
 import fs from "fs";
 
-/** @type{[{id: string, symbol: string, name: string}]} */
-const allCoins = JSON.parse(fs.readFileSync("../allCoingeckoCoins.json"))
-
 function searchSymbolSnapshot(arr, key) {
     const middleIndex = Math.floor(arr.length / 2)
     const middleValue = arr[middleIndex]
@@ -20,16 +17,40 @@ function searchSymbolSnapshot(arr, key) {
 const allSpaces = JSON.parse(fs.readFileSync("./sortedSpaces.json"))
 const definitelyDaos = []
 let totalDaos = 0
-for (const coin of allCoins) {
-    // id === slug
-    coin.id
 
-    const result = searchSymbolSnapshot(allSpaces, coin.symbol)
-    if (result) {
-        coin.snapshot = result
-        definitelyDaos.push(coin)
-        totalDaos++
+/**
+ * 
+ * @param {string} path Either: `./allSantimentCoins.json` or `../allCoingeckoCoins.json`
+ */
+function addToDao(path) {
+    /** @type{[{id: string, symbol: string, name: string}]} */
+    const allCoins = JSON.parse(fs.readFileSync(path))
+
+    for (const coin of allCoins) {
+        // id === slug
+        coin.id = coin.id || coin.slug
+        coin.symbol = coin.symbol || coin.ticker
+
+        const result = searchSymbolSnapshot(allSpaces, coin.symbol)
+        if (result) {
+            coin.snapshot = result
+            definitelyDaos.push(coin.id)
+            totalDaos++
+        }
     }
 }
-console.log("Total DAOs:", totalDaos)
-fs.writeFileSync("definitelyDaos.json", JSON.stringify(definitelyDaos))
+
+addToDao("./allSantimentCoins.json")
+addToDao("../allCoingeckoCoins.json")
+
+console.log(definitelyDaos)
+const set = new Set(definitelyDaos)
+
+const geckoSantiSlugs = JSON.parse(fs.readFileSync("./geckoSantiSlugs.json"))
+const matches = geckoSantiSlugs.filter(value => {
+    return set.has(value);
+})
+
+console.log("Total DAOs:", totalDaos, set.size)
+console.log("Size of current DAOs:", matches.length)
+fs.writeFileSync("definitelyDaoSlugs.json", JSON.stringify([...set]))
