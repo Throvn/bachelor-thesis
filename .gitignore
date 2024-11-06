@@ -10,3 +10,5 @@ model/classifiedDAOs.json
 *.zip
 classifiedDAOs.json
 model/balancedDataset.json
+model/minorityDatast.json
+preprocessing/cleanedClassifiedDaos.json
