@@ -24,13 +24,16 @@ TIMESERIES_SPLITS: Final[int] = 3
 MIN_DATA_OBSERVATIONS: Final[int] = WINDOW_SIZE + (TIMESERIES_SPLITS + 1)
 
 print("Reading '" + DATA_FILE_NAME + "'... ", end="", flush=True)
-total_training_data = json.load(open(DATA_FILE_NAME))
-total_training_data = pd.DataFrame(total_training_data).sample(frac=1, random_state=1337).reset_index(drop=True)
+total_training_data_json = json.load(open(DATA_FILE_NAME))
+total_training_data = pd.DataFrame(total_training_data_json).sample(frac=1, random_state=1337).reset_index(drop=True)
 print("Done.") 
 
 overallCount = Counter()
 for i, d in total_training_data.iterrows():
     overallCount.update(Counter(d['isActive']))
 
+print("# DAOs:", len(total_training_data_json))
+print("DEF DAOs:", len(json.load(open("../preprocessing/definitelyDaos.json"))))
+print("Enriched Coins:", len(json.load(open("../preprocessing/enrichedCoins.json"))))
 print("Counts:", overallCount)
 print("Ratio:", overallCount[0] / (overallCount[1] + overallCount[0]))
