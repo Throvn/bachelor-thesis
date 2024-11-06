@@ -1,5 +1,6 @@
 import json
 import os
+import random
 import pandas as pd
 
 # Function to check balance of active and inactive entries
@@ -13,8 +14,10 @@ js = json.load(open(DATA_FILE_NAME))
 
 WINDOW_SIZE = 64
 
+random.seed(1337)
+
 # Function to filter entries with minimum WINDOW_SIZE and balance the dataset
-def count(js):
+def count(js, minority=False):
     finalActive = []
     finalInActive = []
     for entry in js:
@@ -28,11 +31,20 @@ def count(js):
 
     print("Active:    ", len(finalActive), "\nInactive: ", len(finalInActive))
     shortest = min(len(finalActive), len(finalInActive))
-    final = finalActive[:shortest] + finalInActive[:shortest]
+
+    if minority:
+        print("NOTE: 70% inactive")
+        random.shuffle(finalActive)
+        random.shuffle(finalInActive)
+        print("Actual Inactive: ", len(finalInActive), "\nActual Active: ", int((len(finalInActive) * 3) / 7))
+        final = finalInActive + finalActive[:int((len(finalInActive) * 3) / 7)]
+    else:
+        # Maybe could have shuffled here. but shouldn't make any difference.
+        final = finalActive[:shortest] + finalInActive[:shortest]
     return final
 
 # Apply the count function and create a balanced dataset
-final = count(js)
+final = count(js, minority=True)
 
 # Convert js to DataFrame and shuffle it
 total_training_data = pd.DataFrame(js).sample(frac=1, random_state=1337).reset_index(drop=True)
@@ -56,3 +68,5 @@ count(grouped_test.to_dict('records'))  # Convert DataFrame to list of dicts
 # Display size of training and test sets
 print("Size of training set: ", len(grouped_train))
 print("Size of test set: ", len(grouped_test))
+
+# json.dump(final, open("./minorityDataset.json", "w"))
