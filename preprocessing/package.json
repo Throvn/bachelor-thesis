@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "graphql": "^16.9.0",
-    "undici": "^6.19.8"
+    "big-json": "^3.2.0",
+    "graphql": "^16.9.0"
   }
 }
