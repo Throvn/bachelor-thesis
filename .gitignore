@@ -10,5 +10,11 @@ model/classifiedDAOs.json
 *.zip
 classifiedDAOs.json
 model/balancedDataset.json
-model/minorityDatast.json
+model/minorityDataset.json
 preprocessing/cleanedClassifiedDaos.json
+preprocessing/allSantimentDaos.json
+preprocessing/allSantimentProjects.json
+preprocessing/enrichedSantimentProjects.json
+preprocessing/newlyAddedSantimentProjects.json
+preprocessing/normalizedAllSantimentProjects.json
+preprocessing/*.txt
