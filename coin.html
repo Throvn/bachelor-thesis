@@ -42,7 +42,7 @@
                 <button id="next-button">Skip</button>
 
                 <script>
-                    fetch('./preprocessing/geckoSantiSlugs.json')
+                    fetch('./preprocessing/remainingClassificationSlugs.json')
                         .then(res => res.json())
                         .then(json => {
                             const params = new URLSearchParams(location.search);

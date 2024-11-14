@@ -1,3 +1,4 @@
+import fs from "fs";
 if (!Bun.version) {
     throw new Error("Run script with the Bun runtime...\nOtherwise the files cannot be read.")
 }
@@ -85,6 +86,20 @@ for (const sample of normalizedAllSantimentProjects) {
 }
 console.log("\t\x1b[32mCHECK Successful.\x1b[0m")
 
+console.log("\tChecking if './normalizedAllSantimentProjects.json' is sorted by 'slug'.")
+import { compareUTF8 } from "./utf8.js";
+let prev = normalizedAllSantimentProjects[0].slug;
+for (let i = 1; i < normalizedAllSantimentProjects.length; i++) {
+    const curr = normalizedAllSantimentProjects[i].slug;
+
+    if (compareUTF8(prev, curr) > 0) {
+        console.error(prev, ">=", curr)
+        throw new Error("Santiment projects are not sorted by 'slug' property.");
+    }
+    prev = curr;
+}
+console.log("\t\x1b[32mCHECK Successful.\x1b[0m");
+
 
 /**
  * Step 6:
@@ -100,8 +115,7 @@ if (!allSnapshotSpaces.length) {
 }
 
 
-import { compareUTF8 } from "./utf8.js";
-let prev = allSnapshotSpaces[0].symbol;
+prev = allSnapshotSpaces[0].symbol;
 for (let i = 1; i < allSnapshotSpaces.length; i++) {
     const curr = allSnapshotSpaces[i].symbol;
 
@@ -151,4 +165,38 @@ find(allClassifiedProjects, definitelyDaoSlugs, ["slug"], [], (classifiedDao) =>
 });
 
 console.log("\tCurrently already", definitelyDaos.length, "DAOs were classified.");
-console.log("\tTherefore, only", definitelyDaoSlugs.size - definitelyDaos.length, "need to be classified.")
+const numberOfRemainingClassifications = definitelyDaoSlugs.size - definitelyDaos.length;
+console.log("\tTherefore, only", numberOfRemainingClassifications, "need to be classified.")
+
+
+/**
+ * Step 9:
+ * Write currently already classified DAOs to 'classifications.json'.
+ */
+console.log("9. Write already classified DAOs to disk.");
+if (fs.existsSync("classifications.json")) {
+    console.info("\tFile 'classifications.json' already exists. Skipping...")
+} else {
+    await Bun.write("classifications.json", JSON.stringify(definitelyDaos));
+    console.info("\tWritten 'classifications.json' with already classified DAOs.")
+    console.info("\t", definitelyDaos.length, "DAOs.")
+}
+
+if (fs.existsSync("remainingClassificationSlugs.json")) {
+    console.info("\tFile 'remainingClassificationSlugs.json' already exists. Skipping...")
+} else {
+    // Take out the already classified ones, becuase we don't need to reclassifiy them.
+    const remainingDaoSlugs = [];
+    find(definitelyDaoSlugs, definitelyDaos, [], ["slug"], (found) => { }, (notFoundSlug) => {
+        remainingDaoSlugs.push(notFoundSlug);
+    });
+    await Bun.write("remainingClassificationSlugs.json", JSON.stringify(remainingDaoSlugs));
+    console.info("\tWritten 'remainingClassificationSlugs.json' for all of the remaining slugs.")
+    console.info("\t", remainingDaoSlugs.length, "DAO slugs.")
+
+    if (remainingDaoSlugs.length !== numberOfRemainingClassifications) {
+        throw new Error("Remaining DAO slugs should be equal to number of Remaining Classifications!")
+    }
+}
+
+

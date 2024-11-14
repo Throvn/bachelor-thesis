@@ -11,7 +11,7 @@ app.use(bodyParser.json({}));
 /**
  * @type {[string]}
  */
-const allDAOs = JSON.parse(fs.readFileSync("./preprocessing/smallerStructuredEnrichedCoins.json"));
+import allDAOs from "./preprocessing/normalizedAllSantimentProjects.json" with {type: "json"};
 function searchBySlug(arr, key) {
     const middleIndex = Math.floor(arr.length / 2)
     const middleValue = arr[middleIndex]
@@ -64,7 +64,7 @@ app.post("/api/:slug", (req, res) => {
     console.log("priceUSD Length: ", data.santiment.priceUSD.length);
 
     try {
-        fs.appendFileSync("classifiedDAOs.json", ",\n" + JSON.stringify({
+        fs.appendFileSync("classifiedDAOs1.json", ",\n" + JSON.stringify({
             slug: req.params.slug,
             ...data.santiment
         }));

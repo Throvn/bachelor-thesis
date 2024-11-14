@@ -5,4 +5,4 @@ map({
     twitterFollowers: (.santiment.twitterFollowers1 + .santiment.twitterFollowers2),
     devActivity: (.santiment.devActivity1 + .santiment.devActivity2)
   }
-})
+}) | sort_by(.slug)
