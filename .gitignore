@@ -6,9 +6,9 @@ preprocessing/smallerStructuredEnrichedCoins.json
 preprocessing/enrichedCoins.json
 preprocessing/spaces.json
 preprocessing/structuredEnrichedCoins.json
-model/classifiedDAOs.json
+model/classifiedProjects.json
 *.zip
-classifiedDAOs.json
+classifiedProjects.json
 model/balancedDataset.json
 model/minorityDataset.json
 preprocessing/cleanedClassifiedDaos.json
