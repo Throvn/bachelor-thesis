@@ -1,3 +1,7 @@
+if (!Bun.version) {
+    throw new Error("Run script with the Bun runtime...\nOtherwise the files cannot be read.")
+}
+
 function find(arr1 = [], arr2 = [], path1 = [], path2 = [], foundCallback, notFoundCallback = () => { }) {
     const getValueByPath = (obj, path) => path.reduce((acc, key) => acc && acc[key], obj);
 
@@ -96,7 +100,7 @@ if (!allSnapshotSpaces.length) {
 }
 
 
-import { compareUTF8 } from "./utf8";
+import { compareUTF8 } from "./utf8.js";
 let prev = allSnapshotSpaces[0].symbol;
 for (let i = 1; i < allSnapshotSpaces.length; i++) {
     const curr = allSnapshotSpaces[i].symbol;
@@ -115,3 +119,36 @@ console.log("\t\x1b[32mCHECK Successful.\x1b[0m");
  * Ticker Symbols for the Santiment projects can be found in 'normalizedAllSantimentCoins.json'.
  * We use python as this is better for handling larger files by default.
  */
+const santimentTicker = new Set()
+
+console.log("7. Matching slugs to get TICKER symbol...")
+// First find the ticker of all 'normalizedAllSantimentProjects'.
+find(allSantimentProjectNames, normalizedAllSantimentProjects, ["slug"], ["slug"], (val) => {
+    santimentTicker.add({
+        slug: val.slug,
+        ticker: val.ticker
+    });
+});
+// Then use the projects ticker to compare if they have a Snapshot space.
+const definitelyDaoSlugs = new Set();
+find(santimentTicker, allSnapshotSpaces, ["ticker"], ["symbol"], (space) => {
+    definitelyDaoSlugs.add(space.slug);
+});
+
+console.info("Out of", santimentTicker.size, "Santiment projects,", definitelyDaoSlugs.size, "are DAOs.");
+
+/**
+ * Step 8:
+ * Strip the current dataset of all non-DAOs.
+ */
+console.info("8. Strip '../classifiedProjects.json' of all non-definite DAOs");
+
+import allClassifiedProjects from "../classifiedProjects.json" with {type: "json"};
+
+const definitelyDaos = [];
+find(allClassifiedProjects, definitelyDaoSlugs, ["slug"], [], (classifiedDao) => {
+    definitelyDaos.push(classifiedDao);
+});
+
+console.log("\tCurrently already", definitelyDaos.length, "DAOs were classified.");
+console.log("\tTherefore, only", definitelyDaoSlugs.size - definitelyDaos.length, "need to be classified.")
