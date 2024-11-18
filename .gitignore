@@ -21,3 +21,4 @@ preprocessing/*.txt
 classifications.json
 coingeckoSantiSlugs.json
 remainingClassificationSlugs.json
+classifiedProjects2.json
