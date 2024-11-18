@@ -8,19 +8,6 @@ const app = express();
 app.use(express.static("./"))
 app.use(bodyParser.json({}));
 
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-console.error("Make sure that the classified DAOs are written to disk in a readable json file without duplicates!!!");
-
 /**
  * @type {[string]}
  */
@@ -77,7 +64,7 @@ app.post("/api/:slug", (req, res) => {
     console.log("priceUSD Length: ", data.santiment.priceUSD.length);
 
     try {
-        fs.appendFileSync("classifiedDAOs1.json", ",\n" + JSON.stringify({
+        fs.appendFileSync("classifiedProjects3.json", ",\n" + JSON.stringify({
             slug: req.params.slug,
             ...data.santiment
         }));

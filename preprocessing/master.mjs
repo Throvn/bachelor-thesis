@@ -199,4 +199,6 @@ if (fs.existsSync("remainingClassificationSlugs.json")) {
     }
 }
 
-
+/**
+ * Step 10: Merge only real classified DAOs together.
+ */
