@@ -156,24 +156,26 @@ console.info("Out of", santimentTicker.size, "Santiment projects,", definitelyDa
  * Strip the current dataset of all non-DAOs.
  */
 console.info("8. Strip '../classifiedProjects.json' of all non-definite DAOs");
+console.info("   '../classifiedProjects.json' contains all classifications done over the shared dataset between Coingecko and Santiment regardless of the project being a DAO or not.")
 
 import allClassifiedProjects from "../classifiedProjects.json" with {type: "json"};
+import { ChildProcess, exec, execSync } from "child_process";
 
 const definitelyDaos = [];
 find(allClassifiedProjects, definitelyDaoSlugs, ["slug"], [], (classifiedDao) => {
     definitelyDaos.push(classifiedDao);
 });
 
-console.log("\tCurrently already", definitelyDaos.length, "DAOs were classified.");
+console.log("\tAlready", definitelyDaos.length, "DAOs were classified.");
 const numberOfRemainingClassifications = definitelyDaoSlugs.size - definitelyDaos.length;
-console.log("\tTherefore, only", numberOfRemainingClassifications, "need to be classified.")
+console.log("\tTherefore, only", numberOfRemainingClassifications, "DAOs which were added by Santiment to be classified.")
 
 
 /**
  * Step 9:
  * Write currently already classified DAOs to 'classifications.json'.
  */
-console.log("9. Write already classified DAOs to disk.");
+console.log("9. Write already classified DAOs (not projects!) to 'classifications.json'.");
 if (fs.existsSync("classifications.json")) {
     console.info("\tFile 'classifications.json' already exists. Skipping...")
 } else {
@@ -185,7 +187,7 @@ if (fs.existsSync("classifications.json")) {
 if (fs.existsSync("remainingClassificationSlugs.json")) {
     console.info("\tFile 'remainingClassificationSlugs.json' already exists. Skipping...")
 } else {
-    // Take out the already classified ones, becuase we don't need to reclassifiy them.
+    // Take out the already classified ones, because we don't need to reclassifiy them.
     const remainingDaoSlugs = [];
     find(definitelyDaoSlugs, definitelyDaos, [], ["slug"], (found) => { }, (notFoundSlug) => {
         remainingDaoSlugs.push(notFoundSlug);
@@ -200,5 +202,21 @@ if (fs.existsSync("remainingClassificationSlugs.json")) {
 }
 
 /**
- * Step 10: Merge only real classified DAOs together.
+ * Step 10:
  */
+console.info("------------")
+console.info("10. Now you should have classified the remaining DAOs using 'bun run ../server.mjs'.")
+console.info("\tThe new classifications were written to '../classifiedProjects2.json'.")
+console.info("------------")
+
+/**
+ * Step 11: Merge only real classified DAOs together.
+ * To make sure that we don't lose any data, we put the additional classifications (which come from the 'whole' Santiment dataset) in an extra file called '../classifiedProjects2.json'.
+ */
+console.log("11. Merging the already classified DAOs (GeckoSanti Dataset (./classifications.json)) together with the additional ones (../classifiedProjects2.json).")
+console.log("\tWrite all of the classified DAOs in one file names 'allClassificationsRaw.json'")
+console.log("\t\tjq -s 'flatten | group_by(.slug) | map(reduce .[] as $x ({}; . * $x))' ./classifications.json ../classifiedProjects2.json -cMa > allClassificationsRaw.json")
+console.log("\tRemove all projects which have less than 64 priceUSD entries, as this is the minimum required to give a prediction.")
+console.log("\t\tjq -f ./mergeClassifiedProjects.jq ./allClassificationsRaw.json -cMa > ./allClassifications.json")
+console.log("Output of all classified projects with an adequate length and without duplicates: './allClassifications.json'")
+console.log('Length of complete dataset:', Number(execSync(`~/./jq "length" -s allClassifications.json`).toString()))
