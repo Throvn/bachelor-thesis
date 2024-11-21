@@ -13,9 +13,11 @@ from datetime import datetime
 import json
 import os
 
+# import matplotlib.pyplot as plt
+
 from model import SingleInputLSTMClassifier
-from focal_loss import FocalLoss
 from preparation import create_sequences
+from balance import DATA_FILE_NAME, grouped_train
 script_start = datetime.now()
 
 def print(*args, end="\n", flush=False):
@@ -36,58 +38,36 @@ random.seed(1337)
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
 
-# CONSTANTS
-DATA_FILE_NAME: Final[str] = "../classifiedDAOs.json"
-
 # Is this how many 'days' the time series should be predicted?
 WINDOW_SIZE: Final[int] = 60 # TODO: 120
 TIMESERIES_SPLITS: Final[int] = 3
 
 MIN_DATA_OBSERVATIONS: Final[int] = WINDOW_SIZE + (TIMESERIES_SPLITS + 1)
 
-print("Reading '" + DATA_FILE_NAME + "'... ", end="", flush=True)
-total_training_data = json.load(open(DATA_FILE_NAME))
-total_training_data = pd.DataFrame(total_training_data).sample(frac=1, random_state=1337).reset_index(drop=True)
-print("Done.") 
 
-total_entries = len(total_training_data)
-print("Total training Data: ", total_entries)
-
-MODEL_SAVE_PATH = "./bidirectional_bce_model_full"
+MODEL_SAVE_PATH = "./bidirectional_bce_model_full_correct"
 checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
 daosTrainedOn = checkpoint['daosTrainedOn'] if checkpoint else 0
 print("DAOs trained so far:", daosTrainedOn)
 
 # Split total_training_data into training and testing datasets (70/30)
-split_index = int(total_entries * 0.7)
-grouped_train = total_training_data[daosTrainedOn:split_index]
-grouped_test = total_training_data[split_index:]
-print("Size of training set: ", len(grouped_train))
-print("Size of test set: ", len(grouped_test))
-
-
-# TODO: GET THE FUCKING LSTM TO WORK AGAIN. FASTER THAN BEFORE. AND IMPLEMENT SAVING OF THE MODEL!
+grouped_train = grouped_train[daosTrainedOn:]
 
 ##2 define tensor structure
 print("Preparing data for training...") 
-num_training_observations = 0
-num_testing_observations = 0
 
 def trainIterator():
-    global num_training_observations
     for _, observation in grouped_train.iterrows():
         observation: pd.Series
 
         print("\tCreating sequence for '" + observation.slug + "'... ", end="")
         if len(observation.priceUSD) < MIN_DATA_OBSERVATIONS:
-            print("Skipped.")
-            continue
+            raise ValueError("'" + observation.slug + "' has less than MIN_DATA_OBSERVATION entries")
 
         X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
         # print(X_seq)
         yield X_seq, y_seq
         # print("  " + str(y_seq) + "  ", end="")
-        num_training_observations += 1
         print("Done.")
 
 
@@ -130,8 +110,6 @@ gbm_params = {
     'n_estimators': 100,
     'objective': 'binary:logistic',
     'eval_metric': 'logloss',
-    # TODO: Check that this value is actually true according to credible research.
-    # 'scale_pos_weight': 0.8
 }
 print("Gradient boosting params: \n\t", json.dumps(gbm_params))
 # TODO: Explain in thesis: https://stackoverflow.com/a/68368157
@@ -285,9 +263,7 @@ for name, (X, y) in enumerate(trainIterator()):
         val_prob = gbm.predict(val_output) # [:, 1]  # Get probabilities for the positive class
 
 
-        # # Plot the losses dynamically
-        # clear_output(wait=True)
-        # # Update the plot data
+        # Update the plot data
         # train_line.set_data(range(len(train_losses)), train_losses)
         # val_line.set_data(range(len(val_losses)), val_losses)
         # ax.relim()  # Recalculate limits
@@ -306,10 +282,6 @@ for name, (X, y) in enumerate(trainIterator()):
         'windowSize': WINDOW_SIZE,
         'timeseriesSplits': TIMESERIES_SPLITS,
     }, MODEL_SAVE_PATH)
-
-print("Actual training set: ", num_training_observations, " entries")
-print("Actual testing set:  ", num_testing_observations, " entries")
-print("Actual training/total ratio: ", num_training_observations / len(total_training_data))
 
 
 # Print final classification report for all splits and groups

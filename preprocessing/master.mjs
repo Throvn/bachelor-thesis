@@ -157,9 +157,10 @@ console.info("Out of", santimentTicker.size, "Santiment projects,", definitelyDa
  */
 console.info("8. Strip '../classifiedProjects.json' of all non-definite DAOs");
 console.info("   '../classifiedProjects.json' contains all classifications done over the shared dataset between Coingecko and Santiment regardless of the project being a DAO or not.")
+console.info("   This was due to an error.")
 
 import allClassifiedProjects from "../classifiedProjects.json" with {type: "json"};
-import { ChildProcess, exec, execSync } from "child_process";
+import { execSync } from "child_process";
 
 const definitelyDaos = [];
 find(allClassifiedProjects, definitelyDaoSlugs, ["slug"], [], (classifiedDao) => {
@@ -214,16 +215,18 @@ console.info("------------")
  * To make sure that we don't lose any data, we put the additional classifications (which come from the 'whole' Santiment dataset) in an extra file called '../classifiedProjects2.json'.
  */
 console.log("11. Merging the already classified DAOs (GeckoSanti Dataset (./classifications.json)) together with the additional ones (../classifiedProjects2.json).")
-console.log("\tWrite all of the classified DAOs in one file names 'allClassificationsRaw.json'")
+console.log("\tWrite all of the classified DAOs in one file: 'allClassificationsRaw.json'")
 console.log("\t\tjq -s 'flatten | group_by(.slug) | map(reduce .[] as $x ({}; . * $x))' ./classifications.json ../classifiedProjects2.json -cMa > allClassificationsRaw.json")
+console.log("  Length of unsanitized dataset:", Number(execSync(`~/./jq "length" ./allClassificationsRaw.json`).toString()))
+console.log("")
 console.log("\tRemove all projects which have less than 64 priceUSD entries, as this is the minimum required to give a prediction.")
 console.log("\t\tjq 'unique_by(.slug) | map(select(.priceUSD | length >= 64))' ./allClassificationsRaw.json > ./allClassifications.json")
 console.log("\tOutput of all classified projects with an adequate length and without duplicates: './allClassifications.json'")
-console.log("Length of unsanitized dataset:", Number(execSync(`~/./jq "length" ./allClassificationsRaw.json`).toString()))
-console.log('Length of complete dataset:', Number(execSync(`~/./jq "length" ./allClassifications.json`).toString()))
+console.log('   Length of complete dataset:', Number(execSync(`~/./jq "length" ./allClassifications.json`).toString()))
 
 /**
  * Step 12:
  * Check the distribution of active/inactive DAOs in the dataset.
  */
+console.log("12. Running 'balance.py' to get the bias of the naturally sourced data:")
 console.log(execSync("python ../model/balance.py").toString())

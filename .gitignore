@@ -1,3 +1,5 @@
+model/__pycache__/*
+model/logs/*
 model/venv/
 preprocessing/node_modules/
 .DS_Store
@@ -24,3 +26,4 @@ remainingClassificationSlugs.json
 classifiedProjects2.json
 preprocessing/allClassificationsRaw.json
 preprocessing/allClassifications.json
+model/bidirectional_bce_model_full_correct
