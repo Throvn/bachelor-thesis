@@ -4,6 +4,7 @@ import pandas as pd
 WINDOW_SIZE = 64
 DATA_FILE_NAME = "../preprocessing/allClassifications.json"
 
+print("Reading '" + DATA_FILE_NAME + "'... ", end="", flush=True)
 js = json.load(open(DATA_FILE_NAME))
 
 # Convert js to DataFrame and shuffle it
@@ -11,6 +12,7 @@ total_training_data = pd.DataFrame(js).sample(frac=1, random_state=1337).reset_i
 
 # Display the total count of entries
 total_entries = len(total_training_data)
+print("Done.")
 
 # Function to filter entries with minimum WINDOW_SIZE and balance the dataset
 def countSamples(js):
@@ -43,12 +45,13 @@ def summary(data, title = "<NO TITLE>"):
         raise ValueError("Entries went missing")
     
 
-summary(js, "'./allClassifications.json' balance:")
 
-# Split total_training_data into training and testing datasets (70/30)
-split_index = int(total_entries * 0.7)
+# Split total_training_data into training and testing datasets (80/20)
+split_index = int(total_entries * 0.8)
 grouped_train = total_training_data.iloc[:split_index]
 grouped_test = total_training_data.iloc[split_index:]
 
+if __name__ == '__main__':
+    summary(js, "'./allClassifications.json' balance:")
+    summary(grouped_test.to_dict('records'), "TEST:")
 summary(grouped_train.to_dict('records'), "TRAIN:")
-summary(grouped_test.to_dict('records'), "TEST:")
