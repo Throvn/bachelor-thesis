@@ -217,6 +217,13 @@ console.log("11. Merging the already classified DAOs (GeckoSanti Dataset (./clas
 console.log("\tWrite all of the classified DAOs in one file names 'allClassificationsRaw.json'")
 console.log("\t\tjq -s 'flatten | group_by(.slug) | map(reduce .[] as $x ({}; . * $x))' ./classifications.json ../classifiedProjects2.json -cMa > allClassificationsRaw.json")
 console.log("\tRemove all projects which have less than 64 priceUSD entries, as this is the minimum required to give a prediction.")
-console.log("\t\tjq -f ./mergeClassifiedProjects.jq ./allClassificationsRaw.json -cMa > ./allClassifications.json")
-console.log("Output of all classified projects with an adequate length and without duplicates: './allClassifications.json'")
-console.log('Length of complete dataset:', Number(execSync(`~/./jq "length" -s allClassifications.json`).toString()))
+console.log("\t\tjq 'unique_by(.slug) | map(select(.priceUSD | length >= 64))' ./allClassificationsRaw.json > ./allClassifications.json")
+console.log("\tOutput of all classified projects with an adequate length and without duplicates: './allClassifications.json'")
+console.log("Length of unsanitized dataset:", Number(execSync(`~/./jq "length" ./allClassificationsRaw.json`).toString()))
+console.log('Length of complete dataset:', Number(execSync(`~/./jq "length" ./allClassifications.json`).toString()))
+
+/**
+ * Step 12:
+ * Check the distribution of active/inactive DAOs in the dataset.
+ */
+console.log(execSync("python ../model/balance.py").toString())
