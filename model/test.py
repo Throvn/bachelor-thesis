@@ -60,7 +60,7 @@ for index, observation in grouped_test.iterrows():
 		except:
 			print("Skipping '" + observation.slug + "' because of mismatching shapes.")
 
-	print("\n", observation.slug, "(" + str(np.average(output.cpu().numpy())) + ")", end="")
+	print("\n",str(output.cpu().numpy()[-1]) + " " + observation.slug, end="")
 
 # Set a threshold for classification
 threshold = 0.5

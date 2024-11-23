@@ -26,5 +26,3 @@ remainingClassificationSlugs.json
 classifiedProjects2.json
 preprocessing/allClassificationsRaw.json
 preprocessing/allClassifications.json
-model/bidirectional_bce_model_full_correct
-model/unidirectional_bce_model_balanced_correct

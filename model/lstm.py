@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import torch
-import torch.nn as nn
 import random
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from sklearn.model_selection import TimeSeriesSplit
@@ -16,6 +15,7 @@ import os
 # import matplotlib.pyplot as plt
 
 from model import SingleInputLSTMClassifier
+from focal_loss import FocalLoss
 from preparation import create_sequences
 from balance import DATA_FILE_NAME, grouped_train
 script_start = datetime.now()
@@ -46,7 +46,7 @@ MIN_DATA_OBSERVATIONS: Final[int] = WINDOW_SIZE + (TIMESERIES_SPLITS + 1)
 
 
 IS_BIDIRECTIONAL = False
-MODEL_SAVE_PATH = "./" + ("bi" if IS_BIDIRECTIONAL else "uni") + "directional_bce_model_balanced_correct"
+MODEL_SAVE_PATH = "./" + ("bi" if IS_BIDIRECTIONAL else "uni") + "directional_focal_model_full_correct"
 print("Modelname: %s", MODEL_SAVE_PATH)
 checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
 daosTrainedOn = checkpoint['daosTrainedOn'] if checkpoint else 0
@@ -115,8 +115,8 @@ gbm_params = {
 }
 print("Gradient boosting params: \n\t", json.dumps(gbm_params))
 # TODO: Explain in thesis: https://stackoverflow.com/a/68368157
-criterion = nn.BCELoss()
-# criterion = FocalLoss(alpha=(1-0.77), gamma=2)
+# criterion = nn.BCELoss()
+criterion = FocalLoss(alpha=(1-0.60), gamma=2)
 # criterion = nn.BCEWithLogitsLoss()
 
 # Training and validation
