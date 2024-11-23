@@ -45,7 +45,9 @@ TIMESERIES_SPLITS: Final[int] = 3
 MIN_DATA_OBSERVATIONS: Final[int] = WINDOW_SIZE + (TIMESERIES_SPLITS + 1)
 
 
-MODEL_SAVE_PATH = "./bidirectional_bce_model_full_correct"
+IS_BIDIRECTIONAL = False
+MODEL_SAVE_PATH = "./" + ("bi" if IS_BIDIRECTIONAL else "uni") + "directional_bce_model_balanced_correct"
+print("Modelname: %s", MODEL_SAVE_PATH)
 checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
 daosTrainedOn = checkpoint['daosTrainedOn'] if checkpoint else 0
 print("DAOs trained so far:", daosTrainedOn)
@@ -83,7 +85,7 @@ device = torch.device('mps')
 num_features = 3 # devActivity, twitterFollowers, priceUSD # input_streams[0].shape[2] #Input_dim = length of vector that contains unique feature columns.
 input_dim=(num_features)
 
-model = SingleInputLSTMClassifier(input_dim, isBidirectional=True).to(device)
+model = SingleInputLSTMClassifier(input_dim, isBidirectional=IS_BIDIRECTIONAL).to(device)
 
 if checkpoint:
     model.load_state_dict(checkpoint['model_state_dict'])
