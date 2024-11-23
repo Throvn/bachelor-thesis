@@ -45,15 +45,15 @@ def summary(data, title = "<NO TITLE>"):
         raise ValueError("Entries went missing")
     
 
-for i in range(10):
-	print("NOTE: DOING A 50/50 (active/inactive) SPLIT")
-data = countSamples(total_training_data.to_dict('records'))
-finalActive = data["active"]
-finalInActive = data["inactive"]
-min_size = min(len(finalActive), len(finalInActive))
-total_training_data = finalActive[:min_size] + finalInActive[:min_size]
-total_training_data = pd.DataFrame(total_training_data).sample(frac=1, random_state=1337).reset_index(drop=True)
-total_entries = min_size * 2
+# for i in range(10):
+# 	print("NOTE: DOING A 50/50 (active/inactive) SPLIT")
+# data = countSamples(total_training_data.to_dict('records'))
+# finalActive = data["active"]
+# finalInActive = data["inactive"]
+# min_size = min(len(finalActive), len(finalInActive))
+# total_training_data = finalActive[:min_size] + finalInActive[:min_size]
+# total_training_data = pd.DataFrame(total_training_data).sample(frac=1, random_state=1337).reset_index(drop=True)
+# total_entries = min_size * 2
 
 
 # Split total_training_data into training and testing datasets (80/20)
