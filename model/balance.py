@@ -1,3 +1,5 @@
+from collections import Counter
+from itertools import count
 import json
 import pandas as pd
 
@@ -13,6 +15,13 @@ total_training_data = pd.DataFrame(js).sample(frac=1, random_state=1337).reset_i
 # Display the total count of entries
 total_entries = len(total_training_data)
 print("Done.")
+
+def countOccurrences(js):
+    finalCount = Counter()
+    for observation in js:
+        c = Counter(observation["isActive"])
+        finalCount.update(c)
+    return finalCount
 
 # Function to filter entries with minimum WINDOW_SIZE and balance the dataset
 def countSamples(js):
@@ -60,8 +69,11 @@ def summary(data, title = "<NO TITLE>"):
 split_index = int(total_entries * 0.8)
 grouped_train = total_training_data.iloc[:split_index]
 grouped_test = total_training_data.iloc[split_index:]
+countedOccurrences = countOccurrences(js)
 
 if __name__ == '__main__':
+    print("Total observations:", countedOccurrences)
+    print("Inactive observations: ", countedOccurrences[0] / countedOccurrences.total())
     summary(js, "'./allClassifications.json' balance:")
     summary(grouped_test.to_dict('records'), "TEST:")
 summary(grouped_train.to_dict('records'), "TRAIN:")
