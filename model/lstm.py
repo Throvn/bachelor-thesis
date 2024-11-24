@@ -17,7 +17,7 @@ import os
 from model import SingleInputLSTMClassifier
 from focal_loss import FocalLoss
 from preparation import create_sequences
-from balance import DATA_FILE_NAME, grouped_train
+from balance import DATA_FILE_NAME, grouped_train, countedOccurrences
 script_start = datetime.now()
 
 def print(*args, end="\n", flush=False):
@@ -46,7 +46,7 @@ MIN_DATA_OBSERVATIONS: Final[int] = WINDOW_SIZE + (TIMESERIES_SPLITS + 1)
 
 
 IS_BIDIRECTIONAL = False
-MODEL_SAVE_PATH = "./" + ("bi" if IS_BIDIRECTIONAL else "uni") + "directional_focal_model_full_correct"
+MODEL_SAVE_PATH = "./" + ("bi" if IS_BIDIRECTIONAL else "uni") + "directional_focal_model_full_correct_a0.29"
 print("Modelname: %s", MODEL_SAVE_PATH)
 checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
 daosTrainedOn = checkpoint['daosTrainedOn'] if checkpoint else 0
@@ -116,7 +116,10 @@ gbm_params = {
 print("Gradient boosting params: \n\t", json.dumps(gbm_params))
 # TODO: Explain in thesis: https://stackoverflow.com/a/68368157
 # criterion = nn.BCELoss()
-criterion = FocalLoss(alpha=(1-0.60), gamma=2)
+
+percentageMajority = countedOccurrences.most_common(1)[0][1] / countedOccurrences.total()
+print("Percentage majority class:", percentageMajority)
+criterion = FocalLoss(alpha=(1 - percentageMajority), gamma=2)
 # criterion = nn.BCEWithLogitsLoss()
 
 # Training and validation
