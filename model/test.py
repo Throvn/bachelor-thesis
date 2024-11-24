@@ -15,7 +15,7 @@ torch.backends.cudnn.benchmark = False
 
 # CONSTANTS
 DATA_FILE_NAME = "../preprocessing/allClassifications.json"
-MODEL_SAVE_PATH = "./unidirectional_focal_model_full_correct_a0.71_g3"
+MODEL_SAVE_PATH = "./unidirectional_focal_model_full_correct_a0.71_g3.5"
 WINDOW_SIZE = 64
 print(MODEL_SAVE_PATH)
 
@@ -60,10 +60,10 @@ for index, observation in grouped_test.iterrows():
 		except:
 			print("Skipping '" + observation.slug + "' because of mismatching shapes.")
 
-	print("\n",str(output.cpu().numpy()[-1]) + " " + observation.slug, end="")
+	print("\n",str(output.cpu().numpy()[0]) + " " + observation.slug, end="")
 
 # Set a threshold for classification
-threshold = 0.52
+threshold = 0.5
 all_y_pred_class = [int(pred >= threshold) for pred in all_y_pred]
 
 # Generate the classification report
