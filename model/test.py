@@ -15,7 +15,7 @@ torch.backends.cudnn.benchmark = False
 
 # CONSTANTS
 DATA_FILE_NAME = "../preprocessing/allClassifications.json"
-MODEL_SAVE_PATH = "./unidirectional_focal_model_full_correct_a0.71"
+MODEL_SAVE_PATH = "./unidirectional_focal_model_full_correct_a0.71_g3"
 WINDOW_SIZE = 64
 print(MODEL_SAVE_PATH)
 
@@ -63,7 +63,7 @@ for index, observation in grouped_test.iterrows():
 	print("\n",str(output.cpu().numpy()[-1]) + " " + observation.slug, end="")
 
 # Set a threshold for classification
-threshold = 0.50
+threshold = 0.52
 all_y_pred_class = [int(pred >= threshold) for pred in all_y_pred]
 
 # Generate the classification report
@@ -72,3 +72,26 @@ print("File: ", MODEL_SAVE_PATH)
 print(classification_report(all_y_true, all_y_pred_class, target_names=["Abandoned", "Operating"]))
 
 print(f"Evaluated on {num_testing_observations} test observations.")
+
+###################################
+from sklearn.metrics import classification_report, roc_curve, auc
+import matplotlib.pyplot as plt
+
+# ROC and AUC Calculation
+fpr, tpr, thresholds = roc_curve(all_y_true, all_y_pred)
+roc_auc = auc(fpr, tpr)
+
+# Print AUC
+print(f"Area Under the Curve (AUC): {roc_auc:.2f}")
+
+# Plot the ROC curve
+plt.figure(MODEL_SAVE_PATH + " thresh=" + str(threshold) + " obs=" + str(num_testing_observations))
+plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (AUC = {roc_auc:.2f})')
+plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')  # Random guess line
+plt.xlim([0.0, 1.0])
+plt.ylim([0.0, 1.05])
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver Operating Characteristic')
+plt.legend(loc="lower right")
+plt.show()
