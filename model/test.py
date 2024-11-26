@@ -16,7 +16,7 @@ torch.backends.cudnn.benchmark = False
 
 # CONSTANTS
 DATA_FILE_NAME = "../preprocessing/allClassifications.json"
-MODEL_SAVE_PATH = "./unidirectional_focal_model_full_correct_a0.71_g3"
+MODEL_SAVE_PATH = "./unidirectional_focal_model_full_correct_a0.29_g3"
 WINDOW_SIZE = 64
 print(MODEL_SAVE_PATH)
 
