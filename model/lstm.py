@@ -46,7 +46,7 @@ MIN_DATA_OBSERVATIONS: Final[int] = WINDOW_SIZE + (TIMESERIES_SPLITS + 1)
 
 
 IS_BIDIRECTIONAL = False
-MODEL_SAVE_PATH = "./" + ("bi" if IS_BIDIRECTIONAL else "uni") + "directional_focal_model_full_correct_a0.71_g3.5"
+MODEL_SAVE_PATH = "./" + ("bi" if IS_BIDIRECTIONAL else "uni") + "directional_focal_model_full_correct_a0.29_g3"
 print("Modelname: %s", MODEL_SAVE_PATH)
 checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
 daosTrainedOn = checkpoint['daosTrainedOn'] if checkpoint else 0
@@ -117,9 +117,9 @@ print("Gradient boosting params: \n\t", json.dumps(gbm_params))
 # TODO: Explain in thesis: https://stackoverflow.com/a/68368157
 # criterion = nn.BCELoss()
 
-percentageMajority = countedOccurrences.most_common(1)[0][1] / countedOccurrences.total()
-print("Percentage majority class:", percentageMajority)
-criterion = FocalLoss(alpha=percentageMajority, gamma=3.5)
+percentageMinority = countedOccurrences.most_common()[-1][1] / countedOccurrences.total()
+print("Percentage majority class:", percentageMinority)
+criterion = FocalLoss(alpha=percentageMinority, gamma=3)
 # criterion = nn.BCEWithLogitsLoss()
 
 # Training and validation

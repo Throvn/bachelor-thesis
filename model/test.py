@@ -1,3 +1,4 @@
+import json
 import os
 import random
 from sklearn.metrics import classification_report
@@ -15,7 +16,7 @@ torch.backends.cudnn.benchmark = False
 
 # CONSTANTS
 DATA_FILE_NAME = "../preprocessing/allClassifications.json"
-MODEL_SAVE_PATH = "./unidirectional_focal_model_full_correct_a0.71_g3.5"
+MODEL_SAVE_PATH = "./unidirectional_focal_model_full_correct_a0.71_g3"
 WINDOW_SIZE = 64
 print(MODEL_SAVE_PATH)
 
@@ -40,36 +41,48 @@ num_testing_observations = 0
 all_y_true = []
 all_y_pred = []
 
-for index, observation in grouped_test.iterrows():
+cacheExists = os.path.exists("./cache/" + MODEL_SAVE_PATH + "-all_y_true.npy") and os.path.exists("./cache/" + MODEL_SAVE_PATH + "-all_y_pred.npy")
+if cacheExists:
+	print("Cache exists... Skipping repeated classification.")
+	all_y_true = np.asarray(np.load("./cache/" + MODEL_SAVE_PATH + "-all_y_true.npy"))
+	all_y_pred = np.asarray(np.load("cache/" + MODEL_SAVE_PATH + "-all_y_pred.npy"))
+	num_testing_observations = len(all_y_pred)
+else:
+	for index, observation in grouped_test.iterrows():
 
-	X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
-	if not len(X_seq) or not len(y_seq):
-		continue
-	X = torch.tensor(X_seq.squeeze().squeeze(), device=device, dtype=torch.float32)
-	X = torch.nan_to_num(X, nan=0.0)
-	y = torch.tensor(y_seq, device=device, dtype=torch.float32)
+		X_seq, y_seq = create_sequences(observation, WINDOW_SIZE)
+		if not len(X_seq) or not len(y_seq):
+			continue
+		X = torch.tensor(X_seq.squeeze().squeeze(), device=device, dtype=torch.float32)
+		X = torch.nan_to_num(X, nan=0.0)
+		y = torch.tensor(y_seq, device=device, dtype=torch.float32)
 
-	with torch.no_grad():
-		try:
-			model.eval()
-			output = model(X)
-			num_testing_observations += 1
+		with torch.no_grad():
+			try:
+				model.eval()
+				output = model(X)
+				num_testing_observations += 1
 
-			all_y_true.extend(y.cpu().numpy())
-			all_y_pred.extend(output.cpu().numpy())
-		except:
-			print("Skipping '" + observation.slug + "' because of mismatching shapes.")
+				all_y_true.extend(y.cpu().numpy())
+				all_y_pred.extend(output.cpu().numpy())
+			except:
+				print("Skipping '" + observation.slug + "' because of mismatching shapes.")
 
-	print("\n",str(output.cpu().numpy()[0]) + " " + observation.slug, end="")
+		print("\n",str(np.average(output.cpu().numpy())) + " " + observation.slug, end="")
+
+	np.save("./cache/" + MODEL_SAVE_PATH + "-all_y_true.npy", all_y_true)
+	np.save("./cache/" + MODEL_SAVE_PATH + "-all_y_pred.npy", all_y_pred)
+	print("Wrote results to cache.")
 
 # Set a threshold for classification
-threshold = 0.5
+threshold = 0.89
 all_y_pred_class = [int(pred >= threshold) for pred in all_y_pred]
 
 # Generate the classification report
 print("Final Classification Report:")
 print("File: ", MODEL_SAVE_PATH)
 print(classification_report(all_y_true, all_y_pred_class, target_names=["Abandoned", "Operating"]))
+print(f"Threshold: {threshold}")
 
 print(f"Evaluated on {num_testing_observations} test observations.")
 
@@ -84,14 +97,15 @@ roc_auc = auc(fpr, tpr)
 # Print AUC
 print(f"Area Under the Curve (AUC): {roc_auc:.2f}")
 
+if __name__ == "__main__":
 # Plot the ROC curve
-plt.figure(MODEL_SAVE_PATH + " thresh=" + str(threshold) + " obs=" + str(num_testing_observations))
-plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (AUC = {roc_auc:.2f})')
-plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')  # Random guess line
-plt.xlim([0.0, 1.0])
-plt.ylim([0.0, 1.05])
-plt.xlabel('False Positive Rate')
-plt.ylabel('True Positive Rate')
-plt.title('Receiver Operating Characteristic')
-plt.legend(loc="lower right")
-plt.show()
+	plt.figure(MODEL_SAVE_PATH + " thresh=" + str(threshold) + " obs=" + str(num_testing_observations))
+	plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (AUC = {roc_auc:.2f})')
+	plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')  # Random guess line
+	plt.xlim([0.0, 1.0])
+	plt.ylim([0.0, 1.05])
+	plt.xlabel('False Positive Rate')
+	plt.ylabel('True Positive Rate')
+	plt.title('Receiver Operating Characteristic')
+	plt.legend(loc="lower right")
+	plt.show()
