@@ -16,7 +16,7 @@ torch.backends.cudnn.benchmark = False
 
 # CONSTANTS
 DATA_FILE_NAME = "../preprocessing/allClassifications.json"
-MODEL_SAVE_PATH = "./unidirectional_focal_model_full_correct_a0.29_g3"
+MODEL_SAVE_PATH = "./bidirectional_focal_model_full_correct_a0.29_g3"
 WINDOW_SIZE = 64
 print(MODEL_SAVE_PATH)
 
@@ -75,7 +75,7 @@ else:
 	print("Wrote results to cache.")
 
 # Set a threshold for classification
-threshold = 0.89
+threshold = 0.57
 all_y_pred_class = [int(pred >= threshold) for pred in all_y_pred]
 
 # Generate the classification report

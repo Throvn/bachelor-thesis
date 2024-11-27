@@ -45,7 +45,7 @@ TIMESERIES_SPLITS: Final[int] = 3
 MIN_DATA_OBSERVATIONS: Final[int] = WINDOW_SIZE + (TIMESERIES_SPLITS + 1)
 
 
-IS_BIDIRECTIONAL = False
+IS_BIDIRECTIONAL = True
 MODEL_SAVE_PATH = "./" + ("bi" if IS_BIDIRECTIONAL else "uni") + "directional_focal_model_full_correct_a0.29_g3"
 print("Modelname: %s", MODEL_SAVE_PATH)
 checkpoint = torch.load(MODEL_SAVE_PATH, weights_only=True) if os.path.exists(MODEL_SAVE_PATH) else {}
