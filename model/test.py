@@ -1,4 +1,3 @@
-import json
 import os
 import random
 from sklearn.metrics import classification_report
@@ -18,6 +17,8 @@ torch.backends.cudnn.benchmark = False
 DATA_FILE_NAME = "../preprocessing/allClassifications.json"
 MODEL_SAVE_PATH = "./bidirectional_focal_model_full_correct_a0.29_g3"
 WINDOW_SIZE = 64
+# Set to true, if you only want to call the final predictions. Not all predictions.
+ONLY_LAST = True
 print(MODEL_SAVE_PATH)
 
 
@@ -42,7 +43,7 @@ all_y_true = []
 all_y_pred = []
 
 cacheExists = os.path.exists("./cache/" + MODEL_SAVE_PATH + "-all_y_true.npy") and os.path.exists("./cache/" + MODEL_SAVE_PATH + "-all_y_pred.npy")
-if cacheExists:
+if cacheExists and not ONLY_LAST:
 	print("Cache exists... Skipping repeated classification.")
 	all_y_true = np.asarray(np.load("./cache/" + MODEL_SAVE_PATH + "-all_y_true.npy"))
 	all_y_pred = np.asarray(np.load("cache/" + MODEL_SAVE_PATH + "-all_y_pred.npy"))
@@ -63,8 +64,13 @@ else:
 				output = model(X)
 				num_testing_observations += 1
 
-				all_y_true.extend(y.cpu().numpy())
-				all_y_pred.extend(output.cpu().numpy())
+				if ONLY_LAST:
+					all_y_true.append(y.cpu().numpy()[-1])
+					all_y_pred.append(output.cpu().numpy()[-1])
+				else:
+					all_y_true.extend(y.cpu().numpy())
+					all_y_pred.extend(output.cpu().numpy())
+				# breakpoint()
 			except:
 				print("Skipping '" + observation.slug + "' because of mismatching shapes.")
 
@@ -81,6 +87,7 @@ all_y_pred_class = [int(pred >= threshold) for pred in all_y_pred]
 # Generate the classification report
 print("Final Classification Report:")
 print("File: ", MODEL_SAVE_PATH)
+print("Len Y:", len(all_y_true), "Len PRED Y:", len(all_y_pred_class))
 print(classification_report(all_y_true, all_y_pred_class, target_names=["Abandoned", "Operating"]))
 print(f"Threshold: {threshold}")
 
