@@ -19,10 +19,13 @@ baseline_pr_auc = auc(recall, precision)  # PR-AUC for the baseline
 baseline_average_precision = average_precision_score(all_y_true, baseline_preds)
 
 plt.plot(recall, precision, lw=2, color='navy', linestyle='--', label=f'MCP: PRC (PR-AUC = {baseline_pr_auc:.2f}, AP = {baseline_average_precision:.2f})')
+plt.margins(x=8,y=8)
 
 # Finalize Plot
 plt.xlabel('Recall')
 plt.ylabel('Precision')
+plt.ylim(0, 1)
+plt.xlim(0, 1)
 plt.title('Precision-Recall Curve')
 plt.legend(loc="lower left")
 plt.grid()
