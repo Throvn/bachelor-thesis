@@ -43,7 +43,7 @@ all_y_true = []
 all_y_pred = []
 
 cacheExists = os.path.exists("./cache/" + MODEL_SAVE_PATH + "-all_y_true.npy") and os.path.exists("./cache/" + MODEL_SAVE_PATH + "-all_y_pred.npy")
-if cacheExists and not ONLY_LAST:
+if cacheExists:
 	print("Cache exists... Skipping repeated classification.")
 	all_y_true = np.asarray(np.load("./cache/" + MODEL_SAVE_PATH + "-all_y_true.npy"))
 	all_y_pred = np.asarray(np.load("cache/" + MODEL_SAVE_PATH + "-all_y_pred.npy"))
@@ -81,7 +81,7 @@ else:
 	print("Wrote results to cache.")
 
 # Set a threshold for classification
-threshold = 0.57
+threshold = 0.94
 all_y_pred_class = [int(pred >= threshold) for pred in all_y_pred]
 
 # Generate the classification report
