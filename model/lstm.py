@@ -20,12 +20,12 @@ from preparation import create_sequences
 from balance import DATA_FILE_NAME, grouped_train, countedOccurrences
 script_start = datetime.now()
 
-def print(*args, end="\n", flush=False):
-    with open('./logs/' + str(script_start) + '.log', "a") as f:
-        for arg in args:
-            f.write(str(arg))
-        f.write(end)
-    __builtins__.print(*args, end=end, flush=flush)
+# def print(*args, end="\n", flush=False):
+#     with open('./logs/' + str(script_start) + '.log', "a") as f:
+#         for arg in args:
+#             f.write(str(arg))
+#         f.write(end)
+#     __builtins__.print(*args, end=end, flush=flush)
 
 
 print("\n\n")
