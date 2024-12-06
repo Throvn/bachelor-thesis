@@ -41,7 +41,7 @@ function drawPrices(prices, timeRange) {
                 }),
                 datasets: [
                     {
-                        label: 'Price',
+                        label: 'Price in USD per day',
                         data: prices.map(row => row.value)
                     }
                 ],
@@ -101,7 +101,7 @@ function drawDevelopment(activity, timeRange) {
                 }),
                 datasets: [
                     {
-                        label: 'Commits per day',
+                        label: 'Development activity per day',
                         data: activity.map(row => row.value),
                     }
                 ]
@@ -150,7 +150,7 @@ function drawFollowing(followers, timeRange) {
                 }),
                 datasets: [
                     {
-                        label: 'Change in Twitter followers',
+                        label: 'Cumulative change in Twitter followers per day',
                         data: followers.map(row => {
                             cumSum += row.value;
                             return cumSum;
