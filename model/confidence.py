@@ -115,14 +115,50 @@ def bootstrap_pr_auc(y_true, y_pred, num_samples=BOOTSTRAP_SAMPLES, conf_level=C
     return np.mean(aucs), (lower, upper)
 
 # Calculate PR AUC and confidence intervals for each heuristic
-print("\nPrices USD:")
+print("Prices USD:")
 price_auc, price_ci = bootstrap_pr_auc(all_y_true, price_heur)
 print(f"PR AUC: {price_auc:.2f}, 95% CI: {price_ci}")
 
-print("\nDev Activity:")
+print("Dev Activity:")
 dev_auc, dev_ci = bootstrap_pr_auc(dev_true, dev_heur)
 print(f"PR AUC: {dev_auc:.2f}, 95% CI: {dev_ci}")
 
-print("\nTwitter Followers:")
+print("Twitter Followers:")
 twitter_auc, twitter_ci = bootstrap_pr_auc(twitter_true, twitter_heur)
 print(f"PR AUC: {twitter_auc:.2f}, 95% CI: {twitter_ci}")
+
+#########################################################################################
+# Calculate t-test (statistical significance)
+#########################################################################################
+
+from scipy.stats import ttest_rel
+
+# Function to calculate bootstrapped PR AUCs
+def calculate_bootstrapped_aucs(y_true, y_pred, num_samples=BOOTSTRAP_SAMPLES):
+    aucs = []
+    for _ in range(num_samples):
+        indices = resample(range(len(y_true)))
+        y_true_resampled = np.array(y_true)[indices]
+        y_pred_resampled = np.array(y_pred)[indices]
+        
+        # Calculate PR AUC for the resampled data
+        precision, recall, _ = precision_recall_curve(y_true_resampled, y_pred_resampled)
+        aucs.append(auc(recall, precision))
+    return aucs
+
+# Calculate bootstrapped PR AUCs for LSTM and heuristics
+lstm_aucs = calculate_bootstrapped_aucs(all_y_true, all_y_pred)
+price_aucs = calculate_bootstrapped_aucs(all_y_true, price_heur)
+dev_aucs = calculate_bootstrapped_aucs(dev_true, dev_heur)
+twitter_aucs = calculate_bootstrapped_aucs(twitter_true, twitter_heur)
+
+# Perform paired t-tests between LSTM and each heuristic
+price_ttest = ttest_rel(lstm_aucs, price_aucs)
+dev_ttest = ttest_rel(lstm_aucs, dev_aucs)
+twitter_ttest = ttest_rel(lstm_aucs, twitter_aucs)
+
+# Output the results
+print("\nPaired t-test Results:")
+print(f"Price Trend Heuristic vs. LSTM: t = {price_ttest.statistic:.2f}, p = {price_ttest.pvalue}")
+print(f"Dev Activity Heuristic vs. LSTM: t = {dev_ttest.statistic:.2f}, p = {dev_ttest.pvalue}")
+print(f"Twitter Follower Heuristic vs. LSTM: t = {twitter_ttest.statistic:.2f}, p = {twitter_ttest.pvalue}")
