@@ -98,18 +98,18 @@ for index, observation in grouped_test.iterrows():
 
 # Generate classification report for the heuristic
 print("Prices USD:")
-print(classification_report(all_y_true, price_heur, target_names=["Operating", "Abandoned"]))
+print(classification_report(all_y_true, price_heur, target_names=["Abandoned", "Operating"]))
 
 print("Dev Activity:")
 # Drop all values where dev_heur doesn't have an entry
 dev_true = [val2 for val, val2 in zip(dev_heur, all_y_true) if val is not None]
 dev_heur = [val for val in dev_heur if val is not None]
-print(classification_report(dev_true, dev_heur, target_names=["Operating", "Abandoned"]))
+print(classification_report(dev_true, dev_heur, target_names=["Abandoned", "Operating"]))
 
 print("Twitter Follower:")
 # Drop all values where twitter_heur doesn't have an entry
 twitter_true = [val2 for val, val2 in zip(twitter_heur, all_y_true) if val is not None]
 twitter_heur = [val for val in twitter_heur if val is not None]
-print(classification_report(twitter_true, twitter_heur, target_names=["Operating", "Abandoned"]))
+print(classification_report(twitter_true, twitter_heur, target_names=["Abandoned", "Operating"]))
 
 print(f"Evaluated on {num_testing_observations} test observations.")

@@ -15,7 +15,7 @@ torch.backends.cudnn.benchmark = False
 
 # CONSTANTS
 DATA_FILE_NAME = "../preprocessing/allClassifications.json"
-MODEL_SAVE_PATH = "./bidirectional_focal_model_full_correct_a0.29_g3"
+MODEL_SAVE_PATH = "./unidirectional_focal_model_full_correct_a0.29"
 WINDOW_SIZE = 64
 # Set to true, if you only want to call the final predictions. Not all predictions.
 ONLY_LAST = True
